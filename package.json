@@ -1,0 +1,38 @@
+{
+  "name": "jb-wp-react",
+  "version": "1.0.0",
+  "description": "Simple WordPress theme built based on ReactJs",
+  "main": "index.js",
+  "scripts": {
+    "build": "wp-scripts build --output-path=assets/js",
+    "css": "node-sass --output-style compressed --include-path scss src/scss/main.scss assets/css/main.min.css",
+    "check-engines": "wp-scripts check-engines",
+    "check-licenses": "wp-scripts check-licenses",
+    "lint:css": "wp-scripts lint-style",
+    "lint:js": "wp-scripts lint-js",
+    "lint:pkg-json": "wp-scripts lint-pkg-json",
+    "start": "npm run css && wp-scripts start --output-path=assets/js",
+    "test:e2e": "wp-scripts test-e2e",
+    "test:unit": "wp-scripts test-unit-js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jackbui2014/jb-wp-react.git"
+  },
+  "keywords": [
+    "WordPress",
+    "ReactJs"
+  ],
+  "author": "JB Provider",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jackbui2014/jb-wp-react/issues"
+  },
+  "homepage": "https://github.com/jackbui2014/jb-wp-react#readme",
+  "devDependencies": {
+    "@wordpress/scripts": "^12.5.0"
+  },
+  "dependencies": {
+    "node-sass": "^5.0.0"
+  }
+}
