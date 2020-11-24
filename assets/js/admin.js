@@ -81,14 +81,14 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./src/index.js");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./src/admin.js");
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./src/index.js":
+/***/ "./src/admin.js":
 /*!**********************!*\
-  !*** ./src/index.js ***!
+  !*** ./src/admin.js ***!
   \**********************/
 /*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -103,11 +103,11 @@ var _wp$element = wp.element,
     useState = _wp$element.useState,
     Fragment = _wp$element.Fragment;
 
-var App = function App() {
-  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(Fragment, null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("h1", null, "Site titled"));
+var AdminApp = function AdminApp() {
+  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(Fragment, null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("h1", null, "Admin site"));
 };
 
-render(Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(App, null), document.getElementById('jbapp'));
+render(Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(AdminApp, null), document.getElementById('jbapp'));
 
 /***/ }),
 
@@ -123,4 +123,4 @@ render(Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(
 /***/ })
 
 /******/ });
-//# sourceMappingURL=index.js.map
+//# sourceMappingURL=admin.js.map

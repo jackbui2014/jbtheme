@@ -86,13 +86,27 @@ if( !function_exists('jb_register_styles_scripts')):
 		if ( ( ! is_admin() ) && is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 			wp_enqueue_script( 'comment-reply' );
 		}
-		wp_enqueue_script( 'jb-script', get_template_directory_uri() . '/assets/js/index.js', array('wp-element'), $theme_version, false );
+		wp_enqueue_script( 'jb-script', get_template_directory_uri() . '/assets/js/index.js', array('wp-element'), $theme_version, true );
 		wp_script_add_data( 'jb-script', 'async', true );
 
 
 	}
 endif;
 add_action( 'wp_enqueue_scripts', 'jb_register_styles_scripts' );
+if( !function_exists('jb_admin_register_styles_scripts')):
+	/**
+	 * Register and Enqueue Styles.
+	 */
+	function jb_admin_register_styles_scripts() {
+
+		$theme_version = wp_get_theme()->get( 'Version' );
+		wp_enqueue_script( 'jb-admin-script', get_template_directory_uri() . '/assets/js/admin.js', array('wp-element'), $theme_version, true );
+		wp_script_add_data( 'jb-admin-script', 'async', true );
+
+
+	}
+endif;
+add_action( 'admin_enqueue_scripts', 'jb_admin_register_styles_scripts' );
 if( !function_exists('jb_skip_link_focus_fix')):
 	/**
 	 * Fix skip link focus in IE11.

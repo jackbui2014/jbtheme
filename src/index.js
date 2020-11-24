@@ -1,17 +1,11 @@
-const { render, useState } = wp.element;
+const { render, useState, Fragment } = wp.element;
 
-const Votes = () => {
-  const [votes, setVotes] = useState(0);
-  const addVote = () => {
-    setVotes(votes + 1);
-  };
+const App = () => {
+  
   return (
-    <div>
-      <h2>{votes} Votes</h2>
-      <p>
-        <button onClick={addVote}>Vote!</button>
-      </p>
-    </div>
+    <Fragment>
+      <h1>Site titled</h1>
+    </Fragment>
   );
 };
-render(<Votes />, document.getElementById('react-app'));
+render(<App />, document.getElementById('jbapp'));

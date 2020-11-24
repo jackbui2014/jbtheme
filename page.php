@@ -7,7 +7,7 @@ get_header();
 		<div class="post-inner thin">
 			<div class="entry-content">				
 
-				<div id="react-app"></div><!-- #react-app -->
+				<div id="jbapp"></div><!-- #jbapp -->
 
 			</div><!-- .entry-content -->
 		</div><!-- .post-inner -->
