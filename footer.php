@@ -5,8 +5,9 @@
  * Contains the opening of the #site-footer div and all content after.
  *
  *
- * @package jb-wp-react
- * @since jb-wp-react 1.0
+ * @package JB
+ * @subpackage jb-wp-react
+ * @since 1.0
  */
 
 ?>

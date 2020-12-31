@@ -3,8 +3,9 @@
  * Header file for JB WP React theme.
  *
  *
- * @package jb-wp-react
- * @since jb-wp-react 1.0
+ * @package JB
+ * @subpackage jb-wp-react
+ * @since 1.0
  */
 
 ?><!DOCTYPE html>

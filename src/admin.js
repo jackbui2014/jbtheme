@@ -1,11 +1,23 @@
-const { render, useState, Fragment } = wp.element;
+import { __ } from '@wordpress/i18n';
+import { registerBlockType } from '@wordpress/blocks';
 
-const AdminApp = () => {
-  
-  return (
-    <Fragment>
-      <h1>Admin site</h1>
-    </Fragment>
-  );
-};
-render(<AdminApp />, document.getElementById('jbapp'));
+import * as homebanner from './gutenberg/home-banner';
+
+
+const registerBlock = ( block ) => {
+	if ( !block ){
+		return;
+	}
+
+	let { category } = block;
+	const { name, settings } = block;
+
+	registerBlockType (name, {
+		category,
+		...settings,
+	});
+}
+export const registerJBBlocks = () => {
+	[homebanner].forEach( registerBlock );
+}
+registerJBBlocks();

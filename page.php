@@ -1,4 +1,12 @@
 <?php
+/**
+ * Default page template
+ *
+ *
+ * @package JB
+ * @subpackage jb-wp-react
+ * @since 1.0
+ */
 get_header();
 ?>
 

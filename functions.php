@@ -2,8 +2,9 @@
 /**
  * jb-wp-react's functions and definitions
  *
- * @package jb-wp-react
- * @since jb-wp-react 1.0
+ * @package JB
+ * @subpackage jb-wp-react
+ * @since 1.0
  */
 
 /**
@@ -68,7 +69,7 @@ add_action( 'after_setup_theme', 'jb_setup' );
  * REQUIRED FILES
  * Include required files.
  */
-//require get_template_directory() . '/inc/index.php';
+require get_template_directory() . '/inc/index.php';
 if( !function_exists('jb_register_styles_scripts')):
 	/**
 	 * Register and Enqueue Styles.
@@ -127,6 +128,66 @@ if( !function_exists('jb_skip_link_focus_fix')):
 endif;
 add_action( 'wp_print_footer_scripts', 'jb_skip_link_focus_fix' );
 
+if( !function_exists('jb_gutenberg_enqueue')){
+	/**
+	 * Enqueue Gutenberg
+	 *
+	 */
+	function jb_gutenberg_enqueue(){
+		$theme_version = wp_get_theme()->get( 'Version' );
+		wp_enqueue_style(
+			'jb-gutenberg-editor-css',
+			get_template_directory_uri().'/assets/css/editor.css', 
+			array('wp-editor'),
+			$theme_version
+		);
+		wp_enqueue_script(
+			'jb-gutenberg-script',
+			get_template_directory_uri().'/assets/js/admin.js', 
+			array('wp-blocks', 'wp-element', 'wp-i18n', 'wp-block-editor', 'wp-components'),
+			$theme_version
+		);
+	}
+}
+add_action( 'enqueue_block_editor_assets', 'jb_gutenberg_enqueue');
+
+if( !function_exists('jb_gutenberg_enqueue_frontend')){
+	/**
+	 * Enqueue Gutenberg frontend style
+	 *
+	 */
+	function jb_gutenberg_enqueue_frontend(){
+		$theme_version = wp_get_theme()->get( 'Version' );
+		wp_enqueue_style(
+			'jb-gutenberg-style-css',
+			get_template_directory_uri().'/assets/css/style.css', 
+			array(),
+			$theme_version
+		);
+	}
+}
+add_action( 'enqueue_block_assets', 'jb_gutenberg_enqueue_frontend');
+
+if( !function_exists('jb_gutenberg_block_category')){
+	/**
+	 *
+	 *Add JB General gutenberg block category
+	 *
+	 */
+	function jb_gutenberg_block_category($categories, $post){
+		return array_merge(
+			array(
+				array(
+					'slug'=> 'jb-general-blocks',
+					'title'=> __('JB General Blocks', 'jbtheme')
+				),
+			),
+			$categories
+		);
+	}
+
+}
+add_filter('block_categories', 'jb_gutenberg_block_category', 10, 2);
 if( !function_exists('jb_menus')){
 	/**
 	 * Register navigation menus uses wp_nav_menu in five places.
