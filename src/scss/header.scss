@@ -1,0 +1,49 @@
+.site-header{
+	height: 80px;
+	width:100%;
+	display:flex;
+	align-items: center;
+	position: fixed;
+	top: 0;
+	z-index:99999;
+	background: transparent;
+    -webkit-transition: 300ms all cubic-bezier(.4,0,.2,1);
+    transition: 300ms all cubic-bezier(.4,0,.2,1);
+    &.fixed-header{
+    	background: $white;
+    	a{
+    		color: rgba(0, 0, 0, .7)!important;
+    		&:hover{
+    			color: rgba(0, 0, 0, 1)!important;
+    		}
+    	}
+    }
+	.site-logo{
+		width: 10%;
+		float:left;
+		margin: 0;
+	    opacity: 1;
+	    -webkit-transition: 300ms all cubic-bezier(.4,0,.2,1);
+	    transition: 300ms all cubic-bezier(.4,0,.2,1);
+	    max-height: 80px;
+	    padding-left:1rem;
+	}
+	.primary-navigation{
+		width: 90%;
+		float: left;
+
+		.menu-item{
+			a{
+				padding: 0 24px;
+			    color: rgba(255, 255, 255, .8);
+			    height: 80px; 
+			    -webkit-transition: 300ms all cubic-bezier(.4,0,.2,1);
+			    transition: 300ms all cubic-bezier(.4,0,.2,1);
+			    text-decoration: none;
+			    &:hover{
+			    	color: rgba(255, 255, 255, 1);
+			    }
+		    }
+		}
+	}
+}

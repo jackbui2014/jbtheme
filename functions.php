@@ -47,14 +47,26 @@ function jb_setup() {
      * Enable support for post thumbnails and featured images.
      */
     add_theme_support( 'post-thumbnails' );
- 
+
     /**
-     * Add support for two custom navigation menus.
-     */
-    register_nav_menus( array(
-        'primary'   => __( 'Primary Menu', 'jbdomain' ),
-        'secondary' => __('Secondary Menu', 'jbdomain' )
-    ) );
+		 * Add support for core custom logo.
+		 *
+		 * @link https://codex.wordpress.org/Theme_Logo
+		 */
+		$logo_width  = 300;
+		$logo_height = 100;
+
+		add_theme_support(
+			'custom-logo',
+			array(
+				'height'               => $logo_height,
+				'width'                => $logo_width,
+				'flex-width'           => true,
+				'flex-height'          => true,
+				'unlink-homepage-logo' => true,
+			)
+		);
+ 
  
     /**
      * Enable support for the following post formats:
@@ -78,7 +90,7 @@ if( !function_exists('jb_register_styles_scripts')):
 
 		$theme_version = wp_get_theme()->get( 'Version' );
 		//Enqueue style files
-		wp_enqueue_style( 'jb-style', get_template_directory_uri().'/assets/css/main.min.css', array(), $theme_version );
+		wp_enqueue_style( 'jb-style', get_template_directory_uri().'/assets/css/main.css', array(), $theme_version );
 
 		// Add print CSS.
 		wp_enqueue_style( 'jb-print-style', get_template_directory_uri() . '/assets/css/print.css', null, $theme_version, 'print' );
@@ -87,7 +99,7 @@ if( !function_exists('jb_register_styles_scripts')):
 		if ( ( ! is_admin() ) && is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 			wp_enqueue_script( 'comment-reply' );
 		}
-		wp_enqueue_script( 'jb-script', get_template_directory_uri() . '/assets/js/index.js', array('wp-element'), $theme_version, true );
+		wp_enqueue_script( 'jb-script', get_template_directory_uri() . '/assets/js/index.js', array('wp-element', 'jquery'), $theme_version, true );
 		wp_script_add_data( 'jb-script', 'async', true );
 
 
@@ -100,9 +112,9 @@ if( !function_exists('jb_admin_register_styles_scripts')):
 	 */
 	function jb_admin_register_styles_scripts() {
 
-		$theme_version = wp_get_theme()->get( 'Version' );
-		wp_enqueue_script( 'jb-admin-script', get_template_directory_uri() . '/assets/js/admin.js', array('wp-element'), $theme_version, true );
-		wp_script_add_data( 'jb-admin-script', 'async', true );
+		// $theme_version = wp_get_theme()->get( 'Version' );
+		// wp_enqueue_script( 'jb-admin-script', get_template_directory_uri() . '/assets/js/admin.js', array('wp-element', 'wp-blocks', 'wp-i18n', 'wp-block-editor', 'wp-components'), $theme_version, true );
+		// wp_script_add_data( 'jb-admin-script', 'async', true );
 
 
 	}
@@ -174,20 +186,20 @@ if( !function_exists('jb_gutenberg_block_category')){
 	 *Add JB General gutenberg block category
 	 *
 	 */
-	function jb_gutenberg_block_category($categories, $post){
+	function jb_gutenberg_block_category($categories){
 		return array_merge(
+			$categories,
 			array(
 				array(
 					'slug'=> 'jb-general-blocks',
 					'title'=> __('JB General Blocks', 'jbtheme')
 				),
-			),
-			$categories
+			)
 		);
 	}
 
 }
-add_filter('block_categories', 'jb_gutenberg_block_category', 10, 2);
+add_filter('block_categories', 'jb_gutenberg_block_category');
 if( !function_exists('jb_menus')){
 	/**
 	 * Register navigation menus uses wp_nav_menu in five places.
@@ -195,11 +207,8 @@ if( !function_exists('jb_menus')){
 	function jb_menus() {
 
 		$locations = array(
-			'primary'  => __( 'Desktop Horizontal Menu', 'jbdomain' ),
-			'expanded' => __( 'Desktop Expanded Menu', 'jbdomain' ),
-			'mobile'   => __( 'Mobile Menu', 'jbdomain' ),
-			'footer'   => __( 'Footer Menu', 'jbdomain' ),
-			'social'   => __( 'Social Menu', 'jbdomain' ),
+			'primary'  => __( 'Primary menu', 'jbdomain' ),
+			'second' => __( 'Secondary Menu', 'jbdomain' )
 		);
 		register_nav_menus( $locations );
 	}
@@ -254,10 +263,12 @@ if( !function_exists('jb_get_custom_logo')):
 				}
 
 				$html = preg_replace( $search, $replace, $html );
+				$html .='<a href="'.get_home_url().'">'.$html.'</a>';
 
 			}
 		}
-
+		$html = str_replace('<span ', '<a href="'.get_home_url().'" ', $html);
+		$html = str_replace('</span>', '</a>', $html);
 		return $html;
 
 	}

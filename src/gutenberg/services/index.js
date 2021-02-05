@@ -3,14 +3,16 @@ import { RichText, MediaUpload, PlainText,  InspectorControls } from '@wordpress
 import { PanelBody, TextControl, SelectControl } from '@wordpress/components';
 import config from './config.json';
 import edit from './edit';
+import save from './save';
 
 const {name, category, attributes} = config;
 
 const settings = {
-	title: __('JB Home banner', 'jbtheme'),
+	title: __('JB Service', 'jbtheme'),
 	icon: 'format-gallery',
 	category: category,
 	attributes,
-	edit
+	edit,
+	save
 }
 export {name, category, settings};

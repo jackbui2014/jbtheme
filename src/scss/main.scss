@@ -1,4 +1,18 @@
-body{
-	font-size: 14px;
-	background:#ffffff;
+@import "../../node_modules/bootstrap/scss/bootstrap";
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import './variables';
+html, body{
+	margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    overflow-x: hidden;
 }
+body{
+	font-family: 'Lato', sans-serif;
+	font-size: 17px;
+}
+@import './components/components';
+@import './header';

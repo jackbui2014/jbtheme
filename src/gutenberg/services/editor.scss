@@ -1,0 +1,13 @@
+
+.service-item{
+	position: relative;
+	text-align: center;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	.remove_image{
+		position: absolute;
+		right: 10px;
+		top: 10px;
+		color: red;
+	}
+}

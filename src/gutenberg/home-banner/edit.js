@@ -5,11 +5,7 @@ import { PanelBody, TextControl, SelectControl } from '@wordpress/components';
 import { Fragment, Component } from '@wordpress/element';
 import config from './config.json';
 
-class HomeBannerEdit extends Component{
-	constructor(props){
-		super(props);
-	}
-	render(){
+const HomeBannerEdit = (props) => {
 		return (
 			<Fragment>
 				<MediaUpload
@@ -17,16 +13,16 @@ class HomeBannerEdit extends Component{
 						const image = media.sizes.full
 						? media.sizes.full.url
 						: media.url;
-						this.props.setAttributes({
+						props.setAttributes({
 							background_url: image
 						});
 					}}
 					type="image"
-					value={this.props.attributes.background_url}
+					value={props.attributes.background_url}
 					render={({ open })=>
-					!! this.props.attributes.background_url ? (
+					!! props.attributes.background_url ? (
 						<div>
-						<img className="image" src={this.props.attributes.background_url} onClick={open} />
+						<img className="image" src={props.attributes.background_url} onClick={open} />
 						</div>
 						): (
 						<a href="#"
@@ -38,39 +34,33 @@ class HomeBannerEdit extends Component{
 						)
 					}
 					/>
-					<TextControl
-						label={ __('Video url', 'jbtheme')}
-						type="text"
-						value={ this.props.attributes.video_url }
-						onChange={ (video_url) => this.props.setAttributes({video_url}) }
-						/>
-						<TextControl
+					<RichText
 						label={ __('Banner title', 'jbtheme')}
-						type="text"
-						value={ this.props.attributes.banner_title }
-						onChange={ (banner_title) => this.props.setAttributes({banner_title}) }
-						/>
+						placeholder={ __('Banner title', 'jbtheme')}
+						tagName="h1"
+						value={ props.attributes.banner_title }
+						onChange={ (banner_title) => props.setAttributes({banner_title}) }
+						/>	
 					<RichText
 						label={ __('Banner Subtitle', 'jbtheme')}
 						placeholder={ __('Banner Subtitle', 'jbtheme')}
 						tagName="p"
-						value={ this.props.attributes.banner_subtitle }
-						onChange={ (banner_subtitle) => this.props.setAttributes({banner_subtitle}) }
+						value={ props.attributes.banner_subtitle }
+						onChange={ (banner_subtitle) => props.setAttributes({banner_subtitle}) }
 						/>	
 						<TextControl
 						label={ __('Banner button text', 'jbtheme')}
 						type="text"
-						value={ this.props.attributes.button_text }
-						onChange={ (button_text) => this.props.setAttributes({button_text}) }
+						value={ props.attributes.button_text }
+						onChange={ (button_text) => props.setAttributes({button_text}) }
 						/>
 						<TextControl
 						label={ __('Banner button link', 'jbtheme')}
 						type="text"
-						value={ this.props.attributes.button_link }
-						onChange={ (button_link) => this.props.setAttributes({button_link}) }
+						value={ props.attributes.button_link }
+						onChange={ (button_link) => props.setAttributes({button_link}) }
 						/>
 			</Fragment>
 			);
-	}
 }
 export default HomeBannerEdit;

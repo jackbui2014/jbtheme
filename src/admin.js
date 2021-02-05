@@ -2,6 +2,7 @@ import { __ } from '@wordpress/i18n';
 import { registerBlockType } from '@wordpress/blocks';
 
 import * as homebanner from './gutenberg/home-banner';
+import * as service from './gutenberg/services';
 
 
 const registerBlock = ( block ) => {
@@ -18,6 +19,9 @@ const registerBlock = ( block ) => {
 	});
 }
 export const registerJBBlocks = () => {
-	[homebanner].forEach( registerBlock );
+	[
+	homebanner,
+	service
+	].forEach( registerBlock );
 }
 registerJBBlocks();

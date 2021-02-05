@@ -1,6 +1,6 @@
 <?php
 /**
- * Main file
+ * The main template file
  *
  *
  * @package JB
@@ -8,18 +8,11 @@
  * @since 1.0
  */
 get_header();
-?>
 
-<main id="site-content" role="main">
-	<article class="post-2 page type-page status-publish hentry">
-		<div class="post-inner thin">
-			<div class="entry-content">				
-
-				<div id="jbapp"></div><!-- #jbapp -->
-
-			</div><!-- .entry-content -->
-		</div><!-- .post-inner -->
-	</article><!-- .post -->
-</main><!-- #site-content -->
-
-<?php get_footer(); ?>
+if( have_posts() ):
+	while( have_posts()):
+		the_post();
+		get_template_part('templates/content', get_post_type());
+	endwhile;
+endif;
+get_footer(); ?>

@@ -11,8 +11,11 @@
  */
 
 ?>
-			<footer id="site-footer" role="contentinfo" class="header-footer-group">
+					</main><!-- #main -->
+				</div><!-- #primary -->
+			</div><!-- #content -->
 
+			<footer id="site-footer" role="contentinfo" class="header-footer-group">
 				<div class="section-inner">
 					Footer content
 				</div>

@@ -24,8 +24,9 @@
 	</head>
 
 	<body <?php body_class(); ?>>
-		<header id="site-header" class="jb-header">
-			<div class="section-inner">
-				Header content
-			</div>
-		</header>
+		<?php wp_body_open(); ?>
+		<div id="page" class="site">
+			<?php get_template_part('templates/header/site', 'header'); ?>
+			<div id="content" class="site-content">
+				<div id="primary" class="content-area">
+					<main id="main" class="site-main" role="main">

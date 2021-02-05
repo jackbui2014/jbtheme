@@ -90,35 +90,26 @@
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
-
-var _wp$element = wp.element,
-    render = _wp$element.render,
-    useState = _wp$element.useState,
-    Fragment = _wp$element.Fragment;
-
-var App = function App() {
-  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(Fragment, null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("h1", null, "Site titled"));
-};
-
-render(Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(App, null), document.getElementById('jbapp'));
-
-/***/ }),
-
-/***/ "@wordpress/element":
-/*!******************************************!*\
-  !*** external {"this":["wp","element"]} ***!
-  \******************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-(function() { module.exports = this["wp"]["element"]; }());
+(function ($) {
+  function fixed_header() {
+    if ($('.home').length > 0) {
+      $(window).scroll(function () {
+        if (window.pageYOffset > 0) {
+          $('.site-header').addClass('fixed-header');
+        } else {
+          $('.site-header').removeClass('fixed-header');
+        }
+      });
+    }
+  }
+
+  $(document).ready(function () {
+    fixed_header();
+  });
+})(jQuery);
 
 /***/ })
 

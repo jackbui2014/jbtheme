@@ -1,0 +1,43 @@
+{
+	"name": "jbtheme/service",
+	"category": "jb-general-blocks",
+	"attributes": {
+		"id": {
+			"source": "attributes",
+			"selector": ".jb-service-wrapper",
+			"attribute": "id"
+		},
+		"services":{
+			"source": "query",
+			"default": [],
+			"selector": ".jb-service-inner",
+			"query":{
+				"icon": {
+					"type": "string",
+					"default": ""
+				},
+				"title": {
+					"type": "string",
+					"default": ""
+				},
+				"subtitle": {
+					"type": "string",
+					"default": ""
+				},
+				"link": {
+					"type": "string",
+					"default": ""
+				}
+			}
+		},
+		"section_title":{
+			"type": "string",
+			"default": ""
+		},
+		"section_subtitle":{
+			"type": "string",
+			"default": ""
+		}
+		
+	}
+}
