@@ -1,0 +1,22 @@
+.align-items-center{
+	top: 50%;
+	transform: translateY(-50%);
+    position: absolute;
+}
+.align-items-top{
+    top:0;
+    position: absolute;
+}
+.align-items-bottom{
+    bottom:0;
+    position: absolute;
+}
+.justify-content-left{
+    text-align: left;
+}
+.justify-content-center{
+    text-align: center;
+}
+.justify-content-right{
+    text-align: right;
+}

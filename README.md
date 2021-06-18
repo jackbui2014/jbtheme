@@ -1,2 +1,2 @@
-# jb-wp-react
+# jbtheme
 WordPress theme with ReactJs

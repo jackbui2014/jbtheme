@@ -5,7 +5,7 @@
  *
  *
  * @package JB
- * @subpackage jb-wp-react
+ * @subpackage jbtheme
  * @since 1.0
  */
 ?>

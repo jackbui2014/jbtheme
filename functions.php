@@ -1,9 +1,9 @@
 <?php
 /**
- * jb-wp-react's functions and definitions
+ * jbtheme's functions and definitions
  *
  * @package JB
- * @subpackage jb-wp-react
+ * @subpackage jbtheme
  * @since 1.0
  */
 
@@ -36,7 +36,7 @@ function jb_setup() {
      * Make theme available for translation.
      * Translations can be placed in the /languages/ directory.
      */
-    load_theme_textdomain( 'jbdomain', get_template_directory() . '/languages' );
+    load_theme_textdomain( 'jbtheme', get_template_directory() . '/languages' );
  
     /**
      * Add default posts and comments RSS feed links to <head>.
@@ -188,13 +188,13 @@ if( !function_exists('jb_gutenberg_block_category')){
 	 */
 	function jb_gutenberg_block_category($categories){
 		return array_merge(
-			$categories,
 			array(
 				array(
 					'slug'=> 'jb-general-blocks',
 					'title'=> __('JB General Blocks', 'jbtheme')
 				),
-			)
+			),
+			$categories
 		);
 	}
 
@@ -207,8 +207,8 @@ if( !function_exists('jb_menus')){
 	function jb_menus() {
 
 		$locations = array(
-			'primary'  => __( 'Primary menu', 'jbdomain' ),
-			'second' => __( 'Secondary Menu', 'jbdomain' )
+			'primary'  => __( 'Primary menu', 'jbtheme' ),
+			'second' => __( 'Secondary Menu', 'jbtheme' )
 		);
 		register_nav_menus( $locations );
 	}
@@ -306,9 +306,9 @@ if( !function_exists('jb_sidebar_registration')):
 			array_merge(
 				$shared_args,
 				array(
-					'name'        => __( 'Footer #1', 'jbdomain' ),
+					'name'        => __( 'Footer #1', 'jbtheme' ),
 					'id'          => 'sidebar-1',
-					'description' => __( 'Widgets in this area will be displayed in the first column in the footer.', 'jbdomain' ),
+					'description' => __( 'Widgets in this area will be displayed in the first column in the footer.', 'jbtheme' ),
 				)
 			)
 		);
@@ -318,9 +318,9 @@ if( !function_exists('jb_sidebar_registration')):
 			array_merge(
 				$shared_args,
 				array(
-					'name'        => __( 'Footer #2', 'jbdomain' ),
+					'name'        => __( 'Footer #2', 'jbtheme' ),
 					'id'          => 'sidebar-2',
-					'description' => __( 'Widgets in this area will be displayed in the second column in the footer.', 'jbdomain' ),
+					'description' => __( 'Widgets in this area will be displayed in the second column in the footer.', 'jbtheme' ),
 				)
 			)
 		);

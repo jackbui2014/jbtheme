@@ -5,13 +5,13 @@
  *
  *
  * @package JB
- * @subpackage jb-wp-react
+ * @subpackage jbtheme
  * @since 1.0
  */
 ?>
 
 <?php if ( has_nav_menu( 'primary' ) ) : ?>
-	<nav id="site-navigation" class="navbar navbar-expand-md primary-navigation " role="navigation" aria-label="<?php esc_attr_e( 'Primary menu', 'jbdomain' ); ?>">
+	<nav id="site-navigation" class="navbar navbar-expand-md primary-navigation " role="navigation" aria-label="<?php esc_attr_e( 'Primary menu', 'jbtheme' ); ?>">
 	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 	    <span class="navbar-toggler-icon"></span>
 	  </button>

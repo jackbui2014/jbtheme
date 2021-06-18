@@ -8,10 +8,10 @@
  * @subpackage jbtheme
  * @since 1.0
  */
-if ( !function_exists('home_banner_render_block') ){
+if ( !function_exists('jbsliders_render_block') ){
 	/**
 	 *
-	 * Render home banner block.
+	 * Render jssliders block.
 	 *
 	 * @since 1.0
 	 *
@@ -20,7 +20,7 @@ if ( !function_exists('home_banner_render_block') ){
 	 * @param String $content
 	 * @return String block content
 	 */
-	function home_banner_render_block($attributes, $content ){
+	function jbsliders_render_block($attributes, $content ){
 		$bg = '';
 		if( !empty($attributes['background_url']) ):
 			$bg = 'style="background-image:url(\'' . $attributes['background_url'] . '\'); background-repeat: no-repeat; background-size: cover; background-position: center;"';
@@ -54,21 +54,21 @@ if ( !function_exists('home_banner_render_block') ){
 	}
 }
 
-if( !function_exists('home_banner_register_block') ){
+if( !function_exists('jbsliders_register_block') ){
 
 	/**
 	 *
 	 *Register action after all plugins have loaded
 	 */
-	function home_banner_register_block(){
+	function jbsliders_register_block(){
 		if( function_exists('register_block_type') ){
 			register_block_type(
-				'jbtheme/home-banner',
+				'jbtheme/jbsliders',
 				array(
-					'render_callback'=>'home_banner_render_block'
+					'render_callback'=>'jbsliders_render_block'
 				)
 			);
 		}
 	}
 }
-add_action('init', 'home_banner_register_block');
+add_action('init', 'jbsliders_register_block');
