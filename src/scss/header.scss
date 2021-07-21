@@ -31,10 +31,9 @@
 	.primary-navigation{
 		width: 90%;
 		float: left;
-
 		.menu-item{
 			a{
-				padding: 0 24px;
+				padding: 30px 24px;
 			    color: rgba(255, 255, 255, .8);
 			    height: 80px; 
 			    -webkit-transition: 300ms all cubic-bezier(.4,0,.2,1);
@@ -42,8 +41,40 @@
 			    text-decoration: none;
 			    &:hover{
 			    	color: rgba(255, 255, 255, 1);
+
 			    }
 		    }
+			.sub-menu{
+				display: none;
+				position: absolute;
+				background-color: #f9f9f9;
+				min-width: 160px;
+				box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+				z-index: 1;
+				a{
+					float: none;
+					color: $black;
+					padding: 12px 16px;
+					text-decoration: none;
+					display: block;
+					text-align: left;
+				}
+			}
+			&:hover{
+				.sub-menu{
+					display: block;
+					top: 58px;
+					.menu-item{
+						list-style-type: none;
+						&:hover{
+							background-color: $light_grey;
+						}
+						a{
+							height: auto;
+						}
+					}
+				}
+			}
 		}
 	}
 }

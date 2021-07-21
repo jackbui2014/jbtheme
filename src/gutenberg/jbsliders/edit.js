@@ -21,9 +21,13 @@
 			 { value: 'no', label: __( 'No', 'jbtheme' ) },
 		 ];	
 		 const arrow_control = [
-			 { value: 'yes', label: __( 'Yes', 'jbtheme' ) },
-			 { value: 'no', label: __( 'No', 'jbtheme' ) },
+			 { value: true, label: __( 'Yes', 'jbtheme' ) },
+			 { value: false, label: __( 'No', 'jbtheme' ) },
 		 ];		
+		 const showoverlay = [
+			{ value: true, label: __( 'Yes', 'jbtheme' ) },
+			{ value: false, label: __( 'No', 'jbtheme' ) },
+		];		
 		 const position = [
 			 { value: 'top', label: __( 'Top', 'jbtheme' ) },
 			 { value: 'center', label: __( 'Center', 'jbtheme' ) },
@@ -31,43 +35,61 @@
 		 ];
 
 		 const position_x = [
-			{ value: 'left', label: __( 'Left', 'jbtheme' ) },
 			{ value: 'center', label: __( 'Center', 'jbtheme' ) },
+			{ value: 'left', label: __( 'Left', 'jbtheme' ) },			
 			{ value: 'right', label: __( 'Right', 'jbtheme' ) },
 		];
  
 		 const inspectorControls = (
 			 <InspectorControls>
 				 <PanelBody title={ __( 'Slider Setting', 'jbtheme' ) }>
-					 <SelectControl
+					 {/* <SelectControl
 						 label={ __( 'Show Controls', 'jbtheme' ) }
 						 options={ hide_control }
 						 value={ props.attributes.hidecontrol }
 						 onChange={ ( hidecontrol ) => props.setAttributes( { hidecontrol } ) }
-					 />
+					 /> */}
 					 <SelectControl
 						 label={ __( 'Arrow Controls', 'jbtheme' ) }
 						 options={ arrow_control }
 						 value={ props.attributes.arrowcontrol }
 						 onChange={ ( arrowcontrol ) => props.setAttributes( { arrowcontrol } ) }
 					 />
-					 <SelectControl
+					 {/* <SelectControl
 						 label={ __( 'Caption position Y', 'jbtheme' ) }
 						 options={ position }
 						 value={ props.attributes.position }
 						 onChange={ ( position ) => props.setAttributes( { position } ) }
-					 />
+					 /> */}
 					 <SelectControl
 						 label={ __( 'Caption position X', 'jbtheme' ) }
 						 options={ position_x }
 						 value={ props.attributes.position_x }
 						 onChange={ ( position_x ) => props.setAttributes( { position_x } ) }
 					 />
+					  <SelectControl
+						 label={ __( 'Show overlay layer', 'jbtheme' ) }
+						 options={ showoverlay }
+						 value={ props.attributes.showoverlay }
+						 onChange={ ( showoverlay ) => props.setAttributes( { showoverlay } ) }
+					 />
 					 <TextControl
 						 label={ __( 'Speed', 'jbtheme' ) }
 						 type="text"
 						 value={ props.attributes.slider_speed }
 						 onChange={ ( slider_speed ) => props.setAttributes( { slider_speed } ) }
+					 />
+					 <TextControl
+						 label={ __( 'Slide item on a screen', 'jbtheme' ) }
+						 type="text"
+						 value={ props.attributes.slider_items }
+						 onChange={ ( slider_items ) => props.setAttributes( { slider_items} ) }
+					 />
+					 <TextControl
+						 label={ __( 'Slide items to scroll', 'jbtheme' ) }
+						 type="text"
+						 value={ props.attributes.slidestoscroll }
+						 onChange={ ( slidestoscroll ) => props.setAttributes( { slidestoscroll} ) }
 					 />
 				 </PanelBody>
 			 </InspectorControls>
@@ -180,12 +202,30 @@
 					 } }
 				 />
 				 <TextControl
-					 label={ __( 'Link', 'jbtheme' ) }
+					 label={ __( 'Button Link', 'jbtheme' ) }
 					 type="text"
 					 value={ slide.link }
 					 onChange={ ( link ) => {
 						 const newObject = Object.assign({}, slide, {
 							 link: link
+						   });		                 
+						  props.setAttributes({
+							slideritem: [
+							   ...slideritem.filter(
+								 item => item.index != slide.index
+							   ),
+							   newObject
+							 ]
+						   });
+					 } }
+				 />
+				 <TextControl
+					 label={ __( 'Button text', 'jbtheme' ) }
+					 type="text"
+					 value={ slide.link_text }
+					 onChange={ ( link_text ) => {
+						 const newObject = Object.assign({}, slide, {
+							link_text: link_text
 						   });		                 
 						  props.setAttributes({
 							slideritem: [
@@ -204,7 +244,7 @@
 			 inspectorControls,	   
 			 <Tooltip text="This is a slider">
 				 <div>
-					 Carousel Slider
+					 {__('JB Slider', 'jbtheme')}
 				 </div>
 			 </Tooltip>, 	
 		   <div className={props.className}>

@@ -3,6 +3,7 @@ import { registerBlocType } from '@wordpress/blocks';
 import { RichText, MediaUpload, PlainText,  InspectorControls } from '@wordpress/block-editor';
 import { PanelBody, TextControl, SelectControl } from '@wordpress/components';
 import { Fragment, Component } from '@wordpress/element';
+import SimpleSlider  from './simpleSlider';
 const Service = (props)=>{
 	return (
 		<Fragment>

@@ -1,7 +1,13 @@
-.align-items-center{
-	top: 50%;
-	transform: translateY(-50%);
-    position: absolute;
+ul, li{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    vertical-align: baseline;
+    background: transparent;
 }
 .align-items-top{
     top:0;
@@ -11,12 +17,26 @@
     bottom:0;
     position: absolute;
 }
-.justify-content-left{
-    text-align: left;
+.caption-inner{
+    padding-left: 15%;
+    padding-right: 15%;
+    width: 100%;
 }
 .justify-content-center{
-    text-align: center;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    position: absolute;
 }
 .justify-content-right{
+    text-align: right!important;
+}
+.text-left{
+    text-align: left;
+}
+.text-right{
     text-align: right;
+}
+.text-center{
+    text-align: center;
 }

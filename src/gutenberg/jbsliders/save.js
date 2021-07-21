@@ -1,106 +1,73 @@
 import { __ } from '@wordpress/i18n';
-import { registerBlockType } from '@wordpress/blocks';
 import { RichText, MediaUpload, PlainText, InspectorControls } from '@wordpress/block-editor';
-import { PanelBody, TextControl, SelectControl } from '@wordpress/components';
-import {Fragment, Component} from '@wordpress/element';
+import {Fragment, useEffect} from '@wordpress/element';
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
 
 const JBSlidersSave = (props) =>{  
- 
   const renderPosition = (param) =>{
     let cl = '';
-    switch(param.position) {
-      case 'top':
-        cl += 'align-items-top';
-        break;
-      case 'bottom':
-          console.log('entered');
-        cl += 'align-items-bottom';
-        break;
-      default:
-        cl += 'align-items-center';
-        break;
-    }
+    // switch(param.position) {
+    //   case 'top':
+    //     cl += 'align-items-top';
+    //     break;
+    //   case 'bottom':
+    //     cl += 'align-items-bottom';
+    //     break;
+    //   default:
+    //     cl += 'align-items-center';
+    //     break;
+    // }
     switch(param.position_x) {
         case 'left':
-          cl += ' justify-content-left';
+          cl += 'caption-item text-left justify-content-left';
           break;
         case 'right':
-          cl += ' justify-content-right';
+          cl += 'caption-item text-right justify-content-right';
           break;
         default:
-          cl += ' justify-content-center';
+          cl += 'caption-item text-center justify-content-center';
           break;
       }
       return cl;
   }
-    const { id, slideritem } = props.attributes;
+    const { id, slideritem, showoverlay } = props.attributes;
     const target_id = "#" + id;
-    let classes_position = "col-12 text-center " + renderPosition(props.attributes);
+    let classes_position = renderPosition(props.attributes);
     const sliderList = slideritem.map(function(slide, i) {
         return (  
-            <div className={i === 0 ? "carousel-item active" : "carousel-item"} data-index={i}>
-                {slide.image && ( <img src={slide.image} className="d-block w-100" alt={slide.title} /> )}
+            <div className="jb-slide-item" data-index={i}>
+                {showoverlay && (<div className="slide-overlay"></div>) }
+                {slide.image && ( <img  data-lazy={slide.image}  className="d-block w-100" alt={slide.title} /> )}
                 <div className={classes_position}>
                     <div className="caption-inner">
                     <span className="slide-index" style={{ display: "none" }}>
                     {slide.index}
                     </span>
-                    {slide.title && ( <h2>{slide.title}</h2> )}
-                    {slide.description && ( <RichText.Content tagName="h3" value={slide.description} />)}
+                    {slide.title && ( <h2 className="slide-title">{slide.title}</h2> )}
+                    {slide.description && ( <RichText.Content tagName="p" className="slide-description" value={slide.description} />)}
                     {slide.link && ( 
-                        <div className="scc-button text-center">
-                        <button type="button" className="watch-video-btn btn btn-colour text-white btn-style" data-video={slide.link} data-toggle="modal" data-target={"#carousel-video" + id + i}>Watch the video<span className="fa fa-plus text-white"></span></button>
-                        <button type="button" className="watch-video-btn btn-play-icon btn btn-primary" data-video={slide.link} data-toggle="modal" data-target={"#carousel-video" + id + i}><span className="px-2"><i className="fa fa-play" aria-hidden="true"></i></span></button>
+                        <div className="jb-slide-button">
+                        <a href={slide.link} target="_blank" className="slide-button btn btn-primary" rel="noopener">{slide.link_text}</a>
                         </div>
                         )}
                     </div>
                 </div>
-                {slide.link && (
-                <div className="modal fade" id={"carousel-video" + id + i} tabindex="-1" role="dialog" aria-labelledby={"carousel-video" + id + i} aria-hidden="true">
-                    <div className="modal-dialog modal-dialog-centered" role="document">
-                    <div className="modal-content">
-                        <div className="modal-body">
-                        <iframe className="video-iframe" src={slide.link} frameborder="0" allowfullscreen></iframe>
-                        <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                        </div>
-                    </div>
-                    </div>
-                </div>
-                )}
             </div>
         );
     });
-    const sliderNav = slideritem.map(function(slide, i) { 
-        return (
-            <li data-target={target_id} data-slide-to={i} className={i === 0 ? "active" : ""}></li>
-        );
-    });
     if (slideritem.length > 0) {   
-        const settings = {
-            dots: true,
-            infinite: true,
-            speed: 500,
-            slidesToShow: 1,
-            slidesToScroll: 1
-          };
+      let {
+        slider_items,
+        arrowcontrol,
+        slidestoscroll,
+        slider_speed
+      } = props.attributes;
     return (
         <Fragment>
-        <div class="sliders-wrapper">
-            <div id={id} class="carousel slide carousel-fade" data-ride="carousel" data-interval={props.attributes.slider_speed}>
-                {props.attributes.hidecontrol == "yes" && (
-                <ol class="carousel-indicators">
-                    {sliderNav}
-                </ol>
-                )}
-                <div class="carousel-inner position-relative">
+        <div class="jb-sliders-wrapper">
+            <div id={id} class="jb-slider-inner" data-slidetoshow={slider_items} data-arrowcontrol={arrowcontrol} data-slidestoscroll={slidestoscroll} data-sliderspeed={slider_speed} >
                 {sliderList}
-                </div>
-                {props.attributes.arrowcontrol == "yes" && (
-                <div><a class="carousel-control-prev" href={target_id} role="button" data-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="sr-only">Previous</span></a>
-                <a class="carousel-control-next" href={target_id}  role="button" data-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="sr-only">Next</span></a></div>
-                )}
             </div>
         </div>                    
         </Fragment>

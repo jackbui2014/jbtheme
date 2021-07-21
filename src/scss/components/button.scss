@@ -3,8 +3,9 @@ a{
 		text-decoration: none;
 	}
 }
-.btn-main-color{
+.btn-primary{
 	background: $primary_variant_color;
+	border: 0;
 	&:hover{
 		background: $primary_color;
 	}

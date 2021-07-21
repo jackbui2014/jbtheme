@@ -176,6 +176,21 @@ if( !function_exists('jb_gutenberg_enqueue_frontend')){
 			array(),
 			$theme_version
 		);
+		wp_enqueue_script(
+			'lib-slick',
+			get_template_directory_uri().'/assets/js/lib/slick.js', 
+			array('jquery'),
+			$theme_version,
+			true
+		);
+
+		wp_enqueue_script(
+			'jb-block',
+			get_template_directory_uri().'/assets/js/block.js', 
+			array('jquery', 'lib-slick'),
+			$theme_version,
+			true
+		);
 	}
 }
 add_action( 'enqueue_block_assets', 'jb_gutenberg_enqueue_frontend');

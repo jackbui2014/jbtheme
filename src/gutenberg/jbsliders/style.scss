@@ -3,6 +3,8 @@
  *
  * CSS for both Frontend+Backend.
  */
+ @import '../../../node_modules/slick-carousel/slick/slick.scss';
+ @import '../../../node_modules/slick-carousel/slick/slick-theme.scss';
  button:-moz-focusring, [type="button"]:-moz-focusring, [type="reset"]:-moz-focusring, [type="submit"]:-moz-focusring {
     outline: 0px dotted ButtonText !important;
 }
@@ -11,6 +13,28 @@
 	top:0;
 	left:0;
 	width: 100%;
-	height:100%;
-	background: rgba(0,0,0,0.7);
+	height: 100%;
+	background-color: #000;
+	opacity: .7;
+}
+.caption-item{
+	width: 100%;
+}
+.jb-slide-item{
+	position: relative;
+}
+.slick-arrow{
+	z-index: 99;
+}
+.slick-prev{
+	left: 40px;
+}
+.slick-next{
+	right: 40px;
+}
+.slide-title{
+	color:#fff;
+}
+.slide-description{
+	color:#fff;
 }

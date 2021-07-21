@@ -81,14 +81,14 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./src/index.js");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./src/block.js");
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./src/index.js":
+/***/ "./src/block.js":
 /*!**********************!*\
-  !*** ./src/index.js ***!
+  !*** ./src/block.js ***!
   \**********************/
 /*! no static exports found */
 /***/ (function(module, exports) {
@@ -96,24 +96,38 @@
 (function ($) {
   'use strict';
 
-  function fixedHeader() {
-    if ($('.home').length > 0) {
-      $(window).scroll(function () {
-        if (window.pageYOffset > 0) {
-          $('.site-header').addClass('fixed-header');
+  function jbSliderBlock() {
+    if ($('.jb-slider-inner').length > 0) {
+      var slidestoshow = 1,
+          arrowcontrol = false,
+          slideSpeed = 1000,
+          slidestosroll = 1;
+      $('.jb-slider-inner').each(function (e) {
+        slidestoshow = parseInt($(this).attr('data-slidetoshow')), arrowcontrol = $(this).attr('data-arrowcontrol'), slideSpeed = parseInt($(this).attr('data-sliderspeed')), slidestosroll = parseInt($(this).attr('data-slidestoscroll'));
+
+        if (arrowcontrol == "true") {
+          arrowcontrol = true;
         } else {
-          $('.site-header').removeClass('fixed-header');
+          arrowcontrol = false;
         }
+
+        $(this).slick({
+          autoplay: true,
+          arrows: arrowcontrol,
+          slidestosroll: slidestosroll,
+          slidesToShow: slidestoshow,
+          speed: slideSpeed
+        });
       });
     }
   }
 
   $(document).ready(function () {
-    fixedHeader();
+    jbSliderBlock();
   });
 })(jQuery);
 
 /***/ })
 
 /******/ });
-//# sourceMappingURL=index.js.map
+//# sourceMappingURL=block.js.map

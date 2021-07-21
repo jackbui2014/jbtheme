@@ -13,8 +13,9 @@
 			"selector": ".jb-service-inner",
 			"query":{
 				"icon": {
-					"type": "string",
-					"default": ""
+					"source": "attribute",
+					"selector": "img",
+					"attribute": "src"
 				},
 				"title": {
 					"type": "string",
