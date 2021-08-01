@@ -1,18 +1,43 @@
 import { __ } from '@wordpress/i18n';
-import { registerBlockType } from '@wordpress/blocks';
-import { RichText, MediaUpload, PlainText, InspectorControls } from '@wordpress/block-editor';
-import { PanelBody, TextControl, SelectControl } from '@wordpress/components';
-import { Fragment, Component } from '@wordpress/element';
-import Service from '../../components/service.js';
+import { RichText } from '@wordpress/block-editor';
+import { Fragment } from '@wordpress/element';
 const ServiceSave = (props)=>{
+	let { id, services} = props.attributes;
+	const servicesList = services.map(function(service, i) {
+		let keyVal = 'service-item-'+i;
+		return (
+			<Fragment>
+			<div className="jb-service-item col-md-4 col-sm-6" key={keyVal}>
+				{service.icon && (
+				<img src={service.icon} className="service-icon" alt={__('Service image', 'jbtheme')} />
+				)}
+				{service.title && (
+				<RichText.Content tagName="h3" className="service-item-title" value={service.title} />
+				)}
+				{ service.subtitle && (
+				<RichText.Content tagName="p" className="service-item-subtitle" value={service.subtitle} />
+				)}
+				{ service.link && (
+					<a href={service.link} target="_blank" className="service-button btn jb-btn-primary" rel="noopener" ><span>See more</span></a>
+				)}
+				
+			</div>
+			</Fragment>
+				
+		);
+
+	});
 	return (
 		<Fragment>
-			<Service 
-				icon={props.attributes.icon}
-				link={props.attributes.link}
-				title={props.attributes.title}
-				subtitle={props.attributes.subtitle}
-				 />
+			<div className="jb-service-wrapper jb-section" id={id} style={{backgroundColor: props.attributes.background_color}} >
+				<div className="inner jb-service-inner container">
+				<h3 className="service-title section-title">{props.attributes.title}</h3>
+				<p className="service-subtitle section-subtitle">{props.attributes.subtitle}</p>
+					<div className="row">
+						{servicesList}
+					</div>
+				</div>
+			</div>
 		</Fragment>
 		);
 } 

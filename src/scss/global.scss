@@ -1,3 +1,9 @@
+@import './variables.scss';
+html,body{
+    font-size: $normal_font_size;
+    color: $normal_text_color;
+    line-height: $normal_line_height;
+}
 ul, li{
     margin: 0;
     padding: 0;
@@ -28,6 +34,12 @@ ul, li{
     top: 50%;
     position: absolute;
 }
+.justify-content-left{
+    transform: translateY(-50%);
+    left: 0;
+    top: 50%;
+    position: absolute;
+}
 .justify-content-right{
     text-align: right!important;
 }
@@ -39,4 +51,59 @@ ul, li{
 }
 .text-center{
     text-align: center;
+}
+h1{
+    font-size: $heading_1_font_size;
+    line-height: $heading_1_line_height;
+}
+h2{
+    font-size: $heading_2_font_size;
+    line-height: $heading_2_line_height;
+}
+h3{
+    font-size: $heading_3_font_size;
+    line-height: $heading_3_line_height;
+}
+h4{
+    font-size: $heading_4_font_size;
+    line-height: $heading_4_line_height;
+}
+
+.jb-section{
+    padding-top: $section_padding;
+    padding-bottom: $section_padding;
+    overflow: hidden;
+    .section-title{
+        position: relative;
+        padding-bottom: 10px;
+        font-size: $heading_2_font_size;
+        line-height: $heading_2_line_height;
+        color: $secondary_color;
+        margin-bottom: 20px;
+        &::after{
+            content: "";
+            position: absolute;
+            bottom: 0;
+            width: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+            height: 0;
+            border: 1px solid $secondary_color;
+        }
+        &.section-title-left{
+            &::after{
+                left: 0;
+                transform: translateX(0);
+            }
+        }
+    }
+    .section-subtitle{
+        font-size: $heading_4_font_size;
+        line-height: $heading_4_line_height;
+        color: $heading_text_color;
+        margin-bottom: 30px;
+    }
+    img{
+        width: 100%;
+    }
 }

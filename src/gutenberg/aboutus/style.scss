@@ -1,0 +1,15 @@
+@import '../../scss/variables.scss';
+.jb-about-left{
+    float: left;
+    width: 50%;
+    .inner{
+        padding: $inner_padding;
+    }
+}
+.jb-about-right{
+    float: left;
+    width: 50%;
+    .inner{
+        padding: $inner_padding;
+    }
+}

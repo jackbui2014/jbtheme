@@ -14,7 +14,7 @@
 	left:0;
 	width: 100%;
 	height: 100%;
-	background-color: #000;
+	background-color: $black;
 	opacity: .7;
 }
 .caption-item{
@@ -33,8 +33,27 @@
 	right: 40px;
 }
 .slide-title{
-	color:#fff;
+	color:$white;
+	
 }
 .slide-description{
-	color:#fff;
+	color: $secondary_color;
+}
+.full-screen-height{
+	height: 100vh;
+	.slick-slide{
+		img{
+			height: 100vh;
+		}
+	}
+}
+.jb-page-banner{
+	.slide-title{
+		font-size: $heading_1_font_size;
+		line-height: $heading_1_line_height;
+	}
+	.slide-description{
+		font-size: $heading_4_font_size;
+		font-size: $heading_4_line_height;
+	}
 }

@@ -99,7 +99,8 @@ if( !function_exists('jb_register_styles_scripts')):
 		if ( ( ! is_admin() ) && is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 			wp_enqueue_script( 'comment-reply' );
 		}
-		wp_enqueue_script( 'jb-script', get_template_directory_uri() . '/assets/js/index.js', array('wp-element', 'jquery'), $theme_version, true );
+		wp_enqueue_script( 'jb-bootstrap', get_template_directory_uri() . '/assets/js/lib/bootstrap.js', array( 'jquery'), $theme_version, true );
+		wp_enqueue_script( 'jb-script', get_template_directory_uri() . '/assets/js/index.js', array('wp-element', 'jquery', 'jb-bootstrap'), $theme_version, true );
 		wp_script_add_data( 'jb-script', 'async', true );
 
 

@@ -7,17 +7,6 @@ import "slick-carousel/slick/slick-theme.css";
 const JBSlidersSave = (props) =>{  
   const renderPosition = (param) =>{
     let cl = '';
-    // switch(param.position) {
-    //   case 'top':
-    //     cl += 'align-items-top';
-    //     break;
-    //   case 'bottom':
-    //     cl += 'align-items-bottom';
-    //     break;
-    //   default:
-    //     cl += 'align-items-center';
-    //     break;
-    // }
     switch(param.position_x) {
         case 'left':
           cl += 'caption-item text-left justify-content-left';
@@ -31,9 +20,19 @@ const JBSlidersSave = (props) =>{
       }
       return cl;
   }
+    const fullScreenHeight = (param) =>{
+      if( param ){
+        return 'jb-slider-inner full-screen-height';
+      }
+      return 'jb-slider-inner';
+    }
     const { id, slideritem, showoverlay } = props.attributes;
     const target_id = "#" + id;
     let classes_position = renderPosition(props.attributes);
+    let fh = fullScreenHeight(props.attributes.fullscreenheight);
+    if( slideritem.length == 1 ){
+      fh += " jb-page-banner";
+    }
     const sliderList = slideritem.map(function(slide, i) {
         return (  
             <div className="jb-slide-item" data-index={i}>
@@ -48,7 +47,7 @@ const JBSlidersSave = (props) =>{
                     {slide.description && ( <RichText.Content tagName="p" className="slide-description" value={slide.description} />)}
                     {slide.link && ( 
                         <div className="jb-slide-button">
-                        <a href={slide.link} target="_blank" className="slide-button btn btn-primary" rel="noopener">{slide.link_text}</a>
+                        <a href={slide.link} target="_blank" className="slide-button btn jb-btn-secondary" rel="noopener"><span>{slide.link_text}</span></a>
                         </div>
                         )}
                     </div>
@@ -66,7 +65,7 @@ const JBSlidersSave = (props) =>{
     return (
         <Fragment>
         <div class="jb-sliders-wrapper">
-            <div id={id} class="jb-slider-inner" data-slidetoshow={slider_items} data-arrowcontrol={arrowcontrol} data-slidestoscroll={slidestoscroll} data-sliderspeed={slider_speed} >
+            <div id={id} class={fh} data-slidetoshow={slider_items} data-arrowcontrol={arrowcontrol} data-slidestoscroll={slidestoscroll} data-sliderspeed={slider_speed} >
                 {sliderList}
             </div>
         </div>                    

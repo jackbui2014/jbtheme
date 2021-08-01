@@ -27,6 +27,10 @@
 		 const showoverlay = [
 			{ value: true, label: __( 'Yes', 'jbtheme' ) },
 			{ value: false, label: __( 'No', 'jbtheme' ) },
+		];	
+		const fullscreenheight = [
+			{ value: true, label: __( 'Yes', 'jbtheme' ) },
+			{ value: false, label: __( 'No', 'jbtheme' ) },
 		];		
 		 const position = [
 			 { value: 'top', label: __( 'Top', 'jbtheme' ) },
@@ -72,6 +76,12 @@
 						 options={ showoverlay }
 						 value={ props.attributes.showoverlay }
 						 onChange={ ( showoverlay ) => props.setAttributes( { showoverlay } ) }
+					 />
+					 <SelectControl
+						 label={ __( 'Show full screen height', 'jbtheme' ) }
+						 options={ fullscreenheight }
+						 value={ props.attributes.fullscreenheight }
+						 onChange={ ( fullscreenheight ) => props.setAttributes( { fullscreenheight } ) }
 					 />
 					 <TextControl
 						 label={ __( 'Speed', 'jbtheme' ) }

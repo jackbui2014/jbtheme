@@ -1,16 +1,27 @@
 import { __ } from '@wordpress/i18n';
-import { registerBlocType } from '@wordpress/blocks';
-import { RichText, MediaUpload, PlainText,  InspectorControls } from '@wordpress/block-editor';
-import { PanelBody, TextControl, SelectControl } from '@wordpress/components';
-import { Fragment, Component } from '@wordpress/element';
+import { RichText, MediaUpload, InspectorControls } from '@wordpress/block-editor';
+import { TextControl, ColorPicker, Tooltip, PanelBody } from '@wordpress/components';
 import {
 	faTrashAlt
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import config from './config.json';
+
 
 const ServiceEdit = (props) =>{
 	const { services } = props.attributes;
+
+	const inspectorControls = (
+		<InspectorControls>
+			<PanelBody title={__('Services settings', 'jbtheme')} >
+			<h4>{ __('Section background color', 'jbtheme')}</h4>
+			<ColorPicker
+			color={ props.attributes.background_color }
+            onChangeComplete={ ( value ) => props.setAttributes({background_color: value.hex}) }
+            disableAlpha
+			/>
+			</PanelBody>
+		</InspectorControls>
+	);
 	if( !props.attributes.id ){
 		const id = `service${Math.floor(Math.random() * 100)}`;
 		props.setAttributes({
@@ -45,10 +56,10 @@ const ServiceEdit = (props) =>{
 
 							<MediaUpload
 							onSelect={media => {
-								const image = media.sizes.full
+								let image = media.sizes.full
 								? media.sizes.full.url
 								: media.url;
-								const newObject = Object.assign({}, service, {
+								let newObject = Object.assign({}, service, {
 									icon: image
 								});
 								props.setAttributes({
@@ -100,7 +111,7 @@ const ServiceEdit = (props) =>{
 								label={ __('Service Subtitle', 'jbtheme')}
 								placeholder={ __('Service Subtitle', 'jbtheme')}
 								tagName="p"
-								value={ props.attributes.subtitle }
+								value={ service.subtitle }
 								onChange={ (subtitle) => {
 									const newObject = Object.assign({}, service, {
 										subtitle: subtitle
@@ -118,7 +129,7 @@ const ServiceEdit = (props) =>{
 								<TextControl
 								label={ __('Service link', 'jbtheme')}
 								type="text"
-								value={ props.attributes.link }
+								value={ service.link }
 								onChange={ (link) => {
 									const newObject = Object.assign({}, service, {
 										link: link
@@ -137,44 +148,51 @@ const ServiceEdit = (props) =>{
 				</div>
 			);
 		});
-	return (
-		<Fragment>
-			<RichText
-				label={ __('Section title', 'jbtheme')}
-				placeholder={ __('Section title', 'jbtheme')}
-				tagName="h2"
-				value={ props.attributes.section_title }
-				onChange={ (section_title) => props.setAttributes({section_title})}
-				/>	
-			<RichText
-				label={ __('Section Subtitle', 'jbtheme')}
-				placeholder={ __('Section Subtitle', 'jbtheme')}
-				tagName="p"
-				value={ props.attributes.section_subtitle }
-				onChange={ (section_subtitle) => props.setAttributes({section_subtitle})}
-				/>	
-			<div className="services-wrapper">
-			{servicesList}
-			</div>
-			<button
-				className="add-more-service"
-				onClick={content => 
-					props.setAttributes({
-						services: [
-							...props.attributes.services,
-							{
-								index: props.attributes.services.length,
-								title: "",
-								subtitle: "",
-								linke: ""
-							}
-						]
-					})
-				}
-				>
-				+
-				</button>
-		</Fragment>
+	return ([
+			inspectorControls,	   
+			<Tooltip text={__("This is services section",'jbtheme')}>
+				<div>
+					{__('JB Service', 'jbtheme')}
+				</div>
+			</Tooltip>, 
+			<div>
+				<RichText
+					label={ __('Section title', 'jbtheme')}
+					placeholder={ __('Section title', 'jbtheme')}
+					tagName="h2"
+					value={ props.attributes.title }
+					onChange={ (title) => props.setAttributes({title})}
+					/>	
+				<RichText
+					label={ __('Section Subtitle', 'jbtheme')}
+					placeholder={ __('Section Subtitle', 'jbtheme')}
+					tagName="p"
+					value={ props.attributes.subtitle }
+					onChange={ (subtitle) => props.setAttributes({subtitle})}
+					/>	
+				<div className="services-wrapper">
+				{servicesList}
+				</div>
+				<button
+					className="add-more-service"
+					onClick={content => 
+						props.setAttributes({
+							services: [
+								...props.attributes.services,
+								{
+									index: props.attributes.services.length,
+									title: "",
+									subtitle: "",
+									link: ""
+								}
+							]
+						})
+					}
+					>
+					+
+					</button>
+					</div>
+		]
 		);
 }
 export default ServiceEdit;

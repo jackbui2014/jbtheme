@@ -9,9 +9,15 @@
  * @since 1.0
  */
 ?>
-
+<?php 
+if(is_front_page() ):
+	$cl = 'navbar-dark';
+else:
+	$cl = 'navbar-light';
+endif;
+?>
 <?php if ( has_nav_menu( 'primary' ) ) : ?>
-	<nav id="site-navigation" class="navbar navbar-expand-md primary-navigation " role="navigation" aria-label="<?php esc_attr_e( 'Primary menu', 'jbtheme' ); ?>">
+	<nav id="site-navigation" class="navbar navbar-expand-lg primary-navigation <?php echo $cl; ?>" role="navigation" aria-label="<?php esc_attr_e( 'Primary menu', 'jbtheme' ); ?>">
 	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 	    <span class="navbar-toggler-icon"></span>
 	  </button>

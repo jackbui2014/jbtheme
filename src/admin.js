@@ -3,7 +3,7 @@ import { registerBlockType } from '@wordpress/blocks';
 
 import * as jbsliders from './gutenberg/jbsliders';
 import * as service from './gutenberg/services';
-
+import * as aboutus from './gutenberg/aboutus';
 
 const registerBlock = ( block ) => {
 	if ( !block ){
@@ -21,7 +21,8 @@ const registerBlock = ( block ) => {
 export const registerJBBlocks = () => {
 	[
 	jbsliders,
-	service
+	service,
+	aboutus
 	].forEach( registerBlock );
 }
 registerJBBlocks();

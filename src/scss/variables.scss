@@ -1,9 +1,53 @@
-$primary_color: #6200EE;
-$primary_variant_color:#3700B3;
-$secondary_color: #03DAC6;
-$secondary_variant_color: #018786;
-$error_color: #B00020;
 $white: #FFFFFF;
 $black: #000000; 
-$grey_black: #212121;
-$light_grey: #D3D3D3;
+$primary_color: #0B0A11;
+$secondary_color: #F1B74D;
+
+$success_color: #018786;
+$error_color: #B00020;
+
+$heading_text_color: #0B0A11; 
+$normal_text_color: #777777;
+
+$menu_link_color: $white;
+$menu_link_hover_color: $secondary_color;
+$menu_primary_link_color: $primary_color;
+$menu_primary_link_hover_color: $secondary_color;
+
+$link_color: $secondary_color;
+$link_hover: $white;
+
+$input_backgroud:rgba(11, 10, 17, 0.03);
+$input_border_color: transparent;
+
+$btn_primary_color: #F1B74D;
+$btn_primary_text_color: $white;
+$btn_primary_border_color: $secondary_color;
+$btn_primary_hover_color: $primary_color;
+$btn_primary_border_hover_color: $primary_color;
+$btn_primary_text_hover_color: $white;
+$btn_primary_radius: 5px;
+
+
+$btn_secondary_color: transparent;
+$btn_secondary_text_color: $white;
+$btn_secondary_border_color: $white;
+$btn_secondary_hover_color: $secondary_color;
+$btn_secondary_border_hover_color: $secondary_color;
+$btn_secondary_text_hover_color: $white;
+$btn_secondary_radius: 5px;
+
+$heading_1_font_size: 45px;
+$heading_1_line_height: 55px;
+$heading_2_font_size: 32px;
+$heading_2_line_height: 38px;
+$heading_3_font_size: 24px;
+$heading_3_line_height: 32px;
+$heading_4_font_size: 18px;
+$heading_4_line_height: 24px;
+$normal_font_size: 15px;
+$normal_line_height: 24px;
+
+$section_padding: 60px;
+$element_padding: 30px;
+$inner_padding: 20px;

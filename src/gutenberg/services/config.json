@@ -3,41 +3,53 @@
 	"category": "jb-general-blocks",
 	"attributes": {
 		"id": {
-			"source": "attributes",
+			"source": "attribute",
 			"selector": ".jb-service-wrapper",
 			"attribute": "id"
 		},
 		"services":{
 			"source": "query",
 			"default": [],
-			"selector": ".jb-service-inner",
+			"selector": ".jb-service-item",
 			"query":{
 				"icon": {
 					"source": "attribute",
-					"selector": "img",
+					"selector": "img.service-icon",
 					"attribute": "src"
 				},
 				"title": {
-					"type": "string",
+					"source": "text",
+					"type" :"string",
+					"selector": ".service-item-title",
 					"default": ""
 				},
 				"subtitle": {
+					"source": "text",
 					"type": "string",
+					"selector": ".service-item-subtitle",
 					"default": ""
 				},
 				"link": {
-					"type": "string",
-					"default": ""
+					"source": "attribute",
+					"selector": ".service-button",
+					"attribute": "href"
 				}
 			}
 		},
-		"section_title":{
+		"title":{
 			"type": "string",
+			"selector": ".service-title",
 			"default": ""
 		},
-		"section_subtitle":{
+		"subtitle":{
 			"type": "string",
+			"selector":".service-title",
 			"default": ""
+		},
+		"background_color": {
+			"type": "string",
+			"default": "#ffffff"
+
 		}
 		
 	}

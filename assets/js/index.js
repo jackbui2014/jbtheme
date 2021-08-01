@@ -101,7 +101,21 @@
       $(window).scroll(function () {
         if (window.pageYOffset > 0) {
           $('.site-header').addClass('fixed-header');
+          $('#site-navigation').addClass('navbar-light');
+          $('#site-navigation').removeClass('navbar-dark');
         } else {
+          $('.site-header').removeClass('fixed-header');
+          $('#site-navigation').removeClass('navbar-light');
+          $('#site-navigation').addClass('navbar-dark');
+        }
+      });
+      $('.menu-item-has-children').on('mouseover', function () {
+        if (window.pageYOffset == 0) {
+          $('.site-header').addClass('fixed-header');
+        }
+      });
+      $('.site-header').on('mouseout', function () {
+        if (window.pageYOffset == 0) {
           $('.site-header').removeClass('fixed-header');
         }
       });

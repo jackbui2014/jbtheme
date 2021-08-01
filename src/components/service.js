@@ -1,43 +1,24 @@
 import { __ } from '@wordpress/i18n';
-import { registerBlocType } from '@wordpress/blocks';
-import { RichText, MediaUpload, PlainText,  InspectorControls } from '@wordpress/block-editor';
-import { PanelBody, TextControl, SelectControl } from '@wordpress/components';
-import { Fragment, Component } from '@wordpress/element';
-import SimpleSlider  from './simpleSlider';
+import { RichText} from '@wordpress/block-editor';
+import { ExternalLink } from '@wordpress/components';
+import { Fragment } from '@wordpress/element';
 const Service = (props)=>{
 	return (
 		<Fragment>
-			<div className="jb-service-wrapper">
-				<div className="inner jb-service-inner">
+			<div className="jb-service-item">
+				{props.icon && (
+				<img src={props.icon} className="service-icon" alt={__('Service image', 'jbtheme')} />
+				)}
+				{props.title && (
+				<RichText.Content tagName="h3" className="title" value={props.title} />
+				)}
+				{ props.subtitle && (
+				<RichText.Content tagName="p" className="subtitle" value={props.subtitle} />
+				)}
 				{ props.link && (
-					<a href={props.link} >
-					{props.icon && (
-					<img src={props.icon} className="service-icon" alt={props.title} />
-					)}
-					{props.title && (
-					<RichText.Content tagName="h3" className="title" value={props.title} />
-					)}
-					{ props.subtitle && (
-					<RichText.Content tagName="p" className="subtitle" value={props.subtitle} />
-					)}
-					</a>
-					)}
-
-					{ !props.link && (
-					<div>	
-					{props.icon && (
-					<img src={props.icon} className="service-icon" alt={props.title} />
-					)}
-					{props.title && (
-					<RichText.Content tagName="h3" className="title" value={props.title} />
-					)}
-					{ props.subtitle && (
-					<RichText.Content tagName="p" className="subtitle" value={props.subtitle} />
-					)}
-					</div>
-					)}
-					
-				</div>
+					<a href={props.link} target="_blank" className="service-button btn jb-btn-primary" rel="noopener" ><span>See more</span></a>
+				)}
+				
 			</div>
 		</Fragment>
 		);
