@@ -1,0 +1,23 @@
+{
+	"name": "jbtheme/jbpostslist",
+	"category": "jb-general-blocks",
+	"attributes": {
+		"title":{
+			"type": "string",
+			"default": ""
+		},
+		"subtitle":{
+			"type": "string",
+			"default": ""
+		},
+		"posts_per_page":{
+			"type": "string",
+			"default": "3"
+		},
+		"background_color":{
+			"type": "string",
+			"default": "#ffffff"
+		}
+		
+	}
+}

@@ -2,6 +2,7 @@
 .jb-about-left{
     float: left;
     width: 50%;
+    text-align: left;
     .inner{
         padding: $inner_padding;
     }
@@ -12,4 +13,7 @@
     .inner{
         padding: $inner_padding;
     }
+}
+.aboutus-title{
+    text-align: left;
 }

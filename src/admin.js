@@ -4,6 +4,10 @@ import { registerBlockType } from '@wordpress/blocks';
 import * as jbsliders from './gutenberg/jbsliders';
 import * as service from './gutenberg/services';
 import * as aboutus from './gutenberg/aboutus';
+import * as testimonial from './gutenberg/testimonial';
+import * as jbpostslist from './gutenberg/jbpostslist';
+import * as jbprojects from './gutenberg/jbprojects';
+
 
 const registerBlock = ( block ) => {
 	if ( !block ){
@@ -22,7 +26,10 @@ export const registerJBBlocks = () => {
 	[
 	jbsliders,
 	service,
-	aboutus
+	aboutus,
+	testimonial,
+	jbpostslist,
+	jbprojects
 	].forEach( registerBlock );
 }
 registerJBBlocks();

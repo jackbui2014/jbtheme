@@ -1,53 +1,53 @@
 {
-	"name": "jbtheme/service",
+	"name": "jbtheme/jbprojects",
 	"category": "jb-general-blocks",
 	"attributes": {
 		"id": {
 			"source": "attribute",
-			"selector": ".jb-service-wrapper",
+			"selector": ".jb-projects-wrapper",
 			"attribute": "id"
 		},
-		"services":{
+		"projects":{
 			"source": "query",
 			"default": [],
-			"selector": ".jb-service-item",
+			"selector": ".jb-projects-item",
 			"query":{
-				"icon": {
+				"image": {
 					"source": "attribute",
-					"selector": "img.service-icon",
+					"selector": "img.jb-project-item-image",
 					"attribute": "src"
 				},
 				"index": {
 					"source": "text",
-					"selector": ".service-index"
+					"selector": ".jb-project-item-index"
 				  },
 				"title": {
 					"source": "text",
 					"type" :"string",
-					"selector": ".service-item-title",
+					"selector": ".jb-project-item-title",
 					"default": ""
 				},
 				"subtitle": {
 					"source": "text",
 					"type": "string",
-					"selector": ".service-item-subtitle",
+					"selector": ".jb-project-item-subtitle",
 					"default": ""
 				},
 				"link": {
 					"source": "attribute",
-					"selector": ".service-button",
+					"selector": ".jb-project-item-button",
 					"attribute": "href"
 				}
 			}
 		},
 		"title":{
 			"type": "string",
-			"selector": ".service-title",
+			"selector": ".jb-projects-title",
 			"default": ""
 		},
 		"subtitle":{
 			"type": "string",
-			"selector":".service-subtitle",
+			"selector":".jb-projects-subtitle",
 			"default": ""
 		},
 		"background_color": {

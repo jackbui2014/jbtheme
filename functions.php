@@ -20,6 +20,8 @@
  * Enqueue Block Editor Assets
  * Enqueue Classic Editor Styles
  * Block Editor Settings
+ * change the post expert length
+ * 
  */
 
 if ( ! function_exists( 'jb_setup' ) ) :
@@ -73,6 +75,7 @@ function jb_setup() {
      * aside, gallery, quote, image, and video
      */
     add_theme_support( 'post-formats', array ( 'aside', 'gallery', 'quote', 'image', 'video' ) );
+
 }
 endif; // jb_setup
 add_action( 'after_setup_theme', 'jb_setup' );
@@ -344,3 +347,15 @@ if( !function_exists('jb_sidebar_registration')):
 	}
 endif;
 add_action( 'widgets_init', 'jb_sidebar_registration' );
+
+if( !function_exists('jb_excerpt_length') ){
+	/**
+	 * Custom the post expert length
+	 *
+	 *
+	 */
+	function jb_excerpt_length(){
+		return 30;
+	}
+}
+add_filter( 'excerpt_length', 'jb_excerpt_length', 999 );

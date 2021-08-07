@@ -8,6 +8,9 @@ const ServiceSave = (props)=>{
 		return (
 			<Fragment>
 			<div className="jb-service-item col-md-4 col-sm-6" key={keyVal}>
+				<span className="service-index" style={{ display: "none" }}>
+                    {service.index}
+                </span>
 				{service.icon && (
 				<img src={service.icon} className="service-icon" alt={__('Service image', 'jbtheme')} />
 				)}

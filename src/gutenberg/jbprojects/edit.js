@@ -7,12 +7,12 @@ import {
 import { FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 
 
-const ServiceEdit = (props) =>{
-	const { services } = props.attributes;
+const JBProjectsEdit = (props) =>{
+	const { projects } = props.attributes;
 
 	const inspectorControls = (
 		<InspectorControls>
-			<PanelBody title={__('Services settings', 'jbtheme')} >
+			<PanelBody title={__('JB Projects settings', 'jbtheme')} >
 			<h4>{ __('Section background color', 'jbtheme')}</h4>
 			<ColorPicker
 			color={ props.attributes.background_color }
@@ -23,30 +23,30 @@ const ServiceEdit = (props) =>{
 		</InspectorControls>
 	);
 	if( !props.attributes.id ){
-		const id = `service${Math.floor(Math.random() * 100)}`;
+		const id = `project${Math.floor(Math.random() * 100)}`;
 		props.setAttributes({
 			id
 		});
 	}
-	const servicesList = services
+	const projectsList = projects
 		.sort( (a,b)=> a.index - b.index )
-		.map(service=>{
+		.map(project=>{
 			return (
-				<div className="service-item">
+				<div className="jbprojects-item">
 					<div className="inner">
 						<a href="#"
 							className="remove_image"
 							onClick={() => {
-								const newService = services
-								 .filter(item => item.index != service.index)
+								const newProject = projects
+								 .filter(item => item.index != project.index)
 								 .map(t => {
-								 	if( t.index < service.index ){
+								 	if( t.index < project.index ){
 								 		t.index -= 1;
 								 	}
 								 	return t;
 								 });
 								props.setAttributes({
-									services: newService
+									projects: newProject
 								});
 
 							}}
@@ -59,24 +59,24 @@ const ServiceEdit = (props) =>{
 								let image = media.sizes.full
 								? media.sizes.full.url
 								: media.url;
-								let newObject = Object.assign({}, service, {
-									icon: image
+								let newObject = Object.assign({}, project, {
+									image: image
 								});
 								props.setAttributes({
-									services: [
-										...services.filter(
-											item => item.index != service.index
+									projects: [
+										...projects.filter(
+											item => item.index != project.index
 										),
 										newObject
 									]
 								});
 							}}
 							type="image"
-							value={service.icon}
+							value={project.image}
 							render={({ open })=>
-							!! service.icon ? (
+							!! project.image ? (
 								<div>
-								<img className="image" src={service.icon} onClick={open} />
+								<img className="image" src={project.image} onClick={open} />
 								</div>
 								): (
 								<a href="#"
@@ -89,21 +89,18 @@ const ServiceEdit = (props) =>{
 							}
 							/>
 							<RichText
-								label={ __('Service title', 'jbtheme')}
-								placeholder={ __('Service title', 'jbtheme')}
+								label={ __('Project title', 'jbtheme')}
+								placeholder={ __('Project title', 'jbtheme')}
 								tagName="h3"
-								value={ service.title }
+								value={ project.title }
 								onChange={ (title) => {
-									const newObject = Object.assign({}, service, {
+									const newObject = Object.assign({}, project, {
 										title: title
 									});
-									console.log(services);
-									console.log(service);
-									console.log(newObject);
 									props.setAttributes({
-										services: [
-										...services.filter(
-											item => item.index != service.index
+										projects: [
+										...projects.filter(
+											item => item.index != project.index
 											),
 											newObject
 										]
@@ -111,18 +108,18 @@ const ServiceEdit = (props) =>{
 								}}
 								/>	
 							<RichText
-								label={ __('Service Subtitle', 'jbtheme')}
-								placeholder={ __('Service Subtitle', 'jbtheme')}
+								label={ __('Project Subtitle', 'jbtheme')}
+								placeholder={ __('Project Subtitle', 'jbtheme')}
 								tagName="p"
-								value={ service.subtitle }
+								value={ project.subtitle }
 								onChange={ (subtitle) => {
-									const newObject = Object.assign({}, service, {
+									const newObject = Object.assign({}, project, {
 										subtitle: subtitle
 									});
 									props.setAttributes({
-										services: [
-										...services.filter(
-											item => item.index != service.index
+										projects: [
+										...projects.filter(
+											item => item.index != project.index
 											),
 											newObject
 										]
@@ -130,17 +127,17 @@ const ServiceEdit = (props) =>{
 								}}
 								/>	
 								<TextControl
-								label={ __('Service link', 'jbtheme')}
+								label={ __('Project link', 'jbtheme')}
 								type="text"
-								value={ service.link }
+								value={ project.link }
 								onChange={ (link) => {
-									const newObject = Object.assign({}, service, {
+									const newObject = Object.assign({}, project, {
 										link: link
 									});
 									props.setAttributes({
-										services: [
-										...services.filter(
-											item => item.index != service.index
+										projects: [
+										...projects.filter(
+											item => item.index != project.index
 											),
 											newObject
 										]
@@ -153,9 +150,9 @@ const ServiceEdit = (props) =>{
 		});
 	return ([
 			inspectorControls,	   
-			<Tooltip text={__("This is services section",'jbtheme')}>
+			<Tooltip text={__("This is projects section",'jbtheme')}>
 				<div>
-					{__('JB Service', 'jbtheme')}
+					{__('JB Projects', 'jbtheme')}
 				</div>
 			</Tooltip>, 
 			<div>
@@ -173,17 +170,17 @@ const ServiceEdit = (props) =>{
 					value={ props.attributes.subtitle }
 					onChange={ (subtitle) => props.setAttributes({subtitle})}
 					/>	
-				<div className="services-wrapper">
-				{servicesList}
+				<div className="jbprojects-wrapper">
+				{projectsList}
 				</div>
 				<button
-					className="add-more-service"
+					className="add-more-projects"
 					onClick={content => 
 						props.setAttributes({
-							services: [
-								...props.attributes.services,
+							projects: [
+								...props.attributes.projects,
 								{
-									index: props.attributes.services.length,
+									index: props.attributes.projects.length,
 									title: "",
 									subtitle: "",
 									link: ""
@@ -198,4 +195,4 @@ const ServiceEdit = (props) =>{
 		]
 		);
 }
-export default ServiceEdit;
+export default JBProjectsEdit;

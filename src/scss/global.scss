@@ -73,6 +73,7 @@ h4{
     padding-top: $section_padding;
     padding-bottom: $section_padding;
     overflow: hidden;
+    text-align: center;
     .section-title{
         position: relative;
         padding-bottom: 10px;
@@ -105,5 +106,55 @@ h4{
     }
     img{
         width: 100%;
+        height: auto;
+    }
+}
+.jb-post-list{
+    margin-top: $section_padding;
+    .jb-post-item{
+        text-align: left;
+        margin-bottom: $section_padding;
+        .post-item-image{
+            margin-bottom: $inner_padding;
+        }
+        .post-item-title{
+            
+            a{
+                color: $primary_color;
+            }
+        }
+        .post-item-info{
+            margin-bottom: $inner_padding;
+            .seperator-icon{
+                padding: 0 10px;
+            }
+            &>div{
+                display: inline-block;
+                font-size: .9em;
+            }
+        }
+        .post-item-readmore{
+            color: $primary_color;
+            position: relative;
+            &::after{
+                content: '';
+                position: absolute;
+                bottom: -5px;
+                left: 0;
+                width: 0;
+                transition: width 0.5s;
+                -webkit-transition: width 0.5s;
+                height: 0;
+                border: 1px solid $primary_color;
+            }
+            &:hover, &:visited{
+                &::after{
+                    width: 100%;
+                }
+            }
+        }
+        .post-item-exceprt{
+            margin-bottom: 10px;
+        }
     }
 }

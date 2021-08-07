@@ -27,8 +27,23 @@
 			});
 		}
 	}
+
+	function jbTestimonial(){
+		if( $('.jb-testimonial-list-wrapper').length > 0 ){
+			$('.jb-testimonial-list-wrapper').each(function(e){
+				$(this).slick({
+					autoplay: true,
+					arrows: false,
+					dots: true,
+					slidesToShow: 1
+
+				});
+			});
+		}
+	}
 	$(document).ready(function(){
 		jbSliderBlock();
+		jbTestimonial();
 	});
 
 })(jQuery);

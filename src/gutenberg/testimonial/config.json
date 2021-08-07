@@ -1,0 +1,55 @@
+{
+	"name": "jbtheme/testimonial",
+	"category": "jb-general-blocks",
+	"attributes": {
+		"id": {
+			"source": "attribute",
+			"selector": ".jb-testimonial-wrapper",
+			"attribute": "id"
+		},
+		"testimonials":{
+			"source": "query",
+			"default": [],
+			"selector": ".jb-testimonial-item",
+			"query":{
+				"image": {
+					"source": "attribute",
+					"selector": "img.testimonial-image",
+					"attribute": "src"
+				},
+				"index": {
+					"source": "text",
+					"selector": ".testimonial-index"
+				  },
+				"content": {
+					"source": "text",
+					"type" :"string",
+					"selector": ".testimonial-item-content",
+					"default": ""
+				},
+				"name": {
+					"source": "text",
+					"type": "string",
+					"selector": ".testimonial-item-name",
+					"default": ""
+				},
+				"job_title": {
+					"source": "text",
+					"selector": ".testimonial-job-title",
+					"type": "string",
+					"default": ""
+				}
+			}
+		},
+		"background_color": {
+			"type": "string",
+			"default": "#ffffff"
+
+		},
+		"background_image": {
+			"type": "string",
+			"default": ""
+		}
+		
+	}
+}

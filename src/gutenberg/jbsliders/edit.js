@@ -2,10 +2,9 @@
  * WordPress dependencies
  */
  import { __ } from '@wordpress/i18n';
- import { registerBlockType } from '@wordpress/blocks';
- import { RichText, MediaUpload, PlainText, InspectorControls } from '@wordpress/block-editor';
- import { PanelBody, TextControl, SelectControl, TextareaControl } from '@wordpress/components';
- import {Fragment, Component} from '@wordpress/element';
+ import { RichText, MediaUpload , InspectorControls } from '@wordpress/block-editor';
+ import { PanelBody, TextControl, SelectControl } from '@wordpress/components';
+
  import { Tooltip } from '@wordpress/components';
  import {   
 	 faTrashAlt
@@ -14,7 +13,6 @@
  import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 
  const JBSlidersEdit = (props) => {  
-		  
 		 const { slideritem } = props.attributes;		
 		 const hide_control = [
 			 { value: 'yes', label: __( 'Yes', 'jbtheme' ) },
@@ -43,7 +41,6 @@
 			{ value: 'left', label: __( 'Left', 'jbtheme' ) },			
 			{ value: 'right', label: __( 'Right', 'jbtheme' ) },
 		];
- 
 		 const inspectorControls = (
 			 <InspectorControls>
 				 <PanelBody title={ __( 'Slider Setting', 'jbtheme' ) }>
@@ -101,10 +98,10 @@
 						 value={ props.attributes.slidestoscroll }
 						 onChange={ ( slidestoscroll ) => props.setAttributes( { slidestoscroll} ) }
 					 />
+					
 				 </PanelBody>
 			 </InspectorControls>
 		 );
-	 
  
 		 if (!props.attributes.id) {
 		   const id = `slide${Math.floor(Math.random() * 100)}`;
@@ -192,6 +189,7 @@
 						   });		                     
 					 } }
 				 />				
+
 				 <RichText
 					 label={ __( 'Description','jbtheme' ) }
 					 placeholder={ __( 'Slider description', 'jbtheme' ) }
@@ -252,11 +250,11 @@
 		   });
 		 return ([
 			 inspectorControls,	   
-			 <Tooltip text="This is a slider">
+			<Tooltip text="This is a slider">
 				 <div>
 					 {__('JB Slider', 'jbtheme')}
 				 </div>
-			 </Tooltip>, 	
+			</Tooltip>, 	
 		   <div className={props.className}>
 			 {sliderList}  
 			 <button
