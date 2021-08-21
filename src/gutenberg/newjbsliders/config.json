@@ -1,0 +1,59 @@
+{
+	"name": "jbtheme/newjbsliders",
+	"category": "jb-general-blocks",
+	"attributes": {
+	    "id": {
+	      "source": "attribute",
+	      "selector": ".jb-slider-inner",
+	      "attribute": "id"
+	    },
+	    "slideritem": {
+	      "source": "query",
+	      "default": [],
+	      "selector": ".jb-slide-item",
+	      "query": {
+	       
+	        "index": {
+	          "source": "text",
+	          "selector": ".slide-index"
+	        }
+	      }
+	    },
+		"showoverlay":{
+			"type": "select",
+            "default": false
+		},
+	    "hidecontrol": {
+            "type": "select",
+            "default": false
+        },
+	    "arrowcontrol": {
+            "type": "select",
+            "default": false
+        },
+		"fullscreenheight": {
+			"type": "select",
+			"default": false
+		},
+		"slidestoscroll": {
+            "type": "string",
+            "default": "1"
+        },
+	    "position": {
+            "type": "select",
+            "default": "no"
+        },
+		"position_x": {
+            "type": "select",
+            "default": "no"
+        },
+	    "slider_speed": {
+            "type": "string",
+            "default": "1000"
+        },
+		"slider_items": {
+            "type": "string",
+            "default": "1"
+        }
+	} 
+}

@@ -186,7 +186,7 @@ const TestimonialEdit = (props) =>{
 				{testimonialsList}
 				</div>
 				<button
-					className="add-more-testimonial"
+					className="add-more-testimonial jb-add-more-btn"
 					onClick={content => 
 						props.setAttributes({
 							testimonials: [

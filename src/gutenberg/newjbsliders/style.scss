@@ -1,0 +1,59 @@
+/**
+ * #.# Styles
+ *
+ * CSS for both Frontend+Backend.
+ */
+ @import '../../../node_modules/slick-carousel/slick/slick.scss';
+ @import '../../../node_modules/slick-carousel/slick/slick-theme.scss';
+ button:-moz-focusring, [type="button"]:-moz-focusring, [type="reset"]:-moz-focusring, [type="submit"]:-moz-focusring {
+    outline: 0px dotted ButtonText !important;
+}
+.slide-overlay{
+	position: absolute;
+	top:0;
+	left:0;
+	width: 100%;
+	height: 100%;
+	background-color: $black;
+	opacity: .7;
+}
+.caption-item{
+	width: 100%;
+}
+.jb-slide-item{
+	position: relative;
+}
+.slick-arrow{
+	z-index: 99;
+}
+.slick-prev{
+	left: 40px;
+}
+.slick-next{
+	right: 40px;
+}
+.slide-title{
+	color:$white;
+	
+}
+.slide-description{
+	color: $secondary_color;
+}
+.full-screen-height{
+	height: 100vh;
+	.slick-slide{
+		img{
+			height: 100vh;
+		}
+	}
+}
+.jb-page-banner{
+	.slide-title{
+		font-size: $heading_1_font_size;
+		line-height: $heading_1_line_height;
+	}
+	.slide-description{
+		font-size: $heading_4_font_size;
+		font-size: $heading_4_line_height;
+	}
+}

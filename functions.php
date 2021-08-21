@@ -92,6 +92,7 @@ if( !function_exists('jb_register_styles_scripts')):
 	function jb_register_styles_scripts() {
 
 		$theme_version = wp_get_theme()->get( 'Version' );
+		wp_enqueue_style( 'font-awesome', get_template_directory_uri().'/assets/css/all.min.css', array(), $theme_version );
 		//Enqueue style files
 		wp_enqueue_style( 'jb-style', get_template_directory_uri().'/assets/css/main.css', array(), $theme_version );
 

@@ -174,7 +174,7 @@ const JBProjectsEdit = (props) =>{
 				{projectsList}
 				</div>
 				<button
-					className="add-more-projects"
+					className="add-more-projects jb-add-more-btn"
 					onClick={content => 
 						props.setAttributes({
 							projects: [
