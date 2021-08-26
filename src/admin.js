@@ -2,13 +2,14 @@ import { __ } from '@wordpress/i18n';
 import { registerBlockType } from '@wordpress/blocks';
 
 import * as jbsliders from './gutenberg/jbsliders';
-import * as newjbsliders from './gutenberg/newjbsliders';
 import * as service from './gutenberg/services';
 import * as aboutus from './gutenberg/aboutus';
 import * as testimonial from './gutenberg/testimonial';
 import * as jbpostslist from './gutenberg/jbpostslist';
 import * as jbprojects from './gutenberg/jbprojects';
 import * as jbteam from './gutenberg/jbteam';
+import * as jbcontact from './gutenberg/jbcontact';
+import * as jbsocial from './gutenberg/jbsocial';
 
 
 const registerBlock = ( block ) => {
@@ -33,7 +34,8 @@ export const registerJBBlocks = () => {
 	jbpostslist,
 	jbprojects,
 	jbteam,
-	newjbsliders
+	jbcontact,
+	jbsocial
 	].forEach( registerBlock );
 }
 registerJBBlocks();

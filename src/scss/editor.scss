@@ -1,3 +1,4 @@
+@import './variables.scss';
 @import '../gutenberg/services/editor';
 @import '../gutenberg/jbsliders/editor';
 @import '../gutenberg/testimonial/editor';
@@ -12,4 +13,27 @@
     font-weight: bold;
     cursor: pointer;
     margin: 15px;
+}
+.components-text-control__input{
+    border-top: 0!important;
+    border-left: 0!important;
+    border-right: 0!important;
+    border-bottom: 1px solid #ccc!important;
+}
+[role="textbox"]{
+    border-bottom: 1px solid #ccc;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.jb-block-title{
+    font-size: $heading_3_font_size;
+    line-height: $heading_3_line_height;
+    color: $primary_color;
+    display: none;
+}
+.block-editor-block-list__block{
+    border-left: 3px solid #267DF4;
+    padding: 30px;
+    background: #f9f9f9;
+
 }

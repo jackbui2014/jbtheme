@@ -26,7 +26,7 @@ const AboutusEdit = (props) =>{
 	return ([
 		inspectorControls,	   
 			<Tooltip text={ __("This is JB Posts List section", 'jbtheme') }>
-				<div>
+				<div className="jb-block-title">
 					{__('JB Posts List', 'jbtheme')}
 				</div>
 			</Tooltip>, 

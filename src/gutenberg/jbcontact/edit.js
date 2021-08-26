@@ -1,13 +1,13 @@
 import { __ } from '@wordpress/i18n';
-import { RichText, MediaUpload,  InspectorControls } from '@wordpress/block-editor';
-import { PanelBody, Tooltip, ColorPicker } from '@wordpress/components';
+import { RichText,  InspectorControls, InnerBlocks, useBlockProps } from '@wordpress/block-editor';
+import { PanelBody, Tooltip, ColorPicker, TextControl } from '@wordpress/components';
 import { Fragment } from '@wordpress/element';
 
-const AboutusEdit = (props) =>{
+const JBContactEdit = (props) =>{
 	const { title, subtitle, content, image } = props.attributes;
 	const inspectorControls = (
 		<InspectorControls>
-			<PanelBody title={__('About us settings', 'jbtheme')} >
+			<PanelBody title={__('JB Contact settings', 'jbtheme')} >
 			<h4>{ __('Section background color', 'jbtheme')}</h4>
 			<ColorPicker
 			color={ props.attributes.background_color }
@@ -17,11 +17,12 @@ const AboutusEdit = (props) =>{
 			</PanelBody>
 		</InspectorControls>
 	);
+	const blockProps = useBlockProps();
 	return ([
 		inspectorControls,	   
-			<Tooltip text={ __("This is about us section", 'jbtheme') }>
+			<Tooltip text={ __("This is JB  Contactt section", 'jbtheme') }>
 				<div className="jb-block-title">
-					{__('JB About us', 'jbtheme')}
+					{__('JB Contactt', 'jbtheme')}
 				</div>
 			</Tooltip>, 
 		<Fragment>
@@ -39,7 +40,24 @@ const AboutusEdit = (props) =>{
 				value={ props.attributes.subtitle }
 				onChange={ (subtitle) => props.setAttributes({subtitle})}
 				/>	
-
+			<TextControl
+				placeholder={ __('Address', 'jbtheme')}
+				tagName="p"
+				value={ props.attributes.address }
+				onChange={ (address) => props.setAttributes({address})}
+				/>	
+			<TextControl
+				placeholder={ __('Email', 'jbtheme')}
+				tagName="p"
+				value={ props.attributes.email }
+				onChange={ (email) => props.setAttributes({email})}
+				/>	
+			<TextControl
+				placeholder={ __('Phone', 'jbtheme')}
+				tagName="p"
+				value={ props.attributes.phone }
+				onChange={ (phone) => props.setAttributes({phone})}
+				/>		
 			<RichText
 				label={ __('Content', 'jbtheme')}
 				placeholder={ __('Content', 'jbtheme')}
@@ -47,31 +65,10 @@ const AboutusEdit = (props) =>{
 				value={ props.attributes.content }
 				onChange={ (content) => props.setAttributes({content})}
 				/>	
-			<MediaUpload
-				onSelect={media => {
-					const image_url = media.sizes.full
-					? media.sizes.full.url
-					: media.url;
-					props.setAttributes({image:image_url});
-				}}
-				type="image"
-				value={props.attributes.image}
-				render={({ open })=>
-				!! image ? (
-					<div>
-					<img className="image" src={image} onClick={open} />
-					</div>
-					): (
-					<a href="#"
-						className="banner_image_select"
-						onClick={open}
-						>
-						Select image
-						</a>
-					)
-				}
-				/>
+			 <div { ...blockProps }>
+                <InnerBlocks />
+            </div>
 		</Fragment>
 	]);
 }
-export default AboutusEdit;
+export default JBContactEdit;

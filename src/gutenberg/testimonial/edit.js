@@ -153,7 +153,7 @@ const TestimonialEdit = (props) =>{
 								}}
 								/>	
 								<TextControl
-								label={ __('Customer job title', 'jbtheme')}
+								placeholder={ __('Customer job title', 'jbtheme')}
 								type="text"
 								value={ testimonial.job_title }
 								onChange={ (job_title) => {
@@ -177,7 +177,7 @@ const TestimonialEdit = (props) =>{
 	return ([
 			inspectorControls,	   
 			<Tooltip text={__("This is testimonials section",'jbtheme')}>
-				<div>
+				<div className="jb-block-title">
 					{__('JB Testimonial', 'jbtheme')}
 				</div>
 			</Tooltip>, 

@@ -11,7 +11,9 @@ const TestimonialSave = (props)=>{
 				<span className="testimonial-index" style={{ display: "none" }}>
                     {testimonial.index}
                 </span>
-				
+				{testimonial.image && (
+				<p className="testimonial-image-wrapper"><img src={testimonial.image} className="testimonial-image" alt={__('Testimonial image', 'jbtheme')} /></p>
+				)}
 				{testimonial.content.trim() != "" && (
 				<RichText.Content tagName="q" className="testimonial-item-content" value={testimonial.content} />
 				)}
@@ -20,9 +22,6 @@ const TestimonialSave = (props)=>{
 				)}
 				{ testimonial.job_title && (
 					<p className="testimonial-job-title">{testimonial.job_title}</p>
-				)}
-				{testimonial.image && (
-				<p className="testimonial-image-wrapper"><img src={testimonial.image} className="testimonial-image" alt={__('Testimonial image', 'jbtheme')} /></p>
 				)}
 				
 			</div>

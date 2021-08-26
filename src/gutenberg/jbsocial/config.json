@@ -1,0 +1,19 @@
+{
+	"name": "jbtheme/jbsocial",
+	"category": "jb-general-blocks",
+	"attributes": {
+		"title":{
+			"type": "string",
+			"default": ""
+		},
+		"subtitle":{
+			"type": "string",
+			"default": ""
+		},
+		"background_color":{
+			"type": "string",
+			"default": "#ffffff"
+		}
+		
+	}
+}

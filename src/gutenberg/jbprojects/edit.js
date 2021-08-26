@@ -151,7 +151,7 @@ const JBProjectsEdit = (props) =>{
 	return ([
 			inspectorControls,	   
 			<Tooltip text={__("This is projects section",'jbtheme')}>
-				<div>
+				<div className="jb-block-title">
 					{__('JB Projects', 'jbtheme')}
 				</div>
 			</Tooltip>, 

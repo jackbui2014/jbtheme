@@ -43,7 +43,7 @@ const JBSlidersSave = (props) =>{
                     <span className="slide-index" style={{ display: "none" }}>
                     {slide.index}
                     </span>
-                    {slide.title && ( <h2 className="slide-title">{slide.title}</h2> )}
+                    {slide.title && (<RichText.Content tagName="h2" className="slide-title" value={slide.title} />)}
                     {slide.description && ( <RichText.Content tagName="p" className="slide-description" value={slide.description} />)}
                     {slide.link && ( 
                         <div className="jb-slide-button">

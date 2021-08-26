@@ -3,6 +3,7 @@
  *
  * CSS for both Frontend+Backend.
  */
+ @import '../../scss/variables.scss';
  @import '../../../node_modules/slick-carousel/slick/slick.scss';
  @import '../../../node_modules/slick-carousel/slick/slick-theme.scss';
  button:-moz-focusring, [type="button"]:-moz-focusring, [type="reset"]:-moz-focusring, [type="submit"]:-moz-focusring {
@@ -55,5 +56,43 @@
 	.slide-description{
 		font-size: $heading_4_font_size;
 		font-size: $heading_4_line_height;
+	}
+}
+.jb-slider-inner[data-slidetoshow="1"]{
+	.slide-title{
+		font-size: $super_text_size!important;
+		line-height: $super_text_line_height!important;
+		font-weight: bold;
+		margin-bottom: 25px;
+	}
+	.slide-description{
+		font-size: $heading_4_font_size;
+		line-height: $heading_4_line_height;
+		margin-bottom: 30px;
+		font-weight: bold;
+	}
+}
+@media only screen and (max-width: 768px) {
+	.jb-slider-inner[data-slidetoshow="1"]{
+		.slide-title{
+			font-size: $mobile_super_text_size!important;
+			line-height: $mobile_super_text_line_height!important;
+			margin-bottom: 15px;
+		}
+		.slide-description{
+			font-size: $normal_font_size;
+			line-height: $normal_line_height;
+			margin-bottom: 20px;
+			font-weight: bold;
+		}
+		.caption-inner{
+			padding: 0 5%;
+		}
+		.slick-slide{
+			img{
+				width: auto!important;
+			}
+		}
+		
 	}
 }

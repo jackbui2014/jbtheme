@@ -130,7 +130,7 @@ const ServiceEdit = (props) =>{
 								}}
 								/>	
 								<TextControl
-								label={ __('Service link', 'jbtheme')}
+								placeholder={ __('Service link', 'jbtheme')}
 								type="text"
 								value={ service.link }
 								onChange={ (link) => {
@@ -154,7 +154,7 @@ const ServiceEdit = (props) =>{
 	return ([
 			inspectorControls,	   
 			<Tooltip text={__("This is services section",'jbtheme')}>
-				<div>
+				<div className="jb-block-title">
 					{__('JB Service', 'jbtheme')}
 				</div>
 			</Tooltip>, 

@@ -1,8 +1,9 @@
 .jb-testimonial-list-wrapper{
 	background: rgba(255,255,255,0.85);
-	padding: $inner_padding $inner_padding $section_padding $inner_padding;
+	padding: $section_padding;
 	margin-left: 10%;
 	margin-right: 10%;
+	margin-top: 30px;
 	.jb-testimonial-item{
 		.testimonial-item-content{
 			padding-bottom: $inner_padding;
@@ -30,5 +31,8 @@
 	.slick-dots{
 		bottom: $inner_padding;
 		left: 0;
+		li{
+			margin: 0;
+		}
 	}
 }

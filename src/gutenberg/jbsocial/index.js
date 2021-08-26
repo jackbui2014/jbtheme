@@ -3,16 +3,17 @@ import { RichText, MediaUpload, PlainText,  InspectorControls } from '@wordpress
 import { PanelBody, TextControl, SelectControl } from '@wordpress/components';
 import config from './config.json';
 import edit from './edit';
-import save from './save';
 
 const {name, category, attributes} = config;
 
 const settings = {
-	title: __('NEW JB Sliders', 'jbtheme'),
+	title: __('JB Social icons', 'jbtheme'),
 	icon: 'format-gallery',
 	category: category,
 	attributes,
 	edit,
-	save
+	save: function(){
+		return null;
+	}
 }
 export {name, category, settings};

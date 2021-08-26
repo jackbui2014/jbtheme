@@ -169,16 +169,16 @@
 					   )
 					 }
 				   />                  
-				 </div>
-				   <TextControl
-					 label={ __( 'Title', 'jbtheme' ) }
+				 </div>				
+				<RichText
+					 label={ __( 'Title','jbtheme' ) }
 					 placeholder={ __( 'Slider title', 'jbtheme' ) }
-					 type="text"
 					 value={ slide.title }
+					 tagName="h2"
 					 onChange={ ( title ) => {
 						 const newObject = Object.assign({}, slide, {
-							 title: title
-						   });
+							title: title
+						   });		                 
 						  props.setAttributes({
 							slideritem: [
 							   ...slideritem.filter(
@@ -186,10 +186,9 @@
 							   ),
 							   newObject
 							 ]
-						   });		                     
+						   });
 					 } }
-				 />				
-
+				 />
 				 <RichText
 					 label={ __( 'Description','jbtheme' ) }
 					 placeholder={ __( 'Slider description', 'jbtheme' ) }
@@ -210,7 +209,7 @@
 					 } }
 				 />
 				 <TextControl
-					 label={ __( 'Button Link', 'jbtheme' ) }
+					 placeholder={ __( 'Button Link', 'jbtheme' ) }
 					 type="text"
 					 value={ slide.link }
 					 onChange={ ( link ) => {
@@ -228,7 +227,7 @@
 					 } }
 				 />
 				 <TextControl
-					 label={ __( 'Button text', 'jbtheme' ) }
+					 placeholder={ __( 'Button text', 'jbtheme' ) }
 					 type="text"
 					 value={ slide.link_text }
 					 onChange={ ( link_text ) => {
@@ -250,8 +249,8 @@
 		   });
 		 return ([
 			 inspectorControls,	   
-			<Tooltip text="This is a slider">
-				 <div>
+			<Tooltip text={__('This is JB Slider', 'jbtheme')}>
+				 <div className="jb-block-title">
 					 {__('JB Slider', 'jbtheme')}
 				 </div>
 			</Tooltip>, 	

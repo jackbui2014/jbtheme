@@ -1,0 +1,35 @@
+{
+	"name": "jbtheme/jbcontact",
+	"category": "jb-general-blocks",
+	"attributes": {
+		"title":{
+			"type": "string",
+			"default": ""
+		},
+		"subtitle":{
+			"type": "string",
+			"default": ""
+		},
+		"address": {
+			"type": "string",
+			"default": ""
+		},
+		"email": {
+			"type": "string",
+			"default": ""
+		},
+		"phone": {
+			"type": "string",
+			"default": ""
+		},
+		"content":{
+			"type": "string",
+			"default": ""
+		},
+		"background_color":{
+			"type": "string",
+			"default": "#ffffff"
+		}
+		
+	}
+}
