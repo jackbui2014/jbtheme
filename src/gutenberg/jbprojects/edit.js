@@ -172,7 +172,6 @@ const JBProjectsEdit = (props) =>{
 					/>	
 				<div className="jbprojects-wrapper">
 				{projectsList}
-				</div>
 				<button
 					className="add-more-projects jb-add-more-btn"
 					onClick={content => 
@@ -191,6 +190,8 @@ const JBProjectsEdit = (props) =>{
 					>
 					+
 					</button>
+				</div>
+				
 					</div>
 		]
 		);

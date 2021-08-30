@@ -6,7 +6,7 @@ const Aboutus = (props)=>{
 		<Fragment>
 			<div className="jb-section jb-abouts-wrapper" style={{backgroundColor: props.background_color}}>
 				<div className="inner jb-aboutus-inner container">
-					<div className="jb-about-left">
+					<div className="jb-about-left animate__animated fadeInLeft" data-scroll>
 						<div className="inner">
 							{props.title && (
 							<RichText.Content tagName="h3" className="section-title aboutus-title section-title-left" value={props.title} />
@@ -19,10 +19,10 @@ const Aboutus = (props)=>{
 							)}
 							</div>
 					</div>
-					<div className="jb-about-right">
+					<div className="jb-about-right ">
 						<div className="inner">
 							{props.image && (
-							<img src={props.image} className="aboutus-image" alt={props.title} />
+							<img src={props.image} className="aboutus-image animate_animated fadeInRight" data-scroll alt={props.title} />
 							)}
 							</div>
 					</div>

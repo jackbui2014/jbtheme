@@ -34,7 +34,7 @@ const TestimonialSave = (props)=>{
 		<Fragment>
 			<div className="jb-testimonial-wrapper jb-section" id={id} style={{backgroundColor: props.attributes.background_color,  backgroundImage: `url(${props.attributes.background_image})`}} >
 				<div className="inner jb-testimonial-inner container">
-					<div className="jb-testimonial-list-wrapper">
+					<div className="jb-testimonial-list-wrapper animate__animated fadeInUp" data-scroll>
 						{testimonialsList}
 					</div>
 				</div>

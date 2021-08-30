@@ -16,9 +16,9 @@ $address = get_theme_mod('jb_address');
 				</div><!-- #primary -->
 			</div><!-- #content -->
 
-			<footer id="site-footer" role="contentinfo" class="header-footer-group">
+			<footer id="site-footer" role="contentinfo" class="header-footer-group " >
 			<?php get_sidebar( 'footer' ); ?>			
-			<div class="small-footer">
+			<div class="small-footer animate__animated fadeInUp" data-scroll>
 				<div class="container">
 					<div class="row">
 						<div class="col-md-6 col-sm-6">

@@ -58,13 +58,12 @@ const JBContactEdit = (props) =>{
 				value={ props.attributes.phone }
 				onChange={ (phone) => props.setAttributes({phone})}
 				/>		
-			<RichText
-				label={ __('Content', 'jbtheme')}
-				placeholder={ __('Content', 'jbtheme')}
+			<TextControl
+				placeholder={ __('Google Map link', 'jbtheme')}
 				tagName="p"
-				value={ props.attributes.content }
-				onChange={ (content) => props.setAttributes({content})}
-				/>	
+				value={ props.attributes.google_map_link }
+				onChange={ (google_map_link) => props.setAttributes({google_map_link})}
+				/>		
 			 <div { ...blockProps }>
                 <InnerBlocks />
             </div>

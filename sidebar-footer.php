@@ -15,7 +15,7 @@ $cols = (int) 12 / count( $jb_active_sidebars );
 $cls  = apply_filters( 'jb_footer_widget_class', 'col-12 col-md-' . $cols . ' col-xs-12 ' );
 ?>
 
-<div class="main-footer">
+<div class="main-footer animate__animated fadeInUp" data-scroll>
   <div class="container">
 	  <div class="row">
 		<?php

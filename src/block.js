@@ -1,3 +1,5 @@
+import ScrollOut from "scroll-out";
+
 (function($){
 	'use strict';
 	function jbSliderBlock(){
@@ -41,9 +43,25 @@
 			});
 		}
 	}
+	$(window).load(function(){
+		ScrollOut({
+			onShown(el) {
+					if(  el.classList.contains('fadeInUp') ){
+						el.classList.add("animate__fadeInUp");
+					}
+					else if( el.classList.contains('fadeInLeft') ){
+						el.classList.add("animate__fadeInLeft");
+					}
+					else if( el.classList.contains('fadeInRight') ){
+						el.classList.add("animate__fadeInRight");
+					}
+			}
+		});
+	})
 	$(document).ready(function(){
 		jbSliderBlock();
 		jbTestimonial();
+		
 	});
 
 })(jQuery);

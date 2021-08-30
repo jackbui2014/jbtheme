@@ -56,7 +56,7 @@ const JBTeamSave = (props)=>{
 				<div className="inner jb-team-inner container">
 					<h3 className="jb-team-title section-title">{props.attributes.title}</h3>
 					<p className="jb-team-subtitle section-subtitle">{props.attributes.subtitle}</p>
-					<div className="jb-team-list-wrapper row">
+					<div className="jb-team-list-wrapper row animate__animated fadeInUp" data-scroll>
 						{teamsList}
 					</div>
 				</div>

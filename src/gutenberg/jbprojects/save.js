@@ -7,7 +7,8 @@ const JBProjectsSave = (props)=>{
 		let keyVal = 'project-item-'+i;
 		return (
 			<Fragment>
-			<div className="jb-projects-item" key={keyVal}>
+			<div className="jb-projects-item animate__animated fadeInUp" key={keyVal} data-scroll>
+			<div className="inner" key={keyVal}>
 				<span className="jb-project-item-index" style={{ display: "none" }}>
                     {project.index}
                 </span>
@@ -26,6 +27,7 @@ const JBProjectsSave = (props)=>{
 				<RichText.Content tagName="p" className="jb-project-item-subtitle" value={project.subtitle} />
 				)}
 				</a>
+				</div>
 				</div>
 			</div>
 			</Fragment>

@@ -58,7 +58,7 @@ if ( !function_exists('jbpostslist_render_block') ){
         $recent_posts = wp_get_recent_posts($args);
         
 		ob_start(); ?>
-		<section class="jb-postslist-section jb-section" <?php echo $bg; ?> >
+		<div class="jb-postslist-section jb-section" <?php echo $bg; ?> >
 			<div class="container jb-postslist-wrapper">                
                 <?php if( !empty( $attributes['title']) ):?>
                     <h3 class="jbpostslist-title section-title"><?php echo $attributes['title']; ?></h3>
@@ -77,7 +77,7 @@ if ( !function_exists('jbpostslist_render_block') ){
                             $post_expert = get_the_excerpt($value['ID']);
                             $comments = get_comments_number($value['ID']);
                         ?>
-                            <div class="<?php echo $item_cls; ?>">
+                            <div class="<?php echo $item_cls; ?> animate__animated fadeInUp" data-scroll>
                                 <div class="inner">
                                     <div class="post-item-image"><a href="<?php echo $link; ?> "><img src="<?php echo $thumbnail; ?>" atl="<?php echo $value['title']; ?>" /></a></div>
                                     <h3 class="post-item-title"><a href="<?php echo $link; ?> "><?php echo $value['post_title']; ?></a></h3>
@@ -94,7 +94,7 @@ if ( !function_exists('jbpostslist_render_block') ){
                     endif; ?>
                 </div>
 			</div>
-		</section>	
+        </div>	
 	<?php 
 		return ob_get_clean();
 	}

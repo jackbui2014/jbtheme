@@ -175,7 +175,6 @@ const ServiceEdit = (props) =>{
 					/>	
 				<div className="services-wrapper">
 				{servicesList}
-				</div>
 				<button
 					className="add-more-service"
 					onClick={content => 
@@ -194,6 +193,8 @@ const ServiceEdit = (props) =>{
 					>
 					+
 					</button>
+				</div>
+				
 					</div>
 		]
 		);

@@ -11682,7 +11682,8 @@ const Aboutus = props => {
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
     className: "inner jb-aboutus-inner container"
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
-    className: "jb-about-left"
+    className: "jb-about-left animate__animated fadeInLeft",
+    "data-scroll": true
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
     className: "inner"
   }, props.title && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["RichText"].Content, {
@@ -11698,12 +11699,13 @@ const Aboutus = props => {
     className: "aboutus-content",
     value: props.content
   }))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
-    className: "jb-about-right"
+    className: "jb-about-right "
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
     className: "inner"
   }, props.image && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("img", {
     src: props.image,
-    className: "aboutus-image",
+    className: "aboutus-image animate_animated fadeInRight",
+    "data-scroll": true,
     alt: props.title
   }))))));
 };
@@ -11902,7 +11904,7 @@ const AboutusSave = props => {
 /*! exports provided: name, category, attributes, default */
 /***/ (function(module) {
 
-module.exports = JSON.parse("{\"name\":\"jbtheme/jbcontact\",\"category\":\"jb-general-blocks\",\"attributes\":{\"title\":{\"type\":\"string\",\"default\":\"\"},\"subtitle\":{\"type\":\"string\",\"default\":\"\"},\"address\":{\"type\":\"string\",\"default\":\"\"},\"email\":{\"type\":\"string\",\"default\":\"\"},\"phone\":{\"type\":\"string\",\"default\":\"\"},\"content\":{\"type\":\"string\",\"default\":\"\"},\"background_color\":{\"type\":\"string\",\"default\":\"#ffffff\"}}}");
+module.exports = JSON.parse("{\"name\":\"jbtheme/jbcontact\",\"category\":\"jb-general-blocks\",\"attributes\":{\"title\":{\"type\":\"string\",\"default\":\"\"},\"subtitle\":{\"type\":\"string\",\"default\":\"\"},\"address\":{\"type\":\"string\",\"default\":\"\"},\"email\":{\"type\":\"string\",\"default\":\"\"},\"phone\":{\"type\":\"string\",\"default\":\"\"},\"google_map_link\":{\"type\":\"string\",\"default\":\"\"},\"background_color\":{\"type\":\"string\",\"default\":\"#ffffff\"}}}");
 
 /***/ }),
 
@@ -11987,13 +11989,12 @@ const JBContactEdit = props => {
     onChange: phone => props.setAttributes({
       phone
     })
-  }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["RichText"], {
-    label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Content', 'jbtheme'),
-    placeholder: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Content', 'jbtheme'),
+  }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__["TextControl"], {
+    placeholder: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Google Map link', 'jbtheme'),
     tagName: "p",
-    value: props.attributes.content,
-    onChange: content => props.setAttributes({
-      content
+    value: props.attributes.google_map_link,
+    onChange: google_map_link => props.setAttributes({
+      google_map_link
     })
   }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", blockProps, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["InnerBlocks"], null)))];
 };
@@ -12072,12 +12073,13 @@ const JBContactSave = props => {
   return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
     className: "jb-section jb-contact-wrapper",
     style: {
-      backgroundColor: props.background_color
+      backgroundColor: props.attributes.background_color
     }
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
     className: "inner jb-contact-inner container"
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
-    className: "jb-contact-left"
+    className: "jb-contact-left animate__animated fadeInLeft",
+    "data-scroll": true
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
     className: "inner"
   }, props.attributes.title && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["RichText"].Content, {
@@ -12093,14 +12095,14 @@ const JBContactSave = props => {
   }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("span", {
     className: "jb-contact-label"
   }, Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Phone:', 'jbtheme'), " "), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("a", {
-    href: "tel:{props.attributes.phone}",
+    href: "tel:" + props.attributes.phone,
     className: "jb-contact-content"
   }, props.attributes.phone), " "), props.attributes.email && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("p", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("i", {
     class: "fas fa-envelope"
   }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("span", {
     className: "jb-contact-label"
   }, Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Email:', 'jbtheme'), " "), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("a", {
-    href: "mailto:{props.attributes.email}",
+    href: "mailto:" + props.attributes.email,
     className: "jb-contact-content"
   }, props.attributes.email)), props.attributes.address && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("p", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("i", {
     class: "fas fa-map-marker-alt"
@@ -12108,12 +12110,14 @@ const JBContactSave = props => {
     className: "jb-contact-label"
   }, Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Address:', 'jbtheme'), " "), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("span", {
     className: "jb-contact-content"
-  }, props.attributes.address, " ")), props.attributes.content && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["RichText"].Content, {
-    tagName: "p",
-    className: "contact-content",
-    value: props.attributes.content
+  }, props.attributes.address, " ")), props.attributes.google_map_link && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("iframe", {
+    src: props.attributes.google_map_link,
+    className: "jb-contact-map",
+    style: "border:0",
+    loading: "lazy"
   }))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
-    className: "jb-contact-right"
+    className: "jb-contact-right animate__animated fadeInRight",
+    "data-scroll": true
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
     className: "inner"
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", blockProps, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["InnerBlocks"].Content, null)))))));
@@ -12420,7 +12424,7 @@ const JBProjectsEdit = props => {
     })
   }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
     className: "jbprojects-wrapper"
-  }, projectsList), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("button", {
+  }, projectsList, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("button", {
     className: "add-more-projects jb-add-more-btn",
     onClick: content => props.setAttributes({
       projects: [...props.attributes.projects, {
@@ -12430,7 +12434,7 @@ const JBProjectsEdit = props => {
         link: ""
       }]
     })
-  }, "+"))];
+  }, "+")))];
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (JBProjectsEdit);
@@ -12510,7 +12514,11 @@ const JBProjectsSave = props => {
   const projectsList = projects.map(function (project, i) {
     let keyVal = 'project-item-' + i;
     return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
-      className: "jb-projects-item",
+      className: "jb-projects-item animate__animated fadeInUp",
+      key: keyVal,
+      "data-scroll": true
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "inner",
       key: keyVal
     }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("span", {
       className: "jb-project-item-index",
@@ -12544,7 +12552,7 @@ const JBProjectsSave = props => {
       tagName: "p",
       className: "jb-project-item-subtitle",
       value: project.subtitle
-    })))));
+    }))))));
   });
   return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
     className: "jb-projects-wrapper jb-section",
@@ -12974,11 +12982,11 @@ const JBSlidersSave = props => {
       }
     }, slide.index), slide.title && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["RichText"].Content, {
       tagName: "h2",
-      className: "slide-title",
+      className: "slide-title animate__animated animate__fadeInUp",
       value: slide.title
     }), slide.description && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["RichText"].Content, {
       tagName: "p",
-      className: "slide-description",
+      className: "slide-description animate__animated animate__fadeInUp",
       value: slide.description
     }), slide.link && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
       className: "jb-slide-button"
@@ -13229,7 +13237,6 @@ const JBTeamEdit = props => {
         onClick: open
       }, "Select image")
     }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["RichText"], {
-      label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Name', 'jbtheme'),
       placeholder: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Name', 'jbtheme'),
       tagName: "p",
       value: team.name,
@@ -13242,7 +13249,7 @@ const JBTeamEdit = props => {
         });
       }
     }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__["TextControl"], {
-      label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Job title', 'jbtheme'),
+      placeholder: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Job title', 'jbtheme'),
       type: "text",
       value: team.job_title,
       onChange: job_title => {
@@ -13254,7 +13261,7 @@ const JBTeamEdit = props => {
         });
       }
     }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__["TextControl"], {
-      label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Facebook URL', 'jbtheme'),
+      placeholder: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Facebook URL', 'jbtheme'),
       type: "text",
       value: team.facebook,
       onChange: facebook => {
@@ -13266,7 +13273,7 @@ const JBTeamEdit = props => {
         });
       }
     }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__["TextControl"], {
-      label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Twitter URL', 'jbtheme'),
+      placeholder: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Twitter URL', 'jbtheme'),
       type: "text",
       value: team.twitter,
       onChange: twitter => {
@@ -13278,7 +13285,7 @@ const JBTeamEdit = props => {
         });
       }
     }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__["TextControl"], {
-      label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Linkedin URL', 'jbtheme'),
+      placeholder: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Linkedin URL', 'jbtheme'),
       type: "text",
       value: team.linkedin,
       onChange: linkedin => {
@@ -13290,7 +13297,7 @@ const JBTeamEdit = props => {
         });
       }
     }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__["TextControl"], {
-      label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Google + URL', 'jbtheme'),
+      placeholder: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Google + URL', 'jbtheme'),
       type: "text",
       value: team.google,
       onChange: google => {
@@ -13325,7 +13332,7 @@ const JBTeamEdit = props => {
     })
   }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
     className: "jb-teams-wrapper"
-  }, teamsList), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("button", {
+  }, teamsList, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("button", {
     className: "add-more-team jb-add-more-btn",
     onClick: content => props.setAttributes({
       teams: [...props.attributes.teams, {
@@ -13335,7 +13342,7 @@ const JBTeamEdit = props => {
         link: ""
       }]
     })
-  }, "+"))];
+  }, "+")))];
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (JBTeamEdit);
@@ -13467,7 +13474,8 @@ const JBTeamSave = props => {
   }, props.attributes.title), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("p", {
     className: "jb-team-subtitle section-subtitle"
   }, props.attributes.subtitle), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
-    className: "jb-team-list-wrapper row"
+    className: "jb-team-list-wrapper row animate__animated fadeInUp",
+    "data-scroll": true
   }, teamsList))));
 };
 
@@ -13643,7 +13651,7 @@ const ServiceEdit = props => {
     })
   }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
     className: "services-wrapper"
-  }, servicesList), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("button", {
+  }, servicesList, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("button", {
     className: "add-more-service",
     onClick: content => props.setAttributes({
       services: [...props.attributes.services, {
@@ -13653,7 +13661,7 @@ const ServiceEdit = props => {
         link: ""
       }]
     })
-  }, "+"))];
+  }, "+")))];
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (ServiceEdit);
@@ -13733,8 +13741,9 @@ const ServiceSave = props => {
   const servicesList = services.map(function (service, i) {
     let keyVal = 'service-item-' + i;
     return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
-      className: "jb-service-item col-md-4 col-sm-6",
-      key: keyVal
+      className: "jb-service-item col-md-4 col-sm-6 animate__animated fadeInUp",
+      key: keyVal,
+      "data-scroll": true
     }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("span", {
       className: "service-index",
       style: {
@@ -13949,7 +13958,7 @@ const TestimonialEdit = props => {
     className: "jb-block-title"
   }, Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('JB Testimonial', 'jbtheme'))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
     className: "testimonials-wrapper"
-  }, testimonialsList), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("button", {
+  }, testimonialsList, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("button", {
     className: "add-more-testimonial jb-add-more-btn",
     onClick: content => props.setAttributes({
       testimonials: [...props.attributes.testimonials, {
@@ -13959,7 +13968,7 @@ const TestimonialEdit = props => {
         link: ""
       }]
     })
-  }, "+"))];
+  }, "+")))];
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (TestimonialEdit);
@@ -14068,7 +14077,8 @@ const TestimonialSave = props => {
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
     className: "inner jb-testimonial-inner container"
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
-    className: "jb-testimonial-list-wrapper"
+    className: "jb-testimonial-list-wrapper animate__animated fadeInUp",
+    "data-scroll": true
   }, testimonialsList))));
 };
 

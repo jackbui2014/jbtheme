@@ -58,3 +58,16 @@
 .jb-contact-label{
     display: none;
 }
+.jb-contact-map{
+    width: 100%;
+    height: auto;
+    min-height: 250px;
+}
+@media only screen and (max-width: 768px) {
+    .jb-contact-left{
+        width: 100%;
+    }
+    .jb-contact-right{
+        width: 100%;
+    }
+}

@@ -184,7 +184,6 @@ const TestimonialEdit = (props) =>{
 			<div>
 				<div className="testimonials-wrapper">
 				{testimonialsList}
-				</div>
 				<button
 					className="add-more-testimonial jb-add-more-btn"
 					onClick={content => 
@@ -203,6 +202,8 @@ const TestimonialEdit = (props) =>{
 					>
 					+
 					</button>
+				</div>
+				
 					</div>
 		]
 		);

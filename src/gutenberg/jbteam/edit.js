@@ -89,7 +89,6 @@ const JBTeamEdit = (props) =>{
 							}
 							/>
 							<RichText
-								label={ __('Name', 'jbtheme')}
 								placeholder={ __('Name', 'jbtheme')}
 								tagName="p"
 								value={ team.name }
@@ -108,7 +107,7 @@ const JBTeamEdit = (props) =>{
 								}}
 								/>	
 								<TextControl
-								label={ __('Job title', 'jbtheme')}
+								placeholder={ __('Job title', 'jbtheme')}
 								type="text"
 								value={ team.job_title }
 								onChange={ (job_title) => {
@@ -126,7 +125,7 @@ const JBTeamEdit = (props) =>{
 								}}
 								/>
 								<TextControl
-								label={ __('Facebook URL', 'jbtheme')}
+								placeholder={ __('Facebook URL', 'jbtheme')}
 								type="text"
 								value={ team.facebook }
 								onChange={ (facebook) => {
@@ -144,7 +143,7 @@ const JBTeamEdit = (props) =>{
 								}}
 								/>
 								<TextControl
-								label={ __('Twitter URL', 'jbtheme')}
+								placeholder={ __('Twitter URL', 'jbtheme')}
 								type="text"
 								value={ team.twitter }
 								onChange={ (twitter) => {
@@ -162,7 +161,7 @@ const JBTeamEdit = (props) =>{
 								}}
 								/>
 								<TextControl
-								label={ __('Linkedin URL', 'jbtheme')}
+								placeholder={ __('Linkedin URL', 'jbtheme')}
 								type="text"
 								value={ team.linkedin }
 								onChange={ (linkedin) => {
@@ -180,7 +179,7 @@ const JBTeamEdit = (props) =>{
 								}}
 								/>
 								<TextControl
-								label={ __('Google + URL', 'jbtheme')}
+								placeholder={ __('Google + URL', 'jbtheme')}
 								type="text"
 								value={ team.google }
 								onChange={ (google) => {
@@ -225,7 +224,6 @@ const JBTeamEdit = (props) =>{
 					/>	
 				<div className="jb-teams-wrapper">
 				{teamsList}
-				</div>
 				<button
 					className="add-more-team jb-add-more-btn"
 					onClick={content => 
@@ -244,6 +242,8 @@ const JBTeamEdit = (props) =>{
 					>
 					+
 					</button>
+				</div>
+				
 					</div>
 		]
 		);

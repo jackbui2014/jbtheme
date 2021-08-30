@@ -7,7 +7,7 @@ const ServiceSave = (props)=>{
 		let keyVal = 'service-item-'+i;
 		return (
 			<Fragment>
-			<div className="jb-service-item col-md-4 col-sm-6" key={keyVal}>
+			<div className="jb-service-item col-md-4 col-sm-6 animate__animated fadeInUp" key={keyVal} data-scroll>
 				<span className="service-index" style={{ display: "none" }}>
                     {service.index}
                 </span>
