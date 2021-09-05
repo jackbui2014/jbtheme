@@ -158,3 +158,23 @@ h4{
         }
     }
 }
+.wp-block-search{
+    .wp-block-search__button{
+        position: relative;
+        background: $btn_primary_color!important;
+        color: $btn_primary_text_color!important;;
+        border: 1px solid $btn_primary_border_color!important;;
+        border-radius: $btn_primary_radius;
+        padding: 10px 15px;
+        transition: 0.3s;
+        min-width: 100px;
+        &:hover{
+            color: $btn_primary_text_hover_color!important;
+            border: 1px solid $secondary_color!important;
+            background: transparent!important;
+        }
+    }
+    .wp-block-search__input{
+        padding: 0 7px;
+    }
+}

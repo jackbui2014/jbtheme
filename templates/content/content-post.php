@@ -1,7 +1,8 @@
+
 <?php
 /**
  *
- * The default content template
+ * The post content template
  *
  *
  * @package JB

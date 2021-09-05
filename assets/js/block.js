@@ -416,6 +416,7 @@ __webpack_require__.r(__webpack_exports__);
   }
 
   $(window).load(function () {
+    $('body').addClass('loaded');
     scroll_out__WEBPACK_IMPORTED_MODULE_0___default()({
       onShown(el) {
         if (el.classList.contains('fadeInUp')) {

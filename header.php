@@ -25,6 +25,7 @@
 
 	<body <?php body_class(); ?>>
 		<?php wp_body_open(); ?>
+		<div class="loading-aniamte"><div class="lds-ripple"><div></div><div></div></div></div>
 		<div id="page" class="site">
 			<?php get_template_part('templates/header/site', 'header'); ?>
 			<div id="content" class="site-content">

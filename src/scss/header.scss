@@ -12,7 +12,7 @@
 	position: fixed;
 	top: 0;
 	z-index:9999;
-	background: transparent;
+	background: $white;
     -webkit-transition: 300ms all cubic-bezier(.4,0,.2,1);
     transition: 300ms all cubic-bezier(.4,0,.2,1);
 	border-bottom: 1px solid rgba(255,255,255,.15);
@@ -204,6 +204,14 @@
 				
 				}
 			}
+		}
+	}
+}
+.home{
+	.site-header{
+		background-color: transparent;
+		&.fixed-header{
+			background-color: $white;
 		}
 	}
 }

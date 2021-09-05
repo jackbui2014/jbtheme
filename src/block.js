@@ -43,7 +43,8 @@ import ScrollOut from "scroll-out";
 			});
 		}
 	}
-	$(window).load(function(){
+	$(window).load(function(){		
+		$('body').addClass('loaded');
 		ScrollOut({
 			onShown(el) {
 					if(  el.classList.contains('fadeInUp') ){
