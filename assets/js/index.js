@@ -119,6 +119,8 @@
           $('.site-header').removeClass('fixed-header');
         }
       });
+    } else {
+      $('.site-header').addClass('fixed-header');
     }
   }
 

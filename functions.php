@@ -75,6 +75,7 @@ function jb_setup() {
      * aside, gallery, quote, image, and video
      */
     add_theme_support( 'post-formats', array ( 'aside', 'gallery', 'quote', 'image', 'video' ) );
+	add_theme_support( 'block-templates' );
 
 }
 endif; // jb_setup

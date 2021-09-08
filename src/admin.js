@@ -10,6 +10,7 @@ import * as jbprojects from './gutenberg/jbprojects';
 import * as jbteam from './gutenberg/jbteam';
 import * as jbcontact from './gutenberg/jbcontact';
 import * as jbsocial from './gutenberg/jbsocial';
+import * as jbcontainer from './gutenberg/jbcontainer';
 
 
 const registerBlock = ( block ) => {
@@ -27,6 +28,7 @@ const registerBlock = ( block ) => {
 }
 export const registerJBBlocks = () => {
 	[
+	jbcontainer,
 	jbsliders,
 	service,
 	aboutus,

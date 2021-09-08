@@ -26,6 +26,9 @@
 				}
 			});
 		}
+		else{
+			$('.site-header').addClass('fixed-header');
+		}
 	}
 	$(document).ready(function(){
 		fixedHeader();
