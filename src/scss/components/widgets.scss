@@ -1,0 +1,33 @@
+@import '../variables.scss';
+.widget{
+    margin-bottom: 30px;
+    h2{
+        margin-top: 4px;
+    }
+    &.widget_categories{
+        ul{
+            li{
+                list-style-type: none;
+                padding-bottom: 15px;
+                &::before{
+                    content: '>';
+                    font-size: $normal_font_size;
+                }
+            }
+        }
+    }
+    a{
+        color: $normal_text_color;
+        font-size: $normal_font_size;
+        line-height: $normal_line_height;
+        padding-left: 10px;
+        &:hover{
+            color: $primary_color;
+        }
+    }
+    .wp-block-tag-cloud{
+        a{
+            margin-right: 10px;
+        }
+    }
+}

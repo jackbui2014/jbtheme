@@ -20,6 +20,7 @@ $link_hover: $white;
 $input_backgroud:rgba(11, 10, 17, 0.03);
 $input_border_color: transparent;
 
+$border_primary_color: #e5e5e5;
 $btn_primary_color: #F1B74D;
 $btn_primary_text_color: $white;
 $btn_primary_border_color: $secondary_color;
@@ -47,12 +48,22 @@ $heading_3_font_size: 24px;
 $heading_3_line_height: 32px;
 $heading_4_font_size: 18px;
 $heading_4_line_height: 24px;
+$heading_5_font_size: 16px;
+$heading_5_line_height: 20px;
 $normal_font_size: 15px;
 $normal_line_height: 24px;
+$small_font_size: 13px;
+$small_line_height: 18px;
 
 $section_padding: 60px;
 $element_padding: 30px;
 $inner_padding: 20px;
+
+$global_spacing_horizontal: 25px;
+$mobile_global_spacing_horizontal: 10px;
+$global_spacing_vertical: 30px;
+$mobile_global_spacing_vertical: 10px;
+$global_spacing_unit: 20px;
 
 $mobile_super_text_size: 36px;
 $mobile_super_text_line_height: 42px;

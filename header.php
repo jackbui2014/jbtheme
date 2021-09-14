@@ -7,7 +7,17 @@
  * @subpackage jbtheme
  * @since 1.0
  */
-
+global $show_full_class, $post;
+$show_full_class = 'container';
+if( !empty($post->ID)):
+	$show_full_content = get_post_meta($post->ID,'jb_show_fullwidth', true);
+	if( !empty($show_full_content) && $show_full_content == 1 ):
+		$show_full_class = 'container-fluid';
+	endif;
+endif;
+if( is_front_page() ):
+	$show_full_class = '';
+endif;
 ?><!DOCTYPE html>
 
 <html class="no-js" <?php language_attributes(); ?>>

@@ -76,6 +76,49 @@ function jb_setup() {
      */
     add_theme_support( 'post-formats', array ( 'aside', 'gallery', 'quote', 'image', 'video' ) );
 	add_theme_support( 'block-templates' );
+	if( class_exists('JB_Metabox')){
+		$postmetabox = new JB_Metabox( 'Extra Settings', 'extra_settings', array('post') );
+		$postmetabox->add_field(
+			array(
+				'name' => 'jb_show_fullwidth',
+				'title' => __('Show full width', 'jbtheme'),
+				'desc' => __('Show this page/post full width', 'jbtheme'),
+				'type'=> 'checkbox',
+				'default'=>'0',
+				'options'=>array(
+					'1'=>'Yes'
+				)
+				)
+				
+			);
+			$postmetabox->add_field(
+				array(
+					'name' => 'jb_show_sidebar',
+					'title' => __('Show sidebar', 'jbtheme'),
+					'desc' => __('Show sidebar', 'jbtheme'),
+					'type'=> 'select',
+					'default'=>'',
+					'options'=>array(
+						'nosidebar'=>__('No sidebar', 'jbtheme'),
+						'leftsidebar'=>__('Show left sidebar', 'jbtheme'),
+						'rightsidebar'=>__('Show right sidebar', 'jbtheme'),
+					)
+					)
+					);
+			$pagemetabox = new JB_Metabox( 'Extra Settings', 'extra_settings', array('page') );
+			$pagemetabox->add_field(
+				array(
+					'name' => 'jb_show_fullwidth',
+					'title' => __('Show full width', 'jbtheme'),
+					'desc' => __('Show this page/post full width', 'jbtheme'),
+					'type'=> 'checkbox',
+					'default'=>'0',
+					'options'=>array(
+						'1'=>'Yes'
+					)
+					));
+
+	}
 
 }
 endif; // jb_setup

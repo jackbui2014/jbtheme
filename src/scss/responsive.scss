@@ -1,6 +1,10 @@
 @import './variables.scss';
 @media only screen and (max-width: 768px) {
     .site-header{
+        .site-logo{
+            width:50%;
+            z-index: 9999999;
+        }
         &:not(.fixed-header){
             .navbar-toggler{
                 border: 1px solid $white;

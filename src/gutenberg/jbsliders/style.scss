@@ -74,6 +74,7 @@
 }
 @media only screen and (max-width: 768px) {
 	.jb-slider-inner[data-slidetoshow="1"]{
+		height: 60vh;
 		.slide-title{
 			font-size: $mobile_super_text_size!important;
 			line-height: $mobile_super_text_line_height!important;
@@ -89,8 +90,12 @@
 			padding: 0 5%;
 		}
 		.slick-slide{
-			img{
-				width: auto!important;
+			.jb-slide-item{
+				img{
+					width: auto!important;
+					height: 60vh;
+					max-width: fit-content;
+				}
 			}
 		}
 		
