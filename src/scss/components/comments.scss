@@ -1,6 +1,7 @@
 @import '../variables.scss';
 .comments-area{
     margin-top: 30px;
+    padding: 0!important;
     .comments-title{
         color: $primary_color;
     }

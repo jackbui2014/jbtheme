@@ -20,11 +20,11 @@
 if ( post_password_required() ) {
 	return;
 }
-global $show_full_class;
+global $jb_show_full_class;
 $jb_comment_count = get_comments_number();
 ?>
 
-<div id="comments" class="comments-area default-max-width <?php echo get_option( 'show_avatars' ) ? 'show-avatars' : ''; ?> <?php echo $show_full_class;?>">
+<div id="comments" class="comments-area default-max-width <?php echo get_option( 'show_avatars' ) ? 'show-avatars' : ''; ?> <?php echo $jb_show_full_class;?>">
 
 	<?php
 	if ( have_comments() ) :

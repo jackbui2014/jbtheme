@@ -484,3 +484,107 @@ if ( ! function_exists( 'jb_register_required_plugins' ) ) {
 	}
 }
 add_action( 'tgmpa_register', 'jb_register_required_plugins' );
+if( !function_exists('jb_get_post_options')){
+	/*
+	 * get all page/post options
+	 * 
+	 * @param string/integer $post_id 
+	 * @param array $args the array of meta key
+	 * @return $args array of meta key => meta value 
+	 */
+	function jb_get_post_options($post_id, $args = array()){
+		$default = array('jb_show_fullwidth', 'jb_show_sidebar');
+		$args = wp_parse_args( $args, $default );
+		$result = array();
+		foreach( $args as $key=>$value){
+			$result[$value] = get_post_meta($post_id, $value, true);
+		}
+		return apply_filters('jb_get_post_options', $result);
+	}
+
+}
+if( !function_exists('jb_setup_global_variables')){
+	/*
+	 * get all page/post options
+	 * 
+	 * @param string/integer $post_id 
+	 * @param array $args the array of meta key
+	 * @return void
+	 */
+	function jb_setup_global_variables($post_id, $args = array()){
+		global $jb_show_full_class, $jb_show_sidebar;
+		$post_options = jb_get_post_options($post_id);
+		$jb_show_full_class = 'container';
+		$jb_show_sidebar = $post_options['jb_show_sidebar'];
+		if( !empty($post_id) ){
+			if( !empty($post_options['jb_show_fullwidth']) && $post_options['jb_show_fullwidth'] == 1 ){
+				$jb_show_full_class = 'container-fluid';
+			}
+		}
+		if( is_front_page() ){
+			$jb_show_full_class = '';
+		}
+	}
+
+}
+if(!function_exists('jb_pagination')):
+    /**
+     * render posts list pagination link
+     * @param object $query The WP_Query object for post list
+     * @param string|integer $current if use default query, you can skip it
+     * @param string $type
+     * @param string $text
+     * @author Jack Bui
+     */
+    function jb_pagination( $query, $current = '', $type = 'page', $text = '') {
+        $query_var  =   array();
+        /**
+         * posttype args
+         */
+        $query_var['post_type']     =   $query->query_vars['post_type'] != ''  ? $query->query_vars['post_type'] : 'post' ;
+        $query_var['post_status']   =   isset( $query->query_vars['post_status'] ) ? $query->query_vars['post_status'] : 'publish';
+        $query_var['orderby']       =   isset( $query->query_vars['orderby'] ) ? $query->query_vars['orderby'] : 'date';
+        $query_var['showposts']   =   isset( $query->query_vars['showposts'] ) ? $query->query_vars['showposts'] : '';
+        /**
+         * order
+         */
+        $query_var['order']         =   $query->query_vars['order'];
+        $query_var  =   array_merge($query_var, (array)$query->query );
+        $query_var['paginate'] = $type;
+        echo '<script type="application/json" class="jb_query">'. json_encode($query_var). '</script>';
+        if( $query->max_num_pages <= 1 ||  !$type ) return ;
+        $style = '';
+        echo '<div class="paginations pagination-large" '.$style.'>';
+        if($type === 'page') {
+            $big = 999999999; // need an unlikely integer
+            echo paginate_links( array(
+                'base'      => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+                'format'    => '?paged=%#%',
+                'current'   => max( 1, ($current) ? $current : get_query_var('paged', 1) ),
+                'total'     => $query->max_num_pages,
+                'next_text' => '<i class="fa fa-angle-double-right"></i>',
+                'prev_text' => '<i class="fa fa-angle-double-left"></i>',
+                'type'=>'list'
+            ) );
+        }
+        elseif( $type === 'scroll'){
+            echo '<a href="#" id="'.$query_var['post_type'].'-inview" class="inview sb-scroll" ></a>';
+        }
+        else if( $type == 'link'){
+            wp_link_pages(array(
+                'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'jbtheme' ) . '</span>',
+                'after'       => '</div>',
+                'link_before' => '<span>',
+                'link_after'  => '</span>',
+            ));
+        }
+        else {
+            if($text == '') {
+                $text = __("Load more", 'jbtheme');
+            }
+            echo '<a href="#" id="'.$query_var['post_type'].'-inview" class="inview load-more" >'. $text .'</a>';
+        }
+        echo '</div>';
+
+    }
+endif;

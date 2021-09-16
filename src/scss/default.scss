@@ -10,7 +10,57 @@ button {
 h1,h2,h3,h4,h5,h6{
 	color: $primary_color;
 }
-
+h1, h1 *{
+	font-size: $heading_1_font_size;
+	line-height: $heading_1_line_height;
+	color: $primary_color;
+}
+h2, h2 *{
+	font-size: $heading_2_font_size;
+	line-height: $heading_2_line_height;
+	color: $primary_color;
+}
+h3, h3 *{
+	font-size: $heading_3_font_size;
+	line-height: $heading_3_line_height;
+	color: $primary_color;
+}
+h4, h4 *{
+	font-size: $heading_4_font_size;
+	line-height: $heading_4_line_height;
+	color: $primary_color;
+}
+h5, h5 *{
+	font-size: $heading_5_font_size;
+	line-height: $heading_5_line_height;
+	color: $primary_color;
+}
+a{
+	color: $primary_color;
+	position: relative;
+	&::after{
+			content: '';
+			position: absolute;
+			bottom: -5px;
+			left: 0;
+			width: 0;
+			transition: width 0.5s;
+			-webkit-transition: width 0.5s;
+			height: 1px;
+			background-color: $primary_color;
+	}
+	&:hover, &:visited{
+		color: $primary_color;
+	}
+	&.post-item-readmore{
+		&:hover, &:visited{
+			color: $primary_color;
+				&::after{
+						width: 100%;
+				}
+		}
+	}
+}
 /* Category 04 can contain any default HTML element. Do not add classes here, just give the elements some basic styles. */
 blockquote {
 	position: relative;

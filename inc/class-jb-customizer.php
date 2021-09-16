@@ -254,6 +254,93 @@ class JB_Customizer {
 			)
 		);
 
+		$wp_customize->add_setting(
+			'jb_blog_layout', // No need to use a SERIALIZED name, as `theme_mod` settings already live under one db record
+			array(
+				'default'    => 'grid', // Default setting/value to save
+				'type'       => 'theme_mod', // Is this an 'option' or a 'theme_mod'?
+				'capability' => 'edit_theme_options', // Optional. Special permissions for accessing this setting.
+				'transport'  => 'postMessage', // What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
+			)
+		);
+
+		// 3. Finally, we define the control itself (which links a setting to a section and renders the HTML controls)...
+		$wp_customize->add_control(
+			new WP_Customize_Control( // Instantiate the color control class
+				$wp_customize, // Pass the $wp_customize object (required)
+				'jb_blog_layout_id', // Set a unique ID for the control
+				array(
+					'label'    => __( 'Blog layout', 'jbtheme' ), // Admin-visible name of the control
+					'settings' => 'jb_blog_layout', // Which setting to load and manipulate (serialized is okay)
+					'priority' => 10, // Determines the order this control appears in for the specified section
+					'section'  => 'jbtheme_options', // ID of the section this control should render in (can be one of yours, or a WordPress default section)
+					'type'     => 'select',
+					'choices'=>array(
+						'grid'=>__('Grid', 'jbtheme'),
+						'list'=>__('List', 'jbtheme')
+					)
+				)
+			)
+		);
+		$wp_customize->add_setting(
+			'jb_blog_showsidebar', // No need to use a SERIALIZED name, as `theme_mod` settings already live under one db record
+			array(
+				'default'    => 'nosidebar', // Default setting/value to save
+				'type'       => 'theme_mod', // Is this an 'option' or a 'theme_mod'?
+				'capability' => 'edit_theme_options', // Optional. Special permissions for accessing this setting.
+				'transport'  => 'postMessage', // What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
+			)
+		);
+
+		// 3. Finally, we define the control itself (which links a setting to a section and renders the HTML controls)...
+		$wp_customize->add_control(
+			new WP_Customize_Control( // Instantiate the color control class
+				$wp_customize, // Pass the $wp_customize object (required)
+				'jb_blog_showsidebar_id', // Set a unique ID for the control
+				array(
+					'label'    => __( 'Blog sidebar options', 'jbtheme' ), // Admin-visible name of the control
+					'settings' => 'jb_blog_showsidebar', // Which setting to load and manipulate (serialized is okay)
+					'priority' => 10, // Determines the order this control appears in for the specified section
+					'section'  => 'jbtheme_options', // ID of the section this control should render in (can be one of yours, or a WordPress default section)
+					'type'     => 'select',
+					'choices'=>array(
+						'nosidebar'=>__('No Sidebar', 'jbtheme'),
+						'leftsidebar'=>__('Left Sidebar', 'jbtheme'),
+						'rightsidebar'=>__('Right Sidebar', 'jbtheme')
+					)
+				)
+			)
+		);
+
+		$wp_customize->add_setting(
+			'jb_blog_fullwith', // No need to use a SERIALIZED name, as `theme_mod` settings already live under one db record
+			array(
+				'default'    => 'default', // Default setting/value to save
+				'type'       => 'theme_mod', // Is this an 'option' or a 'theme_mod'?
+				'capability' => 'edit_theme_options', // Optional. Special permissions for accessing this setting.
+				'transport'  => 'postMessage', // What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
+			)
+		);
+
+		// 3. Finally, we define the control itself (which links a setting to a section and renders the HTML controls)...
+		$wp_customize->add_control(
+			new WP_Customize_Control( // Instantiate the color control class
+				$wp_customize, // Pass the $wp_customize object (required)
+				'jb_blog_fullwith_id', // Set a unique ID for the control
+				array(
+					'label'    => __( 'Blog width options', 'jbtheme' ), // Admin-visible name of the control
+					'settings' => 'jb_blog_fullwith', // Which setting to load and manipulate (serialized is okay)
+					'priority' => 10, // Determines the order this control appears in for the specified section
+					'section'  => 'jbtheme_options', // ID of the section this control should render in (can be one of yours, or a WordPress default section)
+					'type'     => 'select',
+					'choices'=>array(
+						'default'=>__('Default', 'jbtheme'),
+						'fullwidth'=>__('Full Width', 'jbtheme')
+					)
+				)
+			)
+		);
+
 		// 4. We can also change built-in settings by modifying properties. For instance, let's make some stuff use live preview JS...
 		$wp_customize->get_setting( 'blogname' )->transport = 'postMessage';
 
