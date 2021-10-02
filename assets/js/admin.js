@@ -13001,16 +13001,14 @@ var _config_json__WEBPACK_IMPORTED_MODULE_3___namespace = /*#__PURE__*/__webpack
 
 
 
-const {
-  name,
-  category,
-  attributes
-} = _config_json__WEBPACK_IMPORTED_MODULE_3__;
-const settings = {
+var name = _config_json__WEBPACK_IMPORTED_MODULE_3__.name,
+    category = _config_json__WEBPACK_IMPORTED_MODULE_3__.category,
+    attributes = _config_json__WEBPACK_IMPORTED_MODULE_3__.attributes;
+var settings = {
   title: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__["__"])('JB Sliders', 'jbtheme'),
   icon: 'format-gallery',
   category: category,
-  attributes,
+  attributes: attributes,
   edit: _edit__WEBPACK_IMPORTED_MODULE_4__["default"],
   save: _save__WEBPACK_IMPORTED_MODULE_5__["default"]
 };
@@ -13819,16 +13817,14 @@ var _config_json__WEBPACK_IMPORTED_MODULE_3___namespace = /*#__PURE__*/__webpack
 
 
 
-const {
-  name,
-  category,
-  attributes
-} = _config_json__WEBPACK_IMPORTED_MODULE_3__;
-const settings = {
+var name = _config_json__WEBPACK_IMPORTED_MODULE_3__.name,
+    category = _config_json__WEBPACK_IMPORTED_MODULE_3__.category,
+    attributes = _config_json__WEBPACK_IMPORTED_MODULE_3__.attributes;
+var settings = {
   title: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__["__"])('JB Service', 'jbtheme'),
   icon: 'format-gallery',
   category: category,
-  attributes,
+  attributes: attributes,
   edit: _edit__WEBPACK_IMPORTED_MODULE_4__["default"],
   save: _save__WEBPACK_IMPORTED_MODULE_5__["default"]
 };

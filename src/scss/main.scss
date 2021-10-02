@@ -23,6 +23,18 @@ body{
             min-height: 380px;
         }
     }
+    &.archive{
+        .site-content{
+            margin-top: 0;
+            padding: 80px 0;
+        }
+    }
+    &.single-post{
+        .site-content{
+            margin-top: 0;
+            padding: 80px 0;
+        }
+    }
 }
 @import './global';
 @import './components/components';
