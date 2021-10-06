@@ -30,9 +30,10 @@ const ServiceSave = (props)=>{
 		);
 
 	});
+	const cl = "jb-service-wrapper jb-section "+props.attributes.className;
 	return (
 		<Fragment>
-			<div className="jb-service-wrapper jb-section" id={id} style={{backgroundColor: props.attributes.background_color}} >
+			<div className={cl} id={id} style={{backgroundColor: props.attributes.background_color}} >
 				<div className="inner jb-service-inner container">
 				<h3 className="service-title section-title">{props.attributes.title}</h3>
 				<p className="service-subtitle section-subtitle">{props.attributes.subtitle}</p>

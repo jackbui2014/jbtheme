@@ -11676,8 +11676,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const Aboutus = props => {
+  const cl = "jb-section jb-abouts-wrapper " + props.className;
   return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
-    className: "jb-section jb-abouts-wrapper",
+    className: cl,
     style: {
       backgroundColor: props.background_color
     }
@@ -11891,7 +11892,8 @@ const AboutusSave = props => {
     content: props.attributes.content,
     title: props.attributes.title,
     subtitle: props.attributes.subtitle,
-    background_color: props.attributes.background_color
+    background_color: props.attributes.background_color,
+    className: props.attributes.className
   }));
 };
 
@@ -12072,8 +12074,9 @@ __webpack_require__.r(__webpack_exports__);
 
 const JBContactSave = props => {
   const blockProps = _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["useBlockProps"].save();
+  const cl = "jb-section jb-contact-wrapper " + props.attributes.className;
   return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
-    className: "jb-section jb-contact-wrapper",
+    className: cl,
     style: {
       backgroundColor: props.attributes.background_color
     }
@@ -12241,8 +12244,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const JBContainerSave = props => {
+  const cl = "container " + props.attributes.className;
   return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
-    className: "container"
+    className: cl
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", props, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["InnerBlocks"].Content, null))));
 };
 
@@ -12257,7 +12261,7 @@ const JBContainerSave = props => {
 /*! exports provided: name, category, attributes, default */
 /***/ (function(module) {
 
-module.exports = JSON.parse("{\"name\":\"jbtheme/jbpostslist\",\"category\":\"jb-general-blocks\",\"attributes\":{\"title\":{\"type\":\"string\",\"default\":\"\"},\"subtitle\":{\"type\":\"string\",\"default\":\"\"},\"posts_per_page\":{\"type\":\"string\",\"default\":\"3\"},\"background_color\":{\"type\":\"string\",\"default\":\"#ffffff\"}}}");
+module.exports = JSON.parse("{\"name\":\"jbtheme/jbpostslist\",\"category\":\"jb-general-blocks\",\"attributes\":{\"title\":{\"type\":\"string\",\"default\":\"\"},\"subtitle\":{\"type\":\"string\",\"default\":\"\"},\"posts_per_page\":{\"type\":\"string\",\"default\":\"3\"},\"post_type\":{\"type\":\"string\",\"default\":\"post\"},\"layout\":{\"type\":\"string\",\"default\":\"grid\"},\"posts_per_line\":{\"type\":\"string\",\"default\":\"3\"},\"show_pagination\":{\"type\":\"string\",\"default\":\"no\"},\"background_color\":{\"type\":\"string\",\"default\":\"#ffffff\"}}}");
 
 /***/ }),
 
@@ -12284,11 +12288,14 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const AboutusEdit = props => {
+const PostListEdit = props => {
   const {
     title,
     subtitle,
-    posts_per_page
+    posts_per_page,
+    show_pagination,
+    layout,
+    posts_per_line
   } = props.attributes;
   const inspectorControls = Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["InspectorControls"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__["PanelBody"], {
     title: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('JB Posts List Settings', 'jbtheme')
@@ -12300,6 +12307,9 @@ const AboutusEdit = props => {
     disableAlpha: true
   })));
   const posts_per_page_options = [{
+    value: '2',
+    label: '2'
+  }, {
     value: '3',
     label: '3'
   }, {
@@ -12311,6 +12321,45 @@ const AboutusEdit = props => {
   }, {
     value: '8',
     label: '8'
+  }, {
+    value: '9',
+    label: '9'
+  }, {
+    value: '12',
+    label: '12'
+  }, {
+    value: '15',
+    label: '15'
+  }, {
+    value: '20',
+    label: '20'
+  }];
+  const posts_per_line_options = [{
+    value: '1',
+    label: '1'
+  }, {
+    value: '2',
+    label: '2'
+  }, {
+    value: '3',
+    label: '3'
+  }, {
+    value: '4',
+    label: '4'
+  }];
+  const show_pagination_options = [{
+    value: 'no',
+    label: 'No'
+  }, {
+    value: 'yes',
+    label: 'Yes'
+  }];
+  const layout_options = [{
+    value: 'grid',
+    label: 'Grid'
+  }, {
+    value: 'list',
+    label: 'List'
   }];
   return [inspectorControls, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__["Tooltip"], {
     text: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])("This is JB Posts List section", 'jbtheme')
@@ -12339,10 +12388,24 @@ const AboutusEdit = props => {
     onChange: posts_per_page => props.setAttributes({
       posts_per_page
     })
+  }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__["SelectControl"], {
+    label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Show pagination', 'jbtheme'),
+    options: show_pagination_options,
+    value: show_pagination,
+    onChange: show_pagination => props.setAttributes({
+      show_pagination
+    })
+  }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__["SelectControl"], {
+    label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Layout', 'jbtheme'),
+    options: layout_options,
+    value: layout,
+    onChange: layout => props.setAttributes({
+      layout
+    })
   }))];
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (AboutusEdit);
+/* harmony default export */ __webpack_exports__["default"] = (PostListEdit);
 
 /***/ }),
 
@@ -12372,7 +12435,7 @@ const {
   attributes
 } = _config_json__WEBPACK_IMPORTED_MODULE_1__;
 const settings = {
-  title: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__["__"])('JB Latest posts', 'jbtheme'),
+  title: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__["__"])('JB Posts List', 'jbtheme'),
   icon: 'format-gallery',
   category: category,
   attributes,
@@ -12677,8 +12740,9 @@ const JBProjectsSave = props => {
       value: project.subtitle
     }))))));
   });
+  const cl = "jb-projects-wrapper jb-section " + props.attributes.className;
   return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
-    className: "jb-projects-wrapper jb-section",
+    className: cl,
     id: id,
     style: {
       backgroundColor: props.attributes.background_color
@@ -13126,11 +13190,12 @@ const JBSlidersSave = props => {
       slidestoscroll,
       slider_speed
     } = props.attributes;
+    const cl = "jb-sliders-wrapper " + props.attributes.className;
     return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
-      class: "jb-sliders-wrapper"
+      className: cl
     }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
       id: id,
-      class: fh,
+      className: fh,
       "data-slidetoshow": slider_items,
       "data-arrowcontrol": arrowcontrol,
       "data-slidestoscroll": slidestoscroll,
@@ -13582,8 +13647,9 @@ const JBTeamSave = props => {
       class: "fab fa-google-plus-square"
     })))))));
   });
+  const cl = "jb-team-wrapper jb-section " + props.attributes.className;
   return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
-    className: "jb-team-wrapper jb-section",
+    className: cl,
     id: id,
     style: {
       backgroundColor: props.attributes.background_color
@@ -13887,8 +13953,9 @@ const ServiceSave = props => {
       rel: "noopener"
     }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("span", null, "See more"))));
   });
+  const cl = "jb-service-wrapper jb-section " + props.attributes.className;
   return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
-    className: "jb-service-wrapper jb-section",
+    className: cl,
     id: id,
     style: {
       backgroundColor: props.attributes.background_color
@@ -14186,8 +14253,9 @@ const TestimonialSave = props => {
       className: "testimonial-job-title"
     }, testimonial.job_title)));
   });
+  const cl = "jb-testimonial-wrapper jb-section " + props.attributes.className;
   return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
-    className: "jb-testimonial-wrapper jb-section",
+    className: cl,
     id: id,
     style: {
       backgroundColor: props.attributes.background_color,
