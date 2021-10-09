@@ -527,7 +527,7 @@ if ( ! function_exists( 'jb_pagination' ) ) :
 		echo '<div class="paginations pagination-large">';
 		if ( 'page' === $type ) {
 			$big = 999999999; // need an unlikely integer.
-			echo wp_kses(
+			echo wp_kses_post(
 				paginate_links(
 					array(
 						'base'      => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),

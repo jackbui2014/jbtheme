@@ -24,12 +24,12 @@ $address   = get_theme_mod( 'jb_address' );
 					<div class="row">
 						<div class="col-md-6 col-sm-6">
 							<div class="jb-small-footer-left">
-								<?php echo wp_kses( $copyright ); ?>
+								<?php echo wp_kses_post( $copyright ); ?>
 							</div>
 						</div>
 						<div class="col-md-6 col-sm-6">
 							<div class="jb-small-footer-right">
-								<?php echo wp_kses( $address ); ?>
+								<?php echo wp_kses_post( $address ); ?>
 							</div>
 						</div>
 					</div>
