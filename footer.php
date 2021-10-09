@@ -1,16 +1,17 @@
 <?php
 /**
+ *
  * The template for displaying the footer
  *
  * Contains the opening of the #site-footer div and all content after.
- *
  *
  * @package JB
  * @subpackage jbtheme
  * @since 1.0
  */
-$copyright = get_theme_mod('jb_copyright');
-$address = get_theme_mod('jb_address');
+
+$copyright = get_theme_mod( 'jb_copyright' );
+$address   = get_theme_mod( 'jb_address' );
 ?>
 					</main><!-- #main -->
 				</div><!-- #primary -->
@@ -23,12 +24,12 @@ $address = get_theme_mod('jb_address');
 					<div class="row">
 						<div class="col-md-6 col-sm-6">
 							<div class="jb-small-footer-left">
-								<?php echo $copyright; ?>
+								<?php echo wp_kses( $copyright ); ?>
 							</div>
 						</div>
 						<div class="col-md-6 col-sm-6">
 							<div class="jb-small-footer-right">
-								<?php echo $address; ?>
+								<?php echo wp_kses( $address ); ?>
 							</div>
 						</div>
 					</div>
