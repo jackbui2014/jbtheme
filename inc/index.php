@@ -1,6 +1,10 @@
 <?php
 /**
- * Load dynamic blocks for server-side rendering
+ * The indes file of all
+ *
+ * @package JB
+ * @subpackage jbtheme
+ * @since 1.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
