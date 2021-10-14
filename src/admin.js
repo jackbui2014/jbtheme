@@ -5,7 +5,6 @@ import * as jbsliders from './gutenberg/jbsliders';
 import * as service from './gutenberg/services';
 import * as aboutus from './gutenberg/aboutus';
 import * as testimonial from './gutenberg/testimonial';
-import * as jbpostslist from './gutenberg/jbpostslist';
 import * as jbprojects from './gutenberg/jbprojects';
 import * as jbteam from './gutenberg/jbteam';
 import * as jbcontact from './gutenberg/jbcontact';
@@ -33,7 +32,6 @@ export const registerJBBlocks = () => {
 	service,
 	aboutus,
 	testimonial,
-	jbpostslist,
 	jbprojects,
 	jbteam,
 	jbcontact,

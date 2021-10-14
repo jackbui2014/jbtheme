@@ -48,6 +48,14 @@ if ( ! function_exists( 'jb_setup' ) ) :
 		 * Enable support for post thumbnails and featured images.
 		 */
 		add_theme_support( 'post-thumbnails' );
+		add_theme_support( "title-tag" ) ;
+		add_theme_support( "wp-block-styles" );
+		add_theme_support( "responsive-embeds" );
+		add_theme_support( "html5" );
+		add_theme_support( "custom-header");
+		add_theme_support( "custom-background");
+		add_theme_support( "align-wide" );
+
 
 		/**
 		* Add support for core custom logo.
@@ -57,8 +65,7 @@ if ( ! function_exists( 'jb_setup' ) ) :
 		$logo_width  = 300;
 		$logo_height = 100;
 
-		add_theme_support(
-			'custom-logo',
+		add_theme_support('custom-logo',
 			array(
 				'height'               => $logo_height,
 				'width'                => $logo_width,
@@ -72,7 +79,7 @@ if ( ! function_exists( 'jb_setup' ) ) :
 		 * Enable support for the following post formats:
 		 * aside, gallery, quote, image, and video
 		 */
-		add_theme_support( 'post-formats', array( 'aside', 'gallery', 'quote', 'image', 'video' ) );
+		//add_theme_support( 'post-formats', array( 'aside', 'gallery', 'quote', 'image', 'video' ) );
 		add_theme_support( 'block-templates' );
 		if ( class_exists( 'JB_Metabox' ) ) {
 			$postmetabox = new JB_Metabox( 'Extra Settings', 'extra_settings', array( 'post' ) );
