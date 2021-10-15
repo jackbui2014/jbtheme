@@ -19,11 +19,17 @@ const ServiceEdit = (props) =>{
             onChangeComplete={ ( value ) => props.setAttributes({background_color: value.hex}) }
             disableAlpha
 			/>
+			<TextControl
+				label={ __('Section id', 'jbtheme')}
+				placeholder={ __('Section id', 'jbtheme')}
+				value={ props.attributes.id }
+				onChange={ (id) => props.setAttributes({id})}
+				/>	
 			</PanelBody>
 		</InspectorControls>
 	);
 	if( !props.attributes.id ){
-		const id = `service${Math.floor(Math.random() * 100)}`;
+		const id = 'jb_services';
 		props.setAttributes({
 			id
 		});

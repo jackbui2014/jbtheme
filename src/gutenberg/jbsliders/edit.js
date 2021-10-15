@@ -98,7 +98,12 @@
 						 value={ props.attributes.slidestoscroll }
 						 onChange={ ( slidestoscroll ) => props.setAttributes( { slidestoscroll} ) }
 					 />
-					
+					 <TextControl
+						label={ __('Section id', 'jbtheme')}
+						placeholder={ __('Section id', 'jbtheme')}
+						value={ props.attributes.id }
+						onChange={ (id) => props.setAttributes({id})}
+						/>	
 				 </PanelBody>
 			 </InspectorControls>
 		 );

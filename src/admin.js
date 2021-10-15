@@ -8,7 +8,6 @@ import * as testimonial from './gutenberg/testimonial';
 import * as jbprojects from './gutenberg/jbprojects';
 import * as jbteam from './gutenberg/jbteam';
 import * as jbcontact from './gutenberg/jbcontact';
-import * as jbsocial from './gutenberg/jbsocial';
 import * as jbcontainer from './gutenberg/jbcontainer';
 
 
@@ -34,8 +33,7 @@ export const registerJBBlocks = () => {
 	testimonial,
 	jbprojects,
 	jbteam,
-	jbcontact,
-	jbsocial
+	jbcontact
 	].forEach( registerBlock );
 }
 registerJBBlocks();

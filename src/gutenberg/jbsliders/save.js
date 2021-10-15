@@ -65,7 +65,7 @@ const JBSlidersSave = (props) =>{
       const cl = "jb-sliders-wrapper "+ props.attributes.className;
     return (
         <Fragment>
-        <div className={cl}>
+        <div className={cl} id={id} >
             <div id={id} className={fh} data-slidetoshow={slider_items} data-arrowcontrol={arrowcontrol} data-slidestoscroll={slidestoscroll} data-sliderspeed={slider_speed} >
                 {sliderList}
             </div>

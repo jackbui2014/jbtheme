@@ -43,7 +43,7 @@ a{
 .jb-btn-secondary{
 	background: $btn_secondary_color;
 	border: 1px solid $btn_secondary_border_color;
-	color: $btn_secondary_text_color;
+	color: $btn_secondary_text_color!important;
 	padding: 10px 15px;
 	transition: 0.3s;
 	position: relative;
@@ -67,7 +67,7 @@ a{
 	}
 	&:hover{
 		border: 1px solid $btn_secondary_border_hover_color;
-		color: $btn_secondary_text_hover_color;
+		color: $btn_secondary_text_hover_color!important;
 		&:before{
 			height: 100%;
 			opacity: 1;

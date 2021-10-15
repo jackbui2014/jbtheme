@@ -35,6 +35,12 @@ body{
             padding: 80px 0;
         }
     }
+    &.blog{
+        .site-content{
+            margin-top: 0;
+            padding: 80px 0;
+        }
+    }
 }
 @import './global';
 @import './components/components';
