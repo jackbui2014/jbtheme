@@ -65,8 +65,7 @@ if ( ! function_exists( 'jb_setup' ) ) :
 		$logo_width  = 300;
 		$logo_height = 100;
 
-		add_theme_support(
-			'custom-logo',
+		add_theme_support('custom-logo',
 			array(
 				'height'               => $logo_height,
 				'width'                => $logo_width,
