@@ -37,8 +37,17 @@ endif;
 		if ( function_exists( 'yoast_breadcrumb' ) ) :
 						yoast_breadcrumb( '<p id="breadcrumbs">', '</p>' );
 		endif;
+	elseif ( is_search() ) :
+		$keyword = get_query_var( 's', '' );
 		?>
-		<?php
+		<?php /* translators: %s: search term */ ?>
+		<h2 class="page-title"><?php echo sprintf( esc_html__( 'Search results for: %s ', 'jbtheme' ), esc_html( $keyword ) ); ?></h2>
+			<?php
+			if ( function_exists( 'yoast_breadcrumb' ) ) :
+							yoast_breadcrumb( '<p id="breadcrumbs">', '</p>' );
+			endif;
+			?>
+			<?php
 	else :
 		?>
 		<h2 class="page-title"><?php esc_html_e( 'BLOGs', 'jbtheme' ); ?></h2>
