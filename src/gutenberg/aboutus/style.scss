@@ -1,0 +1,27 @@
+@import '../../scss/variables.scss';
+.jb-about-left{
+    float: left;
+    width: 50%;
+    text-align: left;
+    .inner{
+        padding: $inner_padding;
+    }
+}
+.jb-about-right{
+    float: left;
+    width: 50%;
+    .inner{
+        padding: $inner_padding;
+    }
+}
+.aboutus-title{
+    text-align: left;
+}
+@media only screen and (max-width: 768px) {
+    .jb-about-left{
+        width: 100%;
+    }
+    .jb-about-right{
+        width: 100%;
+    }
+}

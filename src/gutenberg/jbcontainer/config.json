@@ -1,0 +1,10 @@
+{
+	"name": "jbtheme/jbcontainer",
+	"category": "jb-general-blocks",
+	"attributes": {
+		"section_id":{
+			"type": "string",
+			"default": "jb_container"
+		}
+	}
+}

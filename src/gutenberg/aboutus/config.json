@@ -1,0 +1,32 @@
+{
+	"name": "jbtheme/aboutus",
+	"category": "jb-general-blocks",
+	"attributes": {
+		"title":{
+			"type": "string",
+			"default": ""
+		},
+		"subtitle":{
+			"type": "string",
+			"default": ""
+		},
+		"content":{
+			"type": "string",
+			"default": ""
+		},
+		"image":{
+			"source": "attribute",
+			"selector": "img",
+			"attribute": "src"
+		},
+		"background_color":{
+			"type": "string",
+			"default": "#ffffff"
+		},
+		"section_id":{
+			"type": "string",
+			"default": "jb_about_us"
+		}
+		
+	}
+}

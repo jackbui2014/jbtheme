@@ -1,0 +1,25 @@
+@import '../variables.scss';
+.paginations{
+  width: 100%;
+  text-align: center;
+  .page-numbers{
+    margin-top: 60px;
+    li{
+      list-style-type: none;
+      display: inline-block;
+      a, span{
+        border: 1px solid $primary_color;
+        padding: 8px 15px;
+        margin-right: 5px;
+        &:hover{
+          background-color: $secondary_color;
+          color: $white;
+        }
+      }
+      span{
+        background-color: $secondary_color;
+        color: $white;
+      }
+    }
+  }
+}

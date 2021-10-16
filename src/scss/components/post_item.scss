@@ -1,0 +1,27 @@
+@import '../variables.scss';
+.post-item{
+  margin-bottom: 60px;
+  text-align: left;
+  .post-item-info-comments, .post-item-info-date{
+    display: inline-block;
+  }
+  .seperator-icon{
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+  .post-item-image{
+    margin-bottom: 10px;
+  }
+  .post-item-exceprt{
+    margin-top: 10px;
+    margin-bottom: 10 px;
+  }
+  img{
+    width: 100%;
+  }
+}
+.post-item-info{
+  i{
+      margin-right: 7px;
+  }
+}

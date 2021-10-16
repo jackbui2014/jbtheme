@@ -1,0 +1,39 @@
+{
+	"name": "jbtheme/jbcontact",
+	"category": "jb-general-blocks",
+	"attributes": {
+		"title":{
+			"type": "string",
+			"default": ""
+		},
+		"subtitle":{
+			"type": "string",
+			"default": ""
+		},
+		"address": {
+			"type": "string",
+			"default": ""
+		},
+		"email": {
+			"type": "string",
+			"default": ""
+		},
+		"phone": {
+			"type": "string",
+			"default": ""
+		},
+		"google_map_link":{
+			"type": "string",
+			"default": ""
+		},
+		"background_color":{
+			"type": "string",
+			"default": "#ffffff"
+		},
+		"section_id":{
+			"type": "string",
+			"default": "jb_contact"
+		}
+		
+	}
+}

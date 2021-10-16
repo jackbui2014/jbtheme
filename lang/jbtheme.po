@@ -1,0 +1,780 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: JBThemev1.0\n"
+"Report-Msgid-Bugs-To: https://jbprovider.com/\n"
+"POT-Creation-Date: 2021-10-16 10:07+0700\n"
+"PO-Revision-Date: 2021-10-16 10:08+0700\n"
+"Last-Translator: JBProvider <services@jbprovider.com>\n"
+"Language-Team: JBProvider <services@jbprovider.com>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.0\n"
+"X-Poedit-KeywordsList: _e;__;_n;_x\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPathExcluded-2: js\n"
+"X-Poedit-SearchPathExcluded-3: assets\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: node_modules\n"
+
+#: functions.php:84 functions.php:111
+msgid "Show full width"
+msgstr ""
+
+#: functions.php:85 functions.php:112
+msgid "Show this page/post full width"
+msgstr ""
+
+#: functions.php:96 functions.php:97
+msgid "Show sidebar"
+msgstr ""
+
+#: functions.php:101
+msgid "No sidebar"
+msgstr ""
+
+#: functions.php:102
+msgid "Show left sidebar"
+msgstr ""
+
+#: functions.php:103
+msgid "Show right sidebar"
+msgstr ""
+
+#: functions.php:258
+msgid "JB General Blocks"
+msgstr ""
+
+#: functions.php:273
+msgid "Primary menu"
+msgstr ""
+
+#: functions.php:274
+msgid "Secondary Menu"
+msgstr ""
+
+#: functions.php:372 inc/widgets.php:44
+msgid "Footer #1"
+msgstr ""
+
+#: functions.php:374 inc/widgets.php:46
+msgid ""
+"Widgets in this area will be displayed in the first column in the footer."
+msgstr ""
+
+#: functions.php:384 inc/widgets.php:56
+msgid "Footer #2"
+msgstr ""
+
+#: functions.php:386 inc/widgets.php:58 inc/widgets.php:70 inc/widgets.php:82
+msgid ""
+"Widgets in this area will be displayed in the second column in the footer."
+msgstr ""
+
+#: functions.php:558
+msgid "Pages:"
+msgstr ""
+
+#: functions.php:566
+msgid "Load more"
+msgstr ""
+
+#: inc/class-jb-customizer.php:34
+msgid "JB Theme Options"
+msgstr ""
+
+#: inc/class-jb-customizer.php:37
+msgid "Allows you to customize the settings for JB theme."
+msgstr ""
+
+#: inc/class-jb-customizer.php:58
+msgid "White logo"
+msgstr ""
+
+#: inc/class-jb-customizer.php:84
+msgid "Website copyright"
+msgstr ""
+
+#: inc/class-jb-customizer.php:110 src/gutenberg/jbcontact/edit.js:50
+msgid "Address"
+msgstr ""
+
+#: inc/class-jb-customizer.php:136 src/gutenberg/jbteam/edit.js:134
+msgid "Facebook URL"
+msgstr ""
+
+#: inc/class-jb-customizer.php:162 src/gutenberg/jbteam/edit.js:152
+msgid "Twitter URL"
+msgstr ""
+
+#: inc/class-jb-customizer.php:187 src/gutenberg/jbteam/edit.js:170
+msgid "Linkedin URL"
+msgstr ""
+
+#: inc/class-jb-customizer.php:213 inc/class-jb-customizer.php:239
+msgid "Google Plus URL"
+msgstr ""
+
+#: inc/class-jb-customizer.php:264
+msgid "Youtube URL"
+msgstr ""
+
+#: inc/class-jb-customizer.php:290
+msgid "Blog layout"
+msgstr ""
+
+#: inc/class-jb-customizer.php:296
+msgid "Grid"
+msgstr ""
+
+#: inc/class-jb-customizer.php:297
+msgid "List"
+msgstr ""
+
+#: inc/class-jb-customizer.php:319
+msgid "Blog sidebar options"
+msgstr ""
+
+#: inc/class-jb-customizer.php:325
+msgid "No Sidebar"
+msgstr ""
+
+#: inc/class-jb-customizer.php:326
+msgid "Left Sidebar"
+msgstr ""
+
+#: inc/class-jb-customizer.php:327
+msgid "Right Sidebar"
+msgstr ""
+
+#: inc/class-jb-customizer.php:350
+msgid "Blog width options"
+msgstr ""
+
+#: inc/class-jb-customizer.php:356
+msgid "Default"
+msgstr ""
+
+#: inc/class-jb-customizer.php:357
+msgid "Full Width"
+msgstr ""
+
+#: inc/class-jb-social-widget.php:23
+msgid "JB Social widget"
+msgstr ""
+
+#: inc/class-jb-social-widget.php:95
+msgid "JB Social"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:325
+msgid "Install Required Plugins"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:326
+msgid "Install Plugins"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:328
+#, php-format
+msgid "Installing Plugin: %s"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:330
+#, php-format
+msgid "Updating Plugin: %s"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:331
+msgid "Something went wrong with the plugin API."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:383
+msgid "Return to Required Plugins Installer"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:384
+msgid "Return to the Dashboard"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:385
+#: inc/class-tgm-plugin-activation.php:3177
+msgid "Plugin activated successfully."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:386
+#: inc/class-tgm-plugin-activation.php:2970
+msgid "The following plugin was activated successfully:"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:388
+#, php-format
+msgid "No action taken. Plugin %1$s was already active."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:390
+#, php-format
+msgid ""
+"Plugin not activated. A higher version of %s is needed for this theme. "
+"Please update the plugin."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:392
+#, php-format
+msgid "All plugins installed and activated successfully. %1$s"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:393
+msgid "Dismiss this notice"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:394
+msgid ""
+"There are one or more required or recommended plugins to install, update or "
+"activate."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:395
+msgid "Please contact the administrator of this site for help."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2000
+#, php-format
+msgid "TGMPA v%s"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2291
+msgid "Required"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2294
+msgid "Recommended"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2310
+msgid "WordPress Repository"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2313
+msgid "External Source"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2316
+msgid "Pre-Packaged"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2333
+msgid "Not Installed"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2337
+msgid "Installed But Not Activated"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2339
+msgid "Active"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2345
+msgid "Required Update not Available"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2348
+msgid "Requires Update"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2351
+msgid "Update recommended"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2360
+#, php-format
+msgid "%1$s, %2$s"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2410
+#, php-format
+msgid "To Install <span class=\"count\">(%s)</span>"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2414
+#, php-format
+msgid "Update Available <span class=\"count\">(%s)</span>"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2418
+#, php-format
+msgid "To Activate <span class=\"count\">(%s)</span>"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2500
+msgid "unknown"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2508
+msgid "Installed version:"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2516
+msgid "Minimum required version:"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2528
+msgid "Available version:"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2565
+msgid "Plugin"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2566
+msgid "Source"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2567
+msgid "Type"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2571
+msgid "Version"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2572
+msgid "Status"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2621
+#, php-format
+msgid "Install %2$s"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2626
+#, php-format
+msgid "Update %2$s"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2632
+#, php-format
+msgid "Activate %2$s"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2735
+msgid "Install"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2741
+msgid "Update"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2744
+msgid "Activate"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2775
+msgid "No plugins were selected to be installed. No action taken."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2777
+msgid "No plugins were selected to be updated. No action taken."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2818
+msgid "No plugins are available to be installed at this time."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2820
+msgid "No plugins are available to be updated at this time."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:3176
+msgid "Plugin activation failed."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:3520
+#, php-format
+msgid "Updating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:3523
+#, php-format
+msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:3525
+#, php-format
+msgid "The installation of %1$s failed."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:3529
+msgid ""
+"The installation and activation process is starting. This process may take a "
+"while on some hosts, so please be patient."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:3531
+#, php-format
+msgid "%1$s installed and activated successfully."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:3532
+msgid "All installations and activations have been completed."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:3534
+#, php-format
+msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:3537
+msgid ""
+"The installation process is starting. This process may take a while on some "
+"hosts, so please be patient."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:3540
+msgid "All installations have been completed."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:3542
+#, php-format
+msgid "Installing Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: inc/widgets.php:32
+msgid "Blog sidebar"
+msgstr ""
+
+#: inc/widgets.php:34
+msgid "Widgets in this area will be displayed in blog pages."
+msgstr ""
+
+#: inc/widgets.php:68
+msgid "Footer #3"
+msgstr ""
+
+#: inc/widgets.php:80
+msgid "Footer #4"
+msgstr ""
+
+#: src/components/testimonial.js:9 src/gutenberg/testimonial/save.js:15
+msgid "Testimonial image"
+msgstr ""
+
+#: src/gutenberg/aboutus/edit.js:10
+msgid "About us settings"
+msgstr ""
+
+#: src/gutenberg/aboutus/edit.js:11 src/gutenberg/jbcontact/edit.js:11
+#: src/gutenberg/jbprojects/edit.js:16 src/gutenberg/jbteam/edit.js:16
+#: src/gutenberg/services/edit.js:16 src/gutenberg/testimonial/edit.js:16
+msgid "Section background color"
+msgstr ""
+
+#: src/gutenberg/aboutus/edit.js:19 src/gutenberg/aboutus/edit.js:20
+#: src/gutenberg/jbcontact/edit.js:18 src/gutenberg/jbcontact/edit.js:19
+#: src/gutenberg/jbcontainer/edit.js:12 src/gutenberg/jbcontainer/edit.js:13
+#: src/gutenberg/jbprojects/edit.js:23 src/gutenberg/jbprojects/edit.js:24
+#: src/gutenberg/jbsliders/edit.js:102 src/gutenberg/jbsliders/edit.js:103
+#: src/gutenberg/jbteam/edit.js:23 src/gutenberg/jbteam/edit.js:24
+#: src/gutenberg/services/edit.js:23 src/gutenberg/services/edit.js:24
+#: src/gutenberg/testimonial/edit.js:49 src/gutenberg/testimonial/edit.js:50
+msgid "Section id"
+msgstr ""
+
+#: src/gutenberg/aboutus/edit.js:28
+msgid "This is about us section"
+msgstr ""
+
+#: src/gutenberg/aboutus/edit.js:30
+msgid "JB About us"
+msgstr ""
+
+#: src/gutenberg/aboutus/edit.js:35 src/gutenberg/aboutus/edit.js:36
+#: src/gutenberg/jbcontact/edit.js:36 src/gutenberg/jbcontact/edit.js:37
+#: src/gutenberg/jbprojects/edit.js:166 src/gutenberg/jbprojects/edit.js:167
+#: src/gutenberg/jbteam/edit.js:218 src/gutenberg/jbteam/edit.js:219
+#: src/gutenberg/services/edit.js:169 src/gutenberg/services/edit.js:170
+msgid "Section title"
+msgstr ""
+
+#: src/gutenberg/aboutus/edit.js:42 src/gutenberg/aboutus/edit.js:43
+#: src/gutenberg/jbcontact/edit.js:43 src/gutenberg/jbcontact/edit.js:44
+#: src/gutenberg/jbprojects/edit.js:173 src/gutenberg/jbprojects/edit.js:174
+#: src/gutenberg/jbteam/edit.js:225 src/gutenberg/jbteam/edit.js:226
+#: src/gutenberg/services/edit.js:176 src/gutenberg/services/edit.js:177
+msgid "Section Subtitle"
+msgstr ""
+
+#: src/gutenberg/aboutus/edit.js:50 src/gutenberg/aboutus/edit.js:51
+msgid "Content"
+msgstr ""
+
+#: src/gutenberg/aboutus/index.js:11
+msgid "JB About Us"
+msgstr ""
+
+#: src/gutenberg/jbcontact/edit.js:10 src/gutenberg/jbcontainer/edit.js:10
+msgid "JB Contact settings"
+msgstr ""
+
+#: src/gutenberg/jbcontact/edit.js:29
+msgid "This is JB  Contactt section"
+msgstr ""
+
+#: src/gutenberg/jbcontact/edit.js:31
+msgid "JB Contactt"
+msgstr ""
+
+#: src/gutenberg/jbcontact/edit.js:56
+msgid "Email"
+msgstr ""
+
+#: src/gutenberg/jbcontact/edit.js:62
+msgid "Phone"
+msgstr ""
+
+#: src/gutenberg/jbcontact/edit.js:68
+msgid "Google Map link"
+msgstr ""
+
+#: src/gutenberg/jbcontact/index.js:11
+msgid "JB Contact"
+msgstr ""
+
+#: src/gutenberg/jbcontact/save.js:20
+msgid "Phone:"
+msgstr ""
+
+#: src/gutenberg/jbcontact/save.js:23
+msgid "Email:"
+msgstr ""
+
+#: src/gutenberg/jbcontact/save.js:26
+msgid "Address:"
+msgstr ""
+
+#: src/gutenberg/jbcontainer/edit.js:22
+msgid "This is JB Container"
+msgstr ""
+
+#: src/gutenberg/jbcontainer/edit.js:24 src/gutenberg/jbcontainer/index.js:12
+msgid "JB Container"
+msgstr ""
+
+#: src/gutenberg/jbprojects/edit.js:15
+msgid "JB Projects settings"
+msgstr ""
+
+#: src/gutenberg/jbprojects/edit.js:98 src/gutenberg/jbprojects/edit.js:99
+msgid "Project title"
+msgstr ""
+
+#: src/gutenberg/jbprojects/edit.js:117 src/gutenberg/jbprojects/edit.js:118
+msgid "Project Subtitle"
+msgstr ""
+
+#: src/gutenberg/jbprojects/edit.js:136
+msgid "Project link"
+msgstr ""
+
+#: src/gutenberg/jbprojects/edit.js:159
+msgid "This is projects section"
+msgstr ""
+
+#: src/gutenberg/jbprojects/edit.js:161 src/gutenberg/jbprojects/index.js:11
+msgid "JB Projects"
+msgstr ""
+
+#: src/gutenberg/jbprojects/save.js:16
+msgid "project image"
+msgstr ""
+
+#: src/gutenberg/jbsliders/edit.js:18 src/gutenberg/jbsliders/edit.js:22
+#: src/gutenberg/jbsliders/edit.js:26 src/gutenberg/jbsliders/edit.js:30
+msgid "Yes"
+msgstr ""
+
+#: src/gutenberg/jbsliders/edit.js:19 src/gutenberg/jbsliders/edit.js:23
+#: src/gutenberg/jbsliders/edit.js:27 src/gutenberg/jbsliders/edit.js:31
+msgid "No"
+msgstr ""
+
+#: src/gutenberg/jbsliders/edit.js:34
+msgid "Top"
+msgstr ""
+
+#: src/gutenberg/jbsliders/edit.js:35 src/gutenberg/jbsliders/edit.js:40
+msgid "Center"
+msgstr ""
+
+#: src/gutenberg/jbsliders/edit.js:36
+msgid "Bottom"
+msgstr ""
+
+#: src/gutenberg/jbsliders/edit.js:41
+msgid "Left"
+msgstr ""
+
+#: src/gutenberg/jbsliders/edit.js:42
+msgid "Right"
+msgstr ""
+
+#: src/gutenberg/jbsliders/edit.js:46
+msgid "Slider Setting"
+msgstr ""
+
+#: src/gutenberg/jbsliders/edit.js:54
+msgid "Arrow Controls"
+msgstr ""
+
+#: src/gutenberg/jbsliders/edit.js:66
+msgid "Caption position X"
+msgstr ""
+
+#: src/gutenberg/jbsliders/edit.js:72
+msgid "Show overlay layer"
+msgstr ""
+
+#: src/gutenberg/jbsliders/edit.js:78
+msgid "Show full screen height"
+msgstr ""
+
+#: src/gutenberg/jbsliders/edit.js:84
+msgid "Speed"
+msgstr ""
+
+#: src/gutenberg/jbsliders/edit.js:90
+msgid "Slide item on a screen"
+msgstr ""
+
+#: src/gutenberg/jbsliders/edit.js:96
+msgid "Slide items to scroll"
+msgstr ""
+
+#: src/gutenberg/jbsliders/edit.js:179
+msgid "Title"
+msgstr ""
+
+#: src/gutenberg/jbsliders/edit.js:180
+msgid "Slider title"
+msgstr ""
+
+#: src/gutenberg/jbsliders/edit.js:198
+msgid "Description"
+msgstr ""
+
+#: src/gutenberg/jbsliders/edit.js:199
+msgid "Slider description"
+msgstr ""
+
+#: src/gutenberg/jbsliders/edit.js:217
+msgid "Button Link"
+msgstr ""
+
+#: src/gutenberg/jbsliders/edit.js:235
+msgid "Button text"
+msgstr ""
+
+#: src/gutenberg/jbsliders/edit.js:257
+msgid "This is JB Slider"
+msgstr ""
+
+#: src/gutenberg/jbsliders/edit.js:259
+msgid "JB Slider"
+msgstr ""
+
+#: src/gutenberg/jbsliders/index.js:11
+msgid "JB Sliders"
+msgstr ""
+
+#: src/gutenberg/jbteam/edit.js:15
+msgid "Teams settings"
+msgstr ""
+
+#: src/gutenberg/jbteam/edit.js:98
+msgid "Name"
+msgstr ""
+
+#: src/gutenberg/jbteam/edit.js:116
+msgid "Job title"
+msgstr ""
+
+#: src/gutenberg/jbteam/edit.js:188
+msgid "Google + URL"
+msgstr ""
+
+#: src/gutenberg/jbteam/edit.js:211
+msgid "This is JB Team section"
+msgstr ""
+
+#: src/gutenberg/jbteam/edit.js:213 src/gutenberg/jbteam/index.js:9
+msgid "JB Team"
+msgstr ""
+
+#: src/gutenberg/jbteam/save.js:16
+msgid "Team image"
+msgstr ""
+
+#: src/gutenberg/services/edit.js:15
+msgid "Services settings"
+msgstr ""
+
+#: src/gutenberg/services/edit.js:98 src/gutenberg/services/edit.js:99
+msgid "Service title"
+msgstr ""
+
+#: src/gutenberg/services/edit.js:120 src/gutenberg/services/edit.js:121
+msgid "Service Subtitle"
+msgstr ""
+
+#: src/gutenberg/services/edit.js:139
+msgid "Service link"
+msgstr ""
+
+#: src/gutenberg/services/edit.js:162
+msgid "This is services section"
+msgstr ""
+
+#: src/gutenberg/services/edit.js:164 src/gutenberg/services/index.js:12
+msgid "JB Service"
+msgstr ""
+
+#: src/gutenberg/services/save.js:15
+msgid "Service image"
+msgstr ""
+
+#: src/gutenberg/testimonial/edit.js:15
+msgid "Testimonial settings"
+msgstr ""
+
+#: src/gutenberg/testimonial/edit.js:23
+msgid "Section background image"
+msgstr ""
+
+#: src/gutenberg/testimonial/edit.js:124 src/gutenberg/testimonial/edit.js:125
+msgid "Testimonial content"
+msgstr ""
+
+#: src/gutenberg/testimonial/edit.js:143 src/gutenberg/testimonial/edit.js:144
+msgid "Customer name"
+msgstr ""
+
+#: src/gutenberg/testimonial/edit.js:162
+msgid "Customer job title"
+msgstr ""
+
+#: src/gutenberg/testimonial/edit.js:185
+msgid "This is testimonials section"
+msgstr ""
+
+#: src/gutenberg/testimonial/edit.js:187 src/gutenberg/testimonial/index.js:10
+msgid "JB Testimonial"
+msgstr ""
+
+#: templates/content/content-none.php:39
+#, php-format
+msgid "Ready to publish your first post? <a href=\"%s\">Get started here</a>."
+msgstr ""
