@@ -10,8 +10,9 @@
  * @since 1.0
  */
 
-$copyright = get_theme_mod( 'jb_copyright' );
-$address   = get_theme_mod( 'jb_address' );
+$copyright      = get_theme_mod( 'jb_copyright' );
+$address        = get_theme_mod( 'jb_address' );
+$footer_scripts = get_theme_mod( 'jb_footer_scripts' );
 ?>
 					</main><!-- #main -->
 				</div><!-- #primary -->
@@ -38,6 +39,6 @@ $address   = get_theme_mod( 'jb_address' );
 			</footer>
 
 		<?php wp_footer(); ?>
-
+		<?php echo wp_kses_post( $footer_scripts ); ?>
 	</body>
 </html>

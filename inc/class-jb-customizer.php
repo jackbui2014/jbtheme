@@ -115,6 +115,59 @@ if ( ! class_exists( 'JB_Customizer' ) ) {
 					)
 				)
 			);
+
+			// 2. Register new settings to the WP database...
+			$wp_customize->add_setting(
+				'jb_head_scripts', // No need to use a SERIALIZED name, as `theme_mod` settings already live under one db record.
+				array(
+					'default'           => '', // Default setting/value to save.
+					'type'              => 'theme_mod', // Is this an 'option' or a 'theme_mod'?
+					'capability'        => 'edit_theme_options', // Optional. Special permissions for accessing this setting.
+					'transport'         => 'postMessage', // What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
+					'sanitize_callback' => 'wp_kses_post',
+				)
+			);
+
+			// 3. Finally, we define the control itself (which links a setting to a section and renders the HTML controls)...
+			$wp_customize->add_control(
+				new WP_Customize_Control( // Instantiate the color control class.
+					$wp_customize, // Pass the $wp_customize object (required).
+					'jb_head_scripts_id', // Set a unique ID for the control.
+					array(
+						'label'    => __( 'Head scripts', 'jbtheme' ), // Admin-visible name of the control.
+						'settings' => 'jb_head_scripts', // Which setting to load and manipulate (serialized is okay).
+						'priority' => 10, // Determines the order this control appears in for the specified section.
+						'section'  => 'jbtheme_options', // ID of the section this control should render in (can be one of yours, or a WordPress default section).
+						'type'     => 'textarea',
+					)
+				)
+			);
+			// 2. Register new settings to the WP database...
+			$wp_customize->add_setting(
+				'jb_footer_scripts', // No need to use a SERIALIZED name, as `theme_mod` settings already live under one db record.
+				array(
+					'default'           => '', // Default setting/value to save.
+					'type'              => 'theme_mod', // Is this an 'option' or a 'theme_mod'?
+					'capability'        => 'edit_theme_options', // Optional. Special permissions for accessing this setting.
+					'transport'         => 'postMessage', // What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
+					'sanitize_callback' => 'wp_kses_post',
+				)
+			);
+
+			// 3. Finally, we define the control itself (which links a setting to a section and renders the HTML controls)...
+			$wp_customize->add_control(
+				new WP_Customize_Control( // Instantiate the color control class.
+					$wp_customize, // Pass the $wp_customize object (required).
+					'jb_footer_scripts_id', // Set a unique ID for the control.
+					array(
+						'label'    => __( 'Footer scripts', 'jbtheme' ), // Admin-visible name of the control.
+						'settings' => 'jb_footer_scripts', // Which setting to load and manipulate (serialized is okay).
+						'priority' => 10, // Determines the order this control appears in for the specified section.
+						'section'  => 'jbtheme_options', // ID of the section this control should render in (can be one of yours, or a WordPress default section).
+						'type'     => 'textarea',
+					)
+				)
+			);
 			// 2. Register new settings to the WP database...
 			$wp_customize->add_setting(
 				'jb_social_fb', // No need to use a SERIALIZED name, as `theme_mod` settings already live under one db record.

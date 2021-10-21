@@ -9,6 +9,7 @@
 
 global $jb_show_full_class, $jb_show_sidebar, $post;
 jb_setup_global_variables( $post->ID );
+$head_scripts = get_theme_mod( 'jb_head_scripts' );
 ?><!DOCTYPE html>
 
 <html class="no-js" <?php language_attributes(); ?>>
@@ -21,7 +22,7 @@ jb_setup_global_variables( $post->ID );
 		<link rel="profile" href="https://gmpg.org/xfn/11">
 
 		<?php wp_head(); ?>
-
+		<?php echo wp_kses_post( $head_scripts ); ?>
 	</head>
 
 	<body <?php body_class(); ?>>
