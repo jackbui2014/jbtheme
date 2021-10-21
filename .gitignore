@@ -2,3 +2,4 @@ node_modules
 *.icloud
 *.asset.php
 *.map
+/assets/gutenberg

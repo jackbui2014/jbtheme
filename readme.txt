@@ -23,3 +23,22 @@ JBTheme is a very simple theme for your business
 == Copyright ==
 
 JBTheme is a WordPress Theme, 2021-2022 jbprovider.com
+
+
+== Cleanup code before deploying ==
+cp -avr ./jbtheme ./final
+find ./final/jbtheme -name "*.asset.php" -type f -delete
+find ./final/jbtheme -name "*.js.map" -type f -delete
+rm -rf ./final/jbtheme/node_modules
+rm -rf ./final/jbtheme/src
+rm -rf ./final/jbtheme/package.js
+rm -rf ./final/jbtheme/package-lock.js
+rm -rf ./final/jbtheme/webpack.config.js
+rm -rf ./final/jbtheme/assets/css/components
+rm -rf ./final/jbtheme/assets/css/default.css
+rm -rf ./final/jbtheme/assets/css/footer.css 
+rm -rf ./final/jbtheme/assets/css/global.css 
+rm -rf ./final/jbtheme/assets/css/header.css 
+rm -rf ./final/jbtheme/assets/css/main.min.css 
+rm -rf ./final/jbtheme/assets/css/responsive.css 
+rm -rf ./final/jbtheme/assets/css/variables.css 
