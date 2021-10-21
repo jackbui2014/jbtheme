@@ -22,7 +22,17 @@ $head_scripts = get_theme_mod( 'jb_head_scripts' );
 		<link rel="profile" href="https://gmpg.org/xfn/11">
 
 		<?php wp_head(); ?>
-		<?php echo wp_kses_post( $head_scripts ); ?>
+		<?php
+		echo wp_kses(
+			$head_scripts,
+			array(
+				'script' => array(),
+				'style'  => array(),
+				'link'   => array(),
+				'meta'   => array(),
+			)
+		);
+		?>
 	</head>
 
 	<body <?php body_class(); ?>>
