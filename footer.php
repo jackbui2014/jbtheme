@@ -43,10 +43,18 @@ $footer_scripts = get_theme_mod( 'jb_footer_scripts' );
 		echo wp_kses(
 			$footer_scripts,
 			array(
-				'script' => array(),
+				'script' => array(
+					'async' => array(),
+					'src'   => array(),
+					'id'    => array(),
+				),
 				'style'  => array(),
-				'link'   => array(),
-				'meta'   => array(),
+				'link'   => array(
+					'rel'  => array(),
+					'href' => array(),
+					'type' => array(),
+				),
+				'meta'   => array( 'content' => array() ),
 			)
 		);
 		?>
