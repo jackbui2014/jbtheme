@@ -65,7 +65,8 @@ if ( ! function_exists( 'jb_setup' ) ) :
 		$logo_width  = 300;
 		$logo_height = 100;
 
-		add_theme_support('custom-logo',
+		add_theme_support(
+			'custom-logo',
 			array(
 				'height'               => $logo_height,
 				'width'                => $logo_width,
@@ -136,6 +137,7 @@ if ( ! function_exists( 'jb_register_styles_scripts' ) ) :
 
 		$theme_version = wp_get_theme()->get( 'Version' );
 		wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/assets/css/all.min.css', array(), $theme_version );
+		wp_enqueue_style( 'animate-css', get_template_directory_uri() . '/assets/lib/animate.min.css', array(), $theme_version );
 		wp_enqueue_style( 'jb-style', get_template_directory_uri() . '/assets/css/main.css', array(), $theme_version );
 		wp_enqueue_style( 'jb-print-style', get_template_directory_uri() . '/assets/css/print.css', null, $theme_version, 'print' );
 
