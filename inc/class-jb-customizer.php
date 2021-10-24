@@ -124,7 +124,7 @@ if ( ! class_exists( 'JB_Customizer' ) ) {
 					'type'              => 'theme_mod', // Is this an 'option' or a 'theme_mod'?
 					'capability'        => 'edit_theme_options', // Optional. Special permissions for accessing this setting.
 					'transport'         => 'postMessage', // What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
-					'sanitize_callback' => '',
+					'sanitize_callback' => 'jb_filter_values',
 				)
 			);
 
@@ -150,7 +150,7 @@ if ( ! class_exists( 'JB_Customizer' ) ) {
 					'type'              => 'theme_mod', // Is this an 'option' or a 'theme_mod'?
 					'capability'        => 'edit_theme_options', // Optional. Special permissions for accessing this setting.
 					'transport'         => 'postMessage', // What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
-					'sanitize_callback' => '',
+					'sanitize_callback' => 'jb_filter_values',
 				)
 			);
 

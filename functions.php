@@ -572,3 +572,31 @@ if ( ! function_exists( 'jb_pagination' ) ) :
 
 	}
 endif;
+if ( ! function_exists( 'jb_filter_values' ) ) {
+	/**
+	 *
+	 * Filter value function
+	 *
+	 * @param String $s is the value to filter.
+	 *
+	 * @return String after filter
+	 */
+	function jb_filter_values( $s = '' ) {
+		return wp_kses(
+			$s,
+			array(
+				'script' => array(
+					'async' => array(),
+					'src'   => array(),
+				),
+				'style'  => array(),
+				'link'   => array(
+					'rel'  => array(),
+					'href' => array(),
+					'type' => array(),
+				),
+				'meta'   => array( 'content' => array() ),
+			)
+		);
+	}
+}
