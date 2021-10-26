@@ -6,7 +6,7 @@ const Testimonial = (props)=>{
 		<Fragment>
 			<div className="jb-testimonial-item">
 				{props.image && (
-				<img src={props.image} className="jb-testimonial-image" alt={__('Testimonial image', 'jbtheme')} />
+				<img src={props.image} className="jb-testimonial-image" alt={__('Testimonial image', 'jbprovider')} />
 				)}
 				{props.title && (
 				<RichText.Content tagName="p" className="jb-testimonial-content" value={props.title} />

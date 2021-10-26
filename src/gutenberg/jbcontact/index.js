@@ -8,7 +8,7 @@ import save from './save';
 const {name, category, attributes} = config;
 
 const settings = {
-	title: __('JB Contact', 'jbtheme'),
+	title: __('JB Contact', 'jbprovider'),
 	icon: 'email-alt',
 	category: category,
 	attributes,

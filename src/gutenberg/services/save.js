@@ -12,7 +12,7 @@ const ServiceSave = (props)=>{
                     {service.index}
                 </span>
 				{service.icon && (
-				<img src={service.icon} className="service-icon" alt={__('Service image', 'jbtheme')} />
+				<img src={service.icon} className="service-icon" alt={__('Service image', 'jbprovider')} />
 				)}
 				{service.title && (
 				<RichText.Content tagName="h3" className="service-item-title" value={service.title} />

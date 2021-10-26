@@ -3,7 +3,7 @@
  * The indes file of all
  *
  * @package JB
- * @subpackage jbtheme
+ * @subpackage jbprovider
  * @since 1.0
  */
 
@@ -20,7 +20,7 @@ if ( ! class_exists( 'JB_Social_Widget' ) ) {
 			parent::__construct(
 				'jb_social_widget', // Base ID.
 				'JB Social Widget', // Name.
-				array( 'description' => __( 'JB Social widget', 'jbtheme' ) ) // Args.
+				array( 'description' => __( 'JB Social widget', 'jbprovider' ) ) // Args.
 			);
 		}
 
@@ -92,7 +92,7 @@ if ( ! class_exists( 'JB_Social_Widget' ) ) {
 			if ( isset( $instance['title'] ) ) {
 				$title = $instance['title'];
 			} else {
-				$title = __( 'JB Social', 'jbtheme' );
+				$title = __( 'JB Social', 'jbprovider' );
 			}
 			if ( isset( $instance['style_mode'] ) ) {
 				$style_mode = $instance['style_mode'];
@@ -101,14 +101,14 @@ if ( ! class_exists( 'JB_Social_Widget' ) ) {
 			}
 			?>
 		<p>
-			<label for="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>"><?php esc_html_e( 'Title:', 'jbtheme' ); ?></label>
+			<label for="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>"><?php esc_html_e( 'Title:', 'jbprovider' ); ?></label>
 			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
 		</p>
 		<p>
-			<label for="<?php echo esc_attr( $this->get_field_name( 'style_mode' ) ); ?>"><?php esc_html_e( 'Style mode:', 'jbtheme' ); ?></label>
+			<label for="<?php echo esc_attr( $this->get_field_name( 'style_mode' ) ); ?>"><?php esc_html_e( 'Style mode:', 'jbprovider' ); ?></label>
 			<select name="<?php echo esc_attr( $this->get_field_name( 'style_mode' ) ); ?>" id="<?php echo esc_html( $this->get_field_id( 'style_mode' ) ); ?>" >
-			<option value="normal" <?php echo ( 'normal' === $style_mode ) ? 'selected' : ''; ?>><?php esc_html_e( 'Normal', 'jbtheme' ); ?></option>
-			<option value="white" <?php echo ( 'white' === $style_mode ) ? 'selected' : ''; ?>><?php esc_html_e( 'White', 'jbtheme' ); ?></option>
+			<option value="normal" <?php echo ( 'normal' === $style_mode ) ? 'selected' : ''; ?>><?php esc_html_e( 'Normal', 'jbprovider' ); ?></option>
+			<option value="white" <?php echo ( 'white' === $style_mode ) ? 'selected' : ''; ?>><?php esc_html_e( 'White', 'jbprovider' ); ?></option>
 			</select>
 		</p>
 			<?php

@@ -4,7 +4,7 @@
  * The post item with list layout
  *
  * @package JB
- * @subpackage jbtheme
+ * @subpackage jbprovider
  * @since 1.0
  */
 
@@ -34,6 +34,6 @@ if ( empty( $thumbnail ) ) {
 
 		</div>
 		<div class="post-item-exceprt"><?php echo wp_kses_post( $post_expert ); ?></div>
-		<a class="post-item-readmore" href="<?php echo esc_attr( $jb_link ); ?>"><?php esc_html_e( 'Read more', 'jbtheme' ); ?></a>
+		<a class="post-item-readmore" href="<?php echo esc_attr( $jb_link ); ?>"><?php esc_html_e( 'Read more', 'jbprovider' ); ?></a>
 	</div>
 </div>

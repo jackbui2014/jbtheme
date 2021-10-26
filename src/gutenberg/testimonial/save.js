@@ -12,7 +12,7 @@ const TestimonialSave = (props)=>{
                     {testimonial.index}
                 </span>
 				{testimonial.image && (
-				<p className="testimonial-image-wrapper"><img src={testimonial.image} className="testimonial-image" alt={__('Testimonial image', 'jbtheme')} /></p>
+				<p className="testimonial-image-wrapper"><img src={testimonial.image} className="testimonial-image" alt={__('Testimonial image', 'jbprovider')} /></p>
 				)}
 				{testimonial.content.trim() != "" && (
 				<RichText.Content tagName="q" className="testimonial-item-content" value={testimonial.content} />

@@ -7,10 +7,10 @@ import { Fragment } from '@wordpress/element';
 const JBContainerEdit = (props) => {
 	const inspectorControls = (
 		<InspectorControls>
-			<PanelBody title={__('JB Contact settings', 'jbtheme')} >
+			<PanelBody title={__('JB Contact settings', 'jbprovider')} >
 				<TextControl
-					label={__('Section id', 'jbtheme')}
-					placeholder={__('Section id', 'jbtheme')}
+					label={__('Section id', 'jbprovider')}
+					placeholder={__('Section id', 'jbprovider')}
 					value={props.attributes.section_id}
 					onChange={(section_id) => props.setAttributes({ section_id })}
 				/>
@@ -19,9 +19,9 @@ const JBContainerEdit = (props) => {
 	);
 	return ([
 		inspectorControls,
-		<Tooltip text={__("This is JB Container", 'jbtheme')}>
+		<Tooltip text={__("This is JB Container", 'jbprovider')}>
 			<div className="jb-block-title">
-				{__('JB Container', 'jbtheme')}
+				{__('JB Container', 'jbprovider')}
 			</div>
 		</Tooltip>,
 		<Fragment>

@@ -7,16 +7,16 @@ const JBContactEdit = (props) =>{
 	const { title, subtitle, content, image } = props.attributes;
 	const inspectorControls = (
 		<InspectorControls>
-			<PanelBody title={__('JB Contact settings', 'jbtheme')} >
-			<h4>{ __('Section background color', 'jbtheme')}</h4>
+			<PanelBody title={__('JB Contact settings', 'jbprovider')} >
+			<h4>{ __('Section background color', 'jbprovider')}</h4>
 			<ColorPicker
 			color={ props.attributes.background_color }
             onChangeComplete={ ( value ) => props.setAttributes({background_color: value.hex}) }
             disableAlpha
 			/>
 			<TextControl
-			 label={__('Section id', 'jbtheme')}
-				placeholder={ __('Section id', 'jbtheme')}
+			 label={__('Section id', 'jbprovider')}
+				placeholder={ __('Section id', 'jbprovider')}
 				value={ props.attributes.section_id }
 				onChange={ (section_id) => props.setAttributes({section_id})}
 				/>	
@@ -26,46 +26,46 @@ const JBContactEdit = (props) =>{
 	const blockProps = useBlockProps();
 	return ([
 		inspectorControls,	   
-			<Tooltip text={ __("This is JB  Contactt section", 'jbtheme') }>
+			<Tooltip text={ __("This is JB  Contactt section", 'jbprovider') }>
 				<div className="jb-block-title">
-					{__('JB Contactt', 'jbtheme')}
+					{__('JB Contactt', 'jbprovider')}
 				</div>
 			</Tooltip>, 
 		<Fragment>
 			<RichText
-				label={ __('Section title', 'jbtheme')}
-				placeholder={ __('Section title', 'jbtheme')}
+				label={ __('Section title', 'jbprovider')}
+				placeholder={ __('Section title', 'jbprovider')}
 				tagName="h2"
 				value={ props.attributes.title }
 				onChange={ (title) => props.setAttributes({title})}
 				/>	
 			<RichText
-				label={ __('Section Subtitle', 'jbtheme')}
-				placeholder={ __('Section Subtitle', 'jbtheme')}
+				label={ __('Section Subtitle', 'jbprovider')}
+				placeholder={ __('Section Subtitle', 'jbprovider')}
 				tagName="p"
 				value={ props.attributes.subtitle }
 				onChange={ (subtitle) => props.setAttributes({subtitle})}
 				/>	
 			<TextControl
-				placeholder={ __('Address', 'jbtheme')}
+				placeholder={ __('Address', 'jbprovider')}
 				tagName="p"
 				value={ props.attributes.address }
 				onChange={ (address) => props.setAttributes({address})}
 				/>	
 			<TextControl
-				placeholder={ __('Email', 'jbtheme')}
+				placeholder={ __('Email', 'jbprovider')}
 				tagName="p"
 				value={ props.attributes.email }
 				onChange={ (email) => props.setAttributes({email})}
 				/>	
 			<TextControl
-				placeholder={ __('Phone', 'jbtheme')}
+				placeholder={ __('Phone', 'jbprovider')}
 				tagName="p"
 				value={ props.attributes.phone }
 				onChange={ (phone) => props.setAttributes({phone})}
 				/>		
 			<TextControl
-				placeholder={ __('Google Map link', 'jbtheme')}
+				placeholder={ __('Google Map link', 'jbprovider')}
 				tagName="p"
 				value={ props.attributes.google_map_link }
 				onChange={ (google_map_link) => props.setAttributes({google_map_link})}

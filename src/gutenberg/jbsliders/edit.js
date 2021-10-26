@@ -15,92 +15,92 @@
  const JBSlidersEdit = (props) => {  
 		 const { slideritem } = props.attributes;		
 		 const hide_control = [
-			 { value: 'yes', label: __( 'Yes', 'jbtheme' ) },
-			 { value: 'no', label: __( 'No', 'jbtheme' ) },
+			 { value: 'yes', label: __( 'Yes', 'jbprovider' ) },
+			 { value: 'no', label: __( 'No', 'jbprovider' ) },
 		 ];	
 		 const arrow_control = [
-			 { value: true, label: __( 'Yes', 'jbtheme' ) },
-			 { value: false, label: __( 'No', 'jbtheme' ) },
+			 { value: true, label: __( 'Yes', 'jbprovider' ) },
+			 { value: false, label: __( 'No', 'jbprovider' ) },
 		 ];		
 		 const showoverlay = [
-			{ value: true, label: __( 'Yes', 'jbtheme' ) },
-			{ value: false, label: __( 'No', 'jbtheme' ) },
+			{ value: true, label: __( 'Yes', 'jbprovider' ) },
+			{ value: false, label: __( 'No', 'jbprovider' ) },
 		];	
 		const fullscreenheight = [
-			{ value: true, label: __( 'Yes', 'jbtheme' ) },
-			{ value: false, label: __( 'No', 'jbtheme' ) },
+			{ value: true, label: __( 'Yes', 'jbprovider' ) },
+			{ value: false, label: __( 'No', 'jbprovider' ) },
 		];		
 		 const position = [
-			 { value: 'top', label: __( 'Top', 'jbtheme' ) },
-			 { value: 'center', label: __( 'Center', 'jbtheme' ) },
-			 { value: 'bottom', label: __( 'Bottom', 'jbtheme' ) },
+			 { value: 'top', label: __( 'Top', 'jbprovider' ) },
+			 { value: 'center', label: __( 'Center', 'jbprovider' ) },
+			 { value: 'bottom', label: __( 'Bottom', 'jbprovider' ) },
 		 ];
 
 		 const position_x = [
-			{ value: 'center', label: __( 'Center', 'jbtheme' ) },
-			{ value: 'left', label: __( 'Left', 'jbtheme' ) },			
-			{ value: 'right', label: __( 'Right', 'jbtheme' ) },
+			{ value: 'center', label: __( 'Center', 'jbprovider' ) },
+			{ value: 'left', label: __( 'Left', 'jbprovider' ) },			
+			{ value: 'right', label: __( 'Right', 'jbprovider' ) },
 		];
 		 const inspectorControls = (
 			 <InspectorControls>
-				 <PanelBody title={ __( 'Slider Setting', 'jbtheme' ) }>
+				 <PanelBody title={ __( 'Slider Setting', 'jbprovider' ) }>
 					 {/* <SelectControl
-						 label={ __( 'Show Controls', 'jbtheme' ) }
+						 label={ __( 'Show Controls', 'jbprovider' ) }
 						 options={ hide_control }
 						 value={ props.attributes.hidecontrol }
 						 onChange={ ( hidecontrol ) => props.setAttributes( { hidecontrol } ) }
 					 /> */}
 					 <SelectControl
-						 label={ __( 'Arrow Controls', 'jbtheme' ) }
+						 label={ __( 'Arrow Controls', 'jbprovider' ) }
 						 options={ arrow_control }
 						 value={ props.attributes.arrowcontrol }
 						 onChange={ ( arrowcontrol ) => props.setAttributes( { arrowcontrol } ) }
 					 />
 					 {/* <SelectControl
-						 label={ __( 'Caption position Y', 'jbtheme' ) }
+						 label={ __( 'Caption position Y', 'jbprovider' ) }
 						 options={ position }
 						 value={ props.attributes.position }
 						 onChange={ ( position ) => props.setAttributes( { position } ) }
 					 /> */}
 					 <SelectControl
-						 label={ __( 'Caption position X', 'jbtheme' ) }
+						 label={ __( 'Caption position X', 'jbprovider' ) }
 						 options={ position_x }
 						 value={ props.attributes.position_x }
 						 onChange={ ( position_x ) => props.setAttributes( { position_x } ) }
 					 />
 					  <SelectControl
-						 label={ __( 'Show overlay layer', 'jbtheme' ) }
+						 label={ __( 'Show overlay layer', 'jbprovider' ) }
 						 options={ showoverlay }
 						 value={ props.attributes.showoverlay }
 						 onChange={ ( showoverlay ) => props.setAttributes( { showoverlay } ) }
 					 />
 					 <SelectControl
-						 label={ __( 'Show full screen height', 'jbtheme' ) }
+						 label={ __( 'Show full screen height', 'jbprovider' ) }
 						 options={ fullscreenheight }
 						 value={ props.attributes.fullscreenheight }
 						 onChange={ ( fullscreenheight ) => props.setAttributes( { fullscreenheight } ) }
 					 />
 					 <TextControl
-						 label={ __( 'Speed', 'jbtheme' ) }
+						 label={ __( 'Speed', 'jbprovider' ) }
 						 type="text"
 						 value={ props.attributes.slider_speed }
 						 onChange={ ( slider_speed ) => props.setAttributes( { slider_speed } ) }
 					 />
 					 <TextControl
-						 label={ __( 'Slide item on a screen', 'jbtheme' ) }
+						 label={ __( 'Slide item on a screen', 'jbprovider' ) }
 						 type="text"
 						 value={ props.attributes.slider_items }
 						 onChange={ ( slider_items ) => props.setAttributes( { slider_items} ) }
 					 />
 					 <TextControl
-						 label={ __( 'Slide items to scroll', 'jbtheme' ) }
+						 label={ __( 'Slide items to scroll', 'jbprovider' ) }
 						 type="text"
 						 value={ props.attributes.slidestoscroll }
 						 onChange={ ( slidestoscroll ) => props.setAttributes( { slidestoscroll} ) }
 					 />
 					 <TextControl
-						label={ __('Section id', 'jbtheme')}
-						placeholder={ __('Section id', 'jbtheme')}
+						label={ __('Section id', 'jbprovider')}
+						placeholder={ __('Section id', 'jbprovider')}
 						value={ props.attributes.id }
 						onChange={ (id) => props.setAttributes({id})}
 						/>	
@@ -176,8 +176,8 @@
 				   />                  
 				 </div>				
 				<RichText
-					 label={ __( 'Title','jbtheme' ) }
-					 placeholder={ __( 'Slider title', 'jbtheme' ) }
+					 label={ __( 'Title','jbprovider' ) }
+					 placeholder={ __( 'Slider title', 'jbprovider' ) }
 					 value={ slide.title }
 					 tagName="h2"
 					 onChange={ ( title ) => {
@@ -195,8 +195,8 @@
 					 } }
 				 />
 				 <RichText
-					 label={ __( 'Description','jbtheme' ) }
-					 placeholder={ __( 'Slider description', 'jbtheme' ) }
+					 label={ __( 'Description','jbprovider' ) }
+					 placeholder={ __( 'Slider description', 'jbprovider' ) }
 					 value={ slide.description }
 					 tagName="div"
 					 onChange={ ( description ) => {
@@ -214,7 +214,7 @@
 					 } }
 				 />
 				 <TextControl
-					 placeholder={ __( 'Button Link', 'jbtheme' ) }
+					 placeholder={ __( 'Button Link', 'jbprovider' ) }
 					 type="text"
 					 value={ slide.link }
 					 onChange={ ( link ) => {
@@ -232,7 +232,7 @@
 					 } }
 				 />
 				 <TextControl
-					 placeholder={ __( 'Button text', 'jbtheme' ) }
+					 placeholder={ __( 'Button text', 'jbprovider' ) }
 					 type="text"
 					 value={ slide.link_text }
 					 onChange={ ( link_text ) => {
@@ -254,9 +254,9 @@
 		   });
 		 return ([
 			 inspectorControls,	   
-			<Tooltip text={__('This is JB Slider', 'jbtheme')}>
+			<Tooltip text={__('This is JB Slider', 'jbprovider')}>
 				 <div className="jb-block-title">
-					 {__('JB Slider', 'jbtheme')}
+					 {__('JB Slider', 'jbprovider')}
 				 </div>
 			</Tooltip>, 	
 		   <div className={props.className}>

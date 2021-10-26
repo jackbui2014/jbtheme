@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: JBThemev1.0\n"
+"Project-Id-Version: JBProviderv1.0\n"
 "Report-Msgid-Bugs-To: https://jbprovider.com/\n"
 "POT-Creation-Date: 2021-10-16 10:07+0700\n"
 "PO-Revision-Date: 2021-10-16 10:08+0700\n"
@@ -83,11 +83,11 @@ msgid "Load more"
 msgstr ""
 
 #: inc/class-jb-customizer.php:34
-msgid "JB Theme Options"
+msgid "JB Provider Options"
 msgstr ""
 
 #: inc/class-jb-customizer.php:37
-msgid "Allows you to customize the settings for JB theme."
+msgid "Allows you to customize the settings for JB Provider."
 msgstr ""
 
 #: inc/class-jb-customizer.php:58

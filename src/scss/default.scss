@@ -38,7 +38,6 @@ h5, h5 *{
 a{
 	color: $primary_color;
 	position: relative;
-	text-decoration: none;
 	&::after{
 			content: '';
 			position: absolute;
@@ -1143,11 +1142,22 @@ a img.aligncenter {
 		}
 	}
 	.wp-block-post-excerpt__more-link{
+		text-decoration: none;
 		&:hover{
 			color: $primary_color;
 			&::after{
 					width: 100%;
 			}
 		}
+	}
+}
+.wp-block-post-title{
+	a{
+		text-decoration: none;
+	}
+}
+.menu{
+	a{
+		text-decoration: none;
 	}
 }

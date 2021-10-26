@@ -3,7 +3,7 @@
  * Default page template
  *
  * @package    JB
- * @subpackage jbtheme
+ * @subpackage jbprovider
  * @since      1.0
  */
 

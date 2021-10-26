@@ -3,7 +3,7 @@
  * Header file for JB WP React theme.
  *
  * @package JB
- * @subpackage jbtheme
+ * @subpackage jbprovider
  * @since 1.0
  */
 
@@ -46,6 +46,7 @@ $head_scripts = get_theme_mod( 'jb_head_scripts' );
 		<?php wp_body_open(); ?>
 		<div class="loading-aniamte"><div class="lds-ripple"><div></div><div></div></div></div>
 		<div id="page" class="site">
+		<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'jbprovider' ); ?></a>
 			<?php get_template_part( 'templates/header/site', 'header' ); ?>
 			<div id="content" class="site-content">
 				<div id="primary" class="content-area">

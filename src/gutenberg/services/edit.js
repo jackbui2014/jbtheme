@@ -12,16 +12,16 @@ const ServiceEdit = (props) =>{
 
 	const inspectorControls = (
 		<InspectorControls>
-			<PanelBody title={__('Services settings', 'jbtheme')} >
-			<h4>{ __('Section background color', 'jbtheme')}</h4>
+			<PanelBody title={__('Services settings', 'jbprovider')} >
+			<h4>{ __('Section background color', 'jbprovider')}</h4>
 			<ColorPicker
 			color={ props.attributes.background_color }
             onChangeComplete={ ( value ) => props.setAttributes({background_color: value.hex}) }
             disableAlpha
 			/>
 			<TextControl
-				label={ __('Section id', 'jbtheme')}
-				placeholder={ __('Section id', 'jbtheme')}
+				label={ __('Section id', 'jbprovider')}
+				placeholder={ __('Section id', 'jbprovider')}
 				value={ props.attributes.id }
 				onChange={ (id) => props.setAttributes({id})}
 				/>	
@@ -95,8 +95,8 @@ const ServiceEdit = (props) =>{
 							}
 							/>
 							<RichText
-								label={ __('Service title', 'jbtheme')}
-								placeholder={ __('Service title', 'jbtheme')}
+								label={ __('Service title', 'jbprovider')}
+								placeholder={ __('Service title', 'jbprovider')}
 								tagName="h3"
 								value={ service.title }
 								onChange={ (title) => {
@@ -117,8 +117,8 @@ const ServiceEdit = (props) =>{
 								}}
 								/>	
 							<RichText
-								label={ __('Service Subtitle', 'jbtheme')}
-								placeholder={ __('Service Subtitle', 'jbtheme')}
+								label={ __('Service Subtitle', 'jbprovider')}
+								placeholder={ __('Service Subtitle', 'jbprovider')}
 								tagName="p"
 								value={ service.subtitle }
 								onChange={ (subtitle) => {
@@ -136,7 +136,7 @@ const ServiceEdit = (props) =>{
 								}}
 								/>	
 								<TextControl
-								placeholder={ __('Service link', 'jbtheme')}
+								placeholder={ __('Service link', 'jbprovider')}
 								type="text"
 								value={ service.link }
 								onChange={ (link) => {
@@ -159,22 +159,22 @@ const ServiceEdit = (props) =>{
 		});
 	return ([
 			inspectorControls,	   
-			<Tooltip text={__("This is services section",'jbtheme')}>
+			<Tooltip text={__("This is services section",'jbprovider')}>
 				<div className="jb-block-title">
-					{__('JB Service', 'jbtheme')}
+					{__('JB Service', 'jbprovider')}
 				</div>
 			</Tooltip>, 
 			<div>
 				<RichText
-					label={ __('Section title', 'jbtheme')}
-					placeholder={ __('Section title', 'jbtheme')}
+					label={ __('Section title', 'jbprovider')}
+					placeholder={ __('Section title', 'jbprovider')}
 					tagName="h2"
 					value={ props.attributes.title }
 					onChange={ (title) => props.setAttributes({title})}
 					/>	
 				<RichText
-					label={ __('Section Subtitle', 'jbtheme')}
-					placeholder={ __('Section Subtitle', 'jbtheme')}
+					label={ __('Section Subtitle', 'jbprovider')}
+					placeholder={ __('Section Subtitle', 'jbprovider')}
 					tagName="p"
 					value={ props.attributes.subtitle }
 					onChange={ (subtitle) => props.setAttributes({subtitle})}

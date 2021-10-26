@@ -13,7 +13,7 @@ const JBTeamSave = (props)=>{
 						{team.index}
 					</span>
 					{team.image && (
-					<p className="jb-team-image-wrapper"><img src={team.image} className="jb-team-item-image" alt={__('Team image', 'jbtheme')} /></p>
+					<p className="jb-team-image-wrapper"><img src={team.image} className="jb-team-item-image" alt={__('Team image', 'jbprovider')} /></p>
 					)}
 					{ team.name && (
 					<RichText.Content tagName="p" className="jb-team-item-name" value={team.name} />

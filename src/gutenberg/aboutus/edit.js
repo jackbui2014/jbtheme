@@ -7,8 +7,8 @@ const AboutusEdit = (props) =>{
 	const { title, subtitle, content, image } = props.attributes;
 	const inspectorControls = (
 		<InspectorControls>
-			<PanelBody title={__('About us settings', 'jbtheme')} >
-			<h4>{ __('Section background color', 'jbtheme')}</h4>
+			<PanelBody title={__('About us settings', 'jbprovider')} >
+			<h4>{ __('Section background color', 'jbprovider')}</h4>
 			<ColorPicker
 			color={ props.attributes.background_color }
             onChangeComplete={ ( value ) => props.setAttributes({background_color: value.hex}) }
@@ -16,8 +16,8 @@ const AboutusEdit = (props) =>{
 			/>
 			</PanelBody>
 			<TextControl
-				label={__('Section id', 'jbtheme')}
-				placeholder={ __('Section id', 'jbtheme')}
+				label={__('Section id', 'jbprovider')}
+				placeholder={ __('Section id', 'jbprovider')}
 				value={ props.attributes.section_id }
 				onChange={ (section_id) => props.setAttributes({section_id})}
 				/>	
@@ -25,30 +25,30 @@ const AboutusEdit = (props) =>{
 	);
 	return ([
 		inspectorControls,	   
-			<Tooltip text={ __("This is about us section", 'jbtheme') }>
+			<Tooltip text={ __("This is about us section", 'jbprovider') }>
 				<div className="jb-block-title">
-					{__('JB About us', 'jbtheme')}
+					{__('JB About us', 'jbprovider')}
 				</div>
 			</Tooltip>, 
 		<Fragment>
 			<RichText
-				label={ __('Section title', 'jbtheme')}
-				placeholder={ __('Section title', 'jbtheme')}
+				label={ __('Section title', 'jbprovider')}
+				placeholder={ __('Section title', 'jbprovider')}
 				tagName="h2"
 				value={ props.attributes.title }
 				onChange={ (title) => props.setAttributes({title})}
 				/>	
 			<RichText
-				label={ __('Section Subtitle', 'jbtheme')}
-				placeholder={ __('Section Subtitle', 'jbtheme')}
+				label={ __('Section Subtitle', 'jbprovider')}
+				placeholder={ __('Section Subtitle', 'jbprovider')}
 				tagName="p"
 				value={ props.attributes.subtitle }
 				onChange={ (subtitle) => props.setAttributes({subtitle})}
 				/>	
 
 			<RichText
-				label={ __('Content', 'jbtheme')}
-				placeholder={ __('Content', 'jbtheme')}
+				label={ __('Content', 'jbprovider')}
+				placeholder={ __('Content', 'jbprovider')}
 				tagName="p"
 				value={ props.attributes.content }
 				onChange={ (content) => props.setAttributes({content})}

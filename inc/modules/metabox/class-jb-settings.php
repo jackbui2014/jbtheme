@@ -4,7 +4,7 @@
  * The JB_Settings class file
  *
  * @package JB
- * @subpackage jbtheme
+ * @subpackage jbprovider
  * @since 1.0
  */
 
@@ -14,7 +14,7 @@ if ( ! class_exists( 'JB_Settings' ) ) {
 	 * The JB_Settings class file
 	 *
 	 * @package JB
-	 * @subpackage jbtheme
+	 * @subpackage jbprovider
 	 * @since 1.0
 	 */
 	abstract class JB_Settings {
@@ -304,7 +304,7 @@ if ( ! class_exists( 'JB_Settings' ) ) {
 		 */
 		public function render_fields( $tab ) {
 			if ( ! isset( $this->fields[ $tab ] ) ) {
-				echo '<p>' . esc_attr__( 'There are no settings on these page.', 'jbtheme' ) . '</p>';
+				echo '<p>' . esc_attr__( 'There are no settings on these page.', 'jbprovider' ) . '</p>';
 				return;
 			}
 			foreach ( $this->fields[ $tab ] as $name => $field ) {

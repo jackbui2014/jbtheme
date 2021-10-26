@@ -8,7 +8,7 @@ import save from './save';
 const { name, category, attributes } = config;
 
 const settings = {
-	title: __('JB About Us', 'jbtheme'),
+	title: __('JB About Us', 'jbprovider'),
 	icon: 'info-outline',
 	category: category,
 	attributes,

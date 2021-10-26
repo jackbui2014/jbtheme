@@ -8,7 +8,7 @@
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
  * @package    JB
- * @subpackage jbtheme
+ * @subpackage jbprovider
  * @since      1.0
  */
 
@@ -32,12 +32,12 @@ $jb_comment_count = get_comments_number();
 		?>
 		<h2 class="comments-title">
 		<?php if ( '1' === $jb_comment_count ) : ?>
-			<?php esc_html_e( '1 comment', 'jbtheme' ); ?>
+			<?php esc_html_e( '1 comment', 'jbprovider' ); ?>
 			<?php else : ?>
 				<?php
 				printf(
 				/* translators: %s: Comment count number. */
-					esc_html( _nx( '%s comment', '%s comments', $jb_comment_count, 'Comments title', 'jbtheme' ) ),
+					esc_html( _nx( '%s comment', '%s comments', $jb_comment_count, 'Comments title', 'jbprovider' ) ),
 					esc_html( number_format_i18n( $jb_comment_count ) )
 				);
 				?>
@@ -59,22 +59,22 @@ $jb_comment_count = get_comments_number();
 		<?php
 		the_comments_pagination(
 			array(
-				'before_page_number' => esc_html__( 'Page', 'jbtheme' ) . ' ',
+				'before_page_number' => esc_html__( 'Page', 'jbprovider' ) . ' ',
 				'mid_size'           => 0,
 				'prev_text'          => sprintf(
 					'<span class="nav-prev-text">%s</span>',
-					esc_html__( 'Older comments', 'jbtheme' )
+					esc_html__( 'Older comments', 'jbprovider' )
 				),
 				'next_text'          => sprintf(
 					'<span class="nav-next-text">%s</span>',
-					esc_html__( 'Newer comments', 'jbtheme' )
+					esc_html__( 'Newer comments', 'jbprovider' )
 				),
 			)
 		);
 		?>
 
 		<?php if ( ! comments_open() ) : ?>
-			<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'jbtheme' ); ?></p>
+			<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'jbprovider' ); ?></p>
 		<?php endif; ?>
 	<?php endif; ?>
 
@@ -82,7 +82,7 @@ $jb_comment_count = get_comments_number();
 	comment_form(
 		array(
 			'logged_in_as'       => null,
-			'title_reply'        => esc_html__( 'Leave a comment', 'jbtheme' ),
+			'title_reply'        => esc_html__( 'Leave a comment', 'jbprovider' ),
 			'title_reply_before' => '<h2 id="reply-title" class="comment-reply-title">',
 			'title_reply_after'  => '</h2>',
 		)

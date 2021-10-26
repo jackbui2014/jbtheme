@@ -1,9 +1,9 @@
 <?php
 /**
- * JB theme's functions and definitions
+ * JB Provider's functions and definitions
  *
  * @package JB
- * @subpackage jbtheme
+ * @subpackage jbprovider
  * @since 1.0
  */
 

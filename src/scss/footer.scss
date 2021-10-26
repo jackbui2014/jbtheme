@@ -1,5 +1,11 @@
 @import './variables.scss';
 #site-footer{
+    a{
+        color: $white;
+        &:hover{
+            color: $secondary_color;
+        }
+    }
     .main-footer{
         background: linear-gradient(45deg, #232A35, #0B0A11);
         color: $white;

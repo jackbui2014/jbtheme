@@ -1,9 +1,9 @@
 <?php
 /**
- * JB Theme's sidebar
+ * JB Provider's sidebar
  *
  * @package JB
- * @subpackage jbtheme
+ * @subpackage jbprovider
  * @since 1.0
  */
 

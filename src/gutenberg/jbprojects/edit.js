@@ -12,16 +12,16 @@ const JBProjectsEdit = (props) =>{
 
 	const inspectorControls = (
 		<InspectorControls>
-			<PanelBody title={__('JB Projects settings', 'jbtheme')} >
-			<h4>{ __('Section background color', 'jbtheme')}</h4>
+			<PanelBody title={__('JB Projects settings', 'jbprovider')} >
+			<h4>{ __('Section background color', 'jbprovider')}</h4>
 			<ColorPicker
 			color={ props.attributes.background_color }
             onChangeComplete={ ( value ) => props.setAttributes({background_color: value.hex}) }
             disableAlpha
 			/>
 			<TextControl
-				label={ __('Section id', 'jbtheme')}
-				placeholder={ __('Section id', 'jbtheme')}
+				label={ __('Section id', 'jbprovider')}
+				placeholder={ __('Section id', 'jbprovider')}
 				value={ props.attributes.id }
 				onChange={ (id) => props.setAttributes({id})}
 				/>	
@@ -95,8 +95,8 @@ const JBProjectsEdit = (props) =>{
 							}
 							/>
 							<RichText
-								label={ __('Project title', 'jbtheme')}
-								placeholder={ __('Project title', 'jbtheme')}
+								label={ __('Project title', 'jbprovider')}
+								placeholder={ __('Project title', 'jbprovider')}
 								tagName="h3"
 								value={ project.title }
 								onChange={ (title) => {
@@ -114,8 +114,8 @@ const JBProjectsEdit = (props) =>{
 								}}
 								/>	
 							<RichText
-								label={ __('Project Subtitle', 'jbtheme')}
-								placeholder={ __('Project Subtitle', 'jbtheme')}
+								label={ __('Project Subtitle', 'jbprovider')}
+								placeholder={ __('Project Subtitle', 'jbprovider')}
 								tagName="p"
 								value={ project.subtitle }
 								onChange={ (subtitle) => {
@@ -133,7 +133,7 @@ const JBProjectsEdit = (props) =>{
 								}}
 								/>	
 								<TextControl
-								label={ __('Project link', 'jbtheme')}
+								label={ __('Project link', 'jbprovider')}
 								type="text"
 								value={ project.link }
 								onChange={ (link) => {
@@ -156,22 +156,22 @@ const JBProjectsEdit = (props) =>{
 		});
 	return ([
 			inspectorControls,	   
-			<Tooltip text={__("This is projects section",'jbtheme')}>
+			<Tooltip text={__("This is projects section",'jbprovider')}>
 				<div className="jb-block-title">
-					{__('JB Projects', 'jbtheme')}
+					{__('JB Projects', 'jbprovider')}
 				</div>
 			</Tooltip>, 
 			<div>
 				<RichText
-					label={ __('Section title', 'jbtheme')}
-					placeholder={ __('Section title', 'jbtheme')}
+					label={ __('Section title', 'jbprovider')}
+					placeholder={ __('Section title', 'jbprovider')}
 					tagName="h2"
 					value={ props.attributes.title }
 					onChange={ (title) => props.setAttributes({title})}
 					/>	
 				<RichText
-					label={ __('Section Subtitle', 'jbtheme')}
-					placeholder={ __('Section Subtitle', 'jbtheme')}
+					label={ __('Section Subtitle', 'jbprovider')}
+					placeholder={ __('Section Subtitle', 'jbprovider')}
 					tagName="p"
 					value={ props.attributes.subtitle }
 					onChange={ (subtitle) => props.setAttributes({subtitle})}

@@ -4,7 +4,7 @@
  * JB_Customizer class file
  *
  * @package    JB
- * @subpackage jbtheme
+ * @subpackage jbprovider
  * @since      1.0
  */
 
@@ -24,17 +24,17 @@ if ( ! class_exists( 'JB_Customizer' ) ) {
 		 *
 		 * @see   add_action('customize_register',$func)
 		 * @param \WP_Customize_Manager $wp_customize custmizer array.
-		 * @since JB Theme 1.0
+		 * @since JB Provider 1.0
 		 */
 		public static function register( $wp_customize ) {
 			// 1. Define a new section (if desired) to the Theme Customizer
 			$wp_customize->add_section(
 				'jbtheme_options',
 				array(
-					'title'       => __( 'JB Theme Options', 'jbtheme' ), // Visible title of section.
+					'title'       => __( 'JB Provider Options', 'jbprovider' ), // Visible title of section.
 					'priority'    => 300, // Determines what order this appears in.
 					'capability'  => 'edit_theme_options', // Capability needed to tweak.
-					'description' => __( 'Allows you to customize the settings for JB theme.', 'jbtheme' ), // Descriptive tooltip.
+					'description' => __( 'Allows you to customize the settings for JB Provider.', 'jbprovider' ), // Descriptive tooltip.
 				)
 			);
 
@@ -45,7 +45,7 @@ if ( ! class_exists( 'JB_Customizer' ) ) {
 					'type'              => 'theme_mod', // Is this an 'option' or a 'theme_mod'?
 					'capability'        => 'edit_theme_options', // Optional. Special permissions for accessing this setting.
 					'transport'         => 'postMessage', // What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
-					'sanitize_callback' => 'esc_attr',
+					'sanitize_callback' => 'jb_sanitize_image',
 				)
 			);
 
@@ -55,7 +55,7 @@ if ( ! class_exists( 'JB_Customizer' ) ) {
 					$wp_customize, // Pass the $wp_customize object (required).
 					'jb_white_logo_id', // Set a unique ID for the control.
 					array(
-						'label'    => __( 'White logo', 'jbtheme' ), // Admin-visible name of the control.
+						'label'    => __( 'White logo', 'jbprovider' ), // Admin-visible name of the control.
 						'settings' => 'jb_white_logo', // Which setting to load and manipulate (serialized is okay).
 						'priority' => 1, // Determines the order this control appears in for the specified section.
 						'section'  => 'title_tagline', // ID of the section this control should render in (can be one of yours, or a WordPress default section).
@@ -71,7 +71,7 @@ if ( ! class_exists( 'JB_Customizer' ) ) {
 					'type'              => 'theme_mod', // Is this an 'option' or a 'theme_mod'?
 					'capability'        => 'edit_theme_options', // Optional. Special permissions for accessing this setting.
 					'transport'         => 'postMessage', // What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
-					'sanitize_callback' => 'wp_kses_post',
+					'sanitize_callback' => 'jb_sanitize_html',
 				)
 			);
 
@@ -81,7 +81,7 @@ if ( ! class_exists( 'JB_Customizer' ) ) {
 					$wp_customize, // Pass the $wp_customize object (required).
 					'jb_copyright_id', // Set a unique ID for the control.
 					array(
-						'label'    => __( 'Website copyright', 'jbtheme' ), // Admin-visible name of the control.
+						'label'    => __( 'Website copyright', 'jbprovider' ), // Admin-visible name of the control.
 						'settings' => 'jb_copyright', // Which setting to load and manipulate (serialized is okay).
 						'priority' => 10, // Determines the order this control appears in for the specified section.
 						'section'  => 'jbtheme_options', // ID of the section this control should render in (can be one of yours, or a WordPress default section).
@@ -97,7 +97,7 @@ if ( ! class_exists( 'JB_Customizer' ) ) {
 					'type'              => 'theme_mod', // Is this an 'option' or a 'theme_mod'?
 					'capability'        => 'edit_theme_options', // Optional. Special permissions for accessing this setting.
 					'transport'         => 'postMessage', // What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
-					'sanitize_callback' => 'wp_kses_post',
+					'sanitize_callback' => 'jb_sanitize_html',
 				)
 			);
 
@@ -107,7 +107,7 @@ if ( ! class_exists( 'JB_Customizer' ) ) {
 					$wp_customize, // Pass the $wp_customize object (required).
 					'jb_address_id', // Set a unique ID for the control.
 					array(
-						'label'    => __( 'Address', 'jbtheme' ), // Admin-visible name of the control.
+						'label'    => __( 'Address', 'jbprovider' ), // Admin-visible name of the control.
 						'settings' => 'jb_address', // Which setting to load and manipulate (serialized is okay).
 						'priority' => 10, // Determines the order this control appears in for the specified section.
 						'section'  => 'jbtheme_options', // ID of the section this control should render in (can be one of yours, or a WordPress default section).
@@ -124,7 +124,7 @@ if ( ! class_exists( 'JB_Customizer' ) ) {
 					'type'              => 'theme_mod', // Is this an 'option' or a 'theme_mod'?
 					'capability'        => 'edit_theme_options', // Optional. Special permissions for accessing this setting.
 					'transport'         => 'postMessage', // What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
-					'sanitize_callback' => 'jb_filter_values',
+					'sanitize_callback' => 'jb_sanitize_scripts',
 				)
 			);
 
@@ -134,7 +134,7 @@ if ( ! class_exists( 'JB_Customizer' ) ) {
 					$wp_customize, // Pass the $wp_customize object (required).
 					'jb_head_scripts_id', // Set a unique ID for the control.
 					array(
-						'label'    => __( 'Head scripts', 'jbtheme' ), // Admin-visible name of the control.
+						'label'    => __( 'Head scripts', 'jbprovider' ), // Admin-visible name of the control.
 						'settings' => 'jb_head_scripts', // Which setting to load and manipulate (serialized is okay).
 						'priority' => 10, // Determines the order this control appears in for the specified section.
 						'section'  => 'jbtheme_options', // ID of the section this control should render in (can be one of yours, or a WordPress default section).
@@ -150,7 +150,7 @@ if ( ! class_exists( 'JB_Customizer' ) ) {
 					'type'              => 'theme_mod', // Is this an 'option' or a 'theme_mod'?
 					'capability'        => 'edit_theme_options', // Optional. Special permissions for accessing this setting.
 					'transport'         => 'postMessage', // What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
-					'sanitize_callback' => 'jb_filter_values',
+					'sanitize_callback' => 'jb_sanitize_scripts',
 				)
 			);
 
@@ -160,7 +160,7 @@ if ( ! class_exists( 'JB_Customizer' ) ) {
 					$wp_customize, // Pass the $wp_customize object (required).
 					'jb_footer_scripts_id', // Set a unique ID for the control.
 					array(
-						'label'    => __( 'Footer scripts', 'jbtheme' ), // Admin-visible name of the control.
+						'label'    => __( 'Footer scripts', 'jbprovider' ), // Admin-visible name of the control.
 						'settings' => 'jb_footer_scripts', // Which setting to load and manipulate (serialized is okay).
 						'priority' => 10, // Determines the order this control appears in for the specified section.
 						'section'  => 'jbtheme_options', // ID of the section this control should render in (can be one of yours, or a WordPress default section).
@@ -176,7 +176,7 @@ if ( ! class_exists( 'JB_Customizer' ) ) {
 					'type'              => 'theme_mod', // Is this an 'option' or a 'theme_mod'?
 					'capability'        => 'edit_theme_options', // Optional. Special permissions for accessing this setting.
 					'transport'         => 'postMessage', // What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
-					'sanitize_callback' => 'esc_attr',
+					'sanitize_callback' => 'jb_sanitize_url',
 				)
 			);
 
@@ -186,7 +186,7 @@ if ( ! class_exists( 'JB_Customizer' ) ) {
 					$wp_customize, // Pass the $wp_customize object (required).
 					'jb_social_fb_id', // Set a unique ID for the control.
 					array(
-						'label'    => __( 'Facebook URL', 'jbtheme' ), // Admin-visible name of the control.
+						'label'    => __( 'Facebook URL', 'jbprovider' ), // Admin-visible name of the control.
 						'settings' => 'jb_social_fb', // Which setting to load and manipulate (serialized is okay).
 						'priority' => 10, // Determines the order this control appears in for the specified section.
 						'section'  => 'jbtheme_options', // ID of the section this control should render in (can be one of yours, or a WordPress default section).
@@ -202,7 +202,7 @@ if ( ! class_exists( 'JB_Customizer' ) ) {
 					'type'              => 'theme_mod', // Is this an 'option' or a 'theme_mod'?
 					'capability'        => 'edit_theme_options', // Optional. Special permissions for accessing this setting.
 					'transport'         => 'postMessage', // What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
-					'sanitize_callback' => 'esc_attr',
+					'sanitize_callback' => 'jb_sanitize_url',
 				)
 			);
 
@@ -212,7 +212,7 @@ if ( ! class_exists( 'JB_Customizer' ) ) {
 					$wp_customize, // Pass the $wp_customize object (required).
 					'jb_social_twitter_id', // Set a unique ID for the control.
 					array(
-						'label'    => __( 'Twitter URL', 'jbtheme' ), // Admin-visible name of the control.
+						'label'    => __( 'Twitter URL', 'jbprovider' ), // Admin-visible name of the control.
 						'settings' => 'jb_social_twitter', // Which setting to load and manipulate (serialized is okay).
 						'priority' => 10, // Determines the order this control appears in for the specified section.
 						'section'  => 'jbtheme_options', // ID of the section this control should render in (can be one of yours, or a WordPress default section).
@@ -227,7 +227,7 @@ if ( ! class_exists( 'JB_Customizer' ) ) {
 					'type'              => 'theme_mod', // Is this an 'option' or a 'theme_mod'?
 					'capability'        => 'edit_theme_options', // Optional. Special permissions for accessing this setting.
 					'transport'         => 'postMessage', // What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
-					'sanitize_callback' => 'esc_attr',
+					'sanitize_callback' => 'jb_sanitize_url',
 				)
 			);
 
@@ -237,7 +237,7 @@ if ( ! class_exists( 'JB_Customizer' ) ) {
 					$wp_customize, // Pass the $wp_customize object (required).
 					'jb_social_linkedin_id', // Set a unique ID for the control.
 					array(
-						'label'    => __( 'Linkedin URL', 'jbtheme' ), // Admin-visible name of the control.
+						'label'    => __( 'Linkedin URL', 'jbprovider' ), // Admin-visible name of the control.
 						'settings' => 'jb_social_linkedin', // Which setting to load and manipulate (serialized is okay).
 						'priority' => 10, // Determines the order this control appears in for the specified section.
 						'section'  => 'jbtheme_options', // ID of the section this control should render in (can be one of yours, or a WordPress default section).
@@ -253,7 +253,7 @@ if ( ! class_exists( 'JB_Customizer' ) ) {
 					'type'              => 'theme_mod', // Is this an 'option' or a 'theme_mod'?
 					'capability'        => 'edit_theme_options', // Optional. Special permissions for accessing this setting.
 					'transport'         => 'postMessage', // What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
-					'sanitize_callback' => 'esc_attr',
+					'sanitize_callback' => 'jb_sanitize_url',
 				)
 			);
 
@@ -263,33 +263,7 @@ if ( ! class_exists( 'JB_Customizer' ) ) {
 					$wp_customize, // Pass the $wp_customize object (required).
 					'jb_social_google_plus_id', // Set a unique ID for the control.
 					array(
-						'label'    => __( 'Google Plus URL', 'jbtheme' ), // Admin-visible name of the control.
-						'settings' => 'jb_social_google_plus', // Which setting to load and manipulate (serialized is okay).
-						'priority' => 10, // Determines the order this control appears in for the specified section.
-						'section'  => 'jbtheme_options', // ID of the section this control should render in (can be one of yours, or a WordPress default section).
-						'type'     => 'text',
-					)
-				)
-			);
-
-			$wp_customize->add_setting(
-				'jb_social_google_plus', // No need to use a SERIALIZED name, as `theme_mod` settings already live under one db record.
-				array(
-					'default'           => '', // Default setting/value to save.
-					'type'              => 'theme_mod', // Is this an 'option' or a 'theme_mod'?
-					'capability'        => 'edit_theme_options', // Optional. Special permissions for accessing this setting.
-					'transport'         => 'postMessage', // What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
-					'sanitize_callback' => 'esc_attr',
-				)
-			);
-
-			// 3. Finally, we define the control itself (which links a setting to a section and renders the HTML controls)...
-			$wp_customize->add_control(
-				new WP_Customize_Control( // Instantiate the color control class.
-					$wp_customize, // Pass the $wp_customize object (required).
-					'jb_social_google_plus_id', // Set a unique ID for the control.
-					array(
-						'label'    => __( 'Google Plus URL', 'jbtheme' ), // Admin-visible name of the control.
+						'label'    => __( 'Google Plus URL', 'jbprovider' ), // Admin-visible name of the control.
 						'settings' => 'jb_social_google_plus', // Which setting to load and manipulate (serialized is okay).
 						'priority' => 10, // Determines the order this control appears in for the specified section.
 						'section'  => 'jbtheme_options', // ID of the section this control should render in (can be one of yours, or a WordPress default section).
@@ -304,7 +278,7 @@ if ( ! class_exists( 'JB_Customizer' ) ) {
 					'type'              => 'theme_mod', // Is this an 'option' or a 'theme_mod'?
 					'capability'        => 'edit_theme_options', // Optional. Special permissions for accessing this setting.
 					'transport'         => 'postMessage', // What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
-					'sanitize_callback' => 'esc_attr',
+					'sanitize_callback' => 'jb_sanitize_url',
 				)
 			);
 
@@ -314,7 +288,7 @@ if ( ! class_exists( 'JB_Customizer' ) ) {
 					$wp_customize, // Pass the $wp_customize object (required).
 					'jb_social_youtube_id', // Set a unique ID for the control.
 					array(
-						'label'    => __( 'Youtube URL', 'jbtheme' ), // Admin-visible name of the control.
+						'label'    => __( 'Youtube URL', 'jbprovider' ), // Admin-visible name of the control.
 						'settings' => 'jb_social_youtube', // Which setting to load and manipulate (serialized is okay).
 						'priority' => 10, // Determines the order this control appears in for the specified section.
 						'section'  => 'jbtheme_options', // ID of the section this control should render in (can be one of yours, or a WordPress default section).
@@ -330,7 +304,7 @@ if ( ! class_exists( 'JB_Customizer' ) ) {
 					'type'              => 'theme_mod', // Is this an 'option' or a 'theme_mod'?
 					'capability'        => 'edit_theme_options', // Optional. Special permissions for accessing this setting.
 					'transport'         => 'postMessage', // What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
-					'sanitize_callback' => 'esc_attr',
+					'sanitize_callback' => 'jb_sanitize_select',
 				)
 			);
 
@@ -340,14 +314,14 @@ if ( ! class_exists( 'JB_Customizer' ) ) {
 					$wp_customize, // Pass the $wp_customize object (required).
 					'jb_blog_layout_id', // Set a unique ID for the control.
 					array(
-						'label'    => __( 'Blog layout', 'jbtheme' ), // Admin-visible name of the control.
+						'label'    => __( 'Blog layout', 'jbprovider' ), // Admin-visible name of the control.
 						'settings' => 'jb_blog_layout', // Which setting to load and manipulate (serialized is okay).
 						'priority' => 10, // Determines the order this control appears in for the specified section.
 						'section'  => 'jbtheme_options', // ID of the section this control should render in (can be one of yours, or a WordPress default section).
 						'type'     => 'select',
 						'choices'  => array(
-							'grid' => __( 'Grid', 'jbtheme' ),
-							'list' => __( 'List', 'jbtheme' ),
+							'grid' => __( 'Grid', 'jbprovider' ),
+							'list' => __( 'List', 'jbprovider' ),
 						),
 					)
 				)
@@ -359,7 +333,7 @@ if ( ! class_exists( 'JB_Customizer' ) ) {
 					'type'              => 'theme_mod', // Is this an 'option' or a 'theme_mod'?
 					'capability'        => 'edit_theme_options', // Optional. Special permissions for accessing this setting.
 					'transport'         => 'postMessage', // What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
-					'sanitize_callback' => 'esc_attr',
+					'sanitize_callback' => 'jb_sanitize_select',
 				)
 			);
 
@@ -369,15 +343,15 @@ if ( ! class_exists( 'JB_Customizer' ) ) {
 					$wp_customize, // Pass the $wp_customize object (required).
 					'jb_blog_showsidebar_id', // Set a unique ID for the control.
 					array(
-						'label'    => __( 'Blog sidebar options', 'jbtheme' ), // Admin-visible name of the control.
+						'label'    => __( 'Blog sidebar options', 'jbprovider' ), // Admin-visible name of the control.
 						'settings' => 'jb_blog_showsidebar', // Which setting to load and manipulate (serialized is okay).
 						'priority' => 10, // Determines the order this control appears in for the specified section.
 						'section'  => 'jbtheme_options', // ID of the section this control should render in (can be one of yours, or a WordPress default section).
 						'type'     => 'select',
 						'choices'  => array(
-							'nosidebar'    => __( 'No Sidebar', 'jbtheme' ),
-							'leftsidebar'  => __( 'Left Sidebar', 'jbtheme' ),
-							'rightsidebar' => __( 'Right Sidebar', 'jbtheme' ),
+							'nosidebar'    => __( 'No Sidebar', 'jbprovider' ),
+							'leftsidebar'  => __( 'Left Sidebar', 'jbprovider' ),
+							'rightsidebar' => __( 'Right Sidebar', 'jbprovider' ),
 						),
 					)
 				)
@@ -390,7 +364,7 @@ if ( ! class_exists( 'JB_Customizer' ) ) {
 					'type'              => 'theme_mod', // Is this an 'option' or a 'theme_mod'?
 					'capability'        => 'edit_theme_options', // Optional. Special permissions for accessing this setting.
 					'transport'         => 'postMessage', // What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
-					'sanitize_callback' => 'esc_attr',
+					'sanitize_callback' => 'jb_sanitize_select',
 				)
 			);
 
@@ -400,14 +374,14 @@ if ( ! class_exists( 'JB_Customizer' ) ) {
 					$wp_customize, // Pass the $wp_customize object (required).
 					'jb_blog_fullwith_id', // Set a unique ID for the control.
 					array(
-						'label'    => __( 'Blog width options', 'jbtheme' ), // Admin-visible name of the control.
+						'label'    => __( 'Blog width options', 'jbprovider' ), // Admin-visible name of the control.
 						'settings' => 'jb_blog_fullwith', // Which setting to load and manipulate (serialized is okay).
 						'priority' => 10, // Determines the order this control appears in for the specified section.
 						'section'  => 'jbtheme_options', // ID of the section this control should render in (can be one of yours, or a WordPress default section).
 						'type'     => 'select',
 						'choices'  => array(
-							'default'   => __( 'Default', 'jbtheme' ),
-							'fullwidth' => __( 'Full Width', 'jbtheme' ),
+							'default'   => __( 'Default', 'jbprovider' ),
+							'fullwidth' => __( 'Full Width', 'jbprovider' ),
 						),
 					)
 				)
@@ -424,7 +398,7 @@ if ( ! class_exists( 'JB_Customizer' ) ) {
 		 * Used by hook: 'wp_head'
 		 *
 		 * @see   add_action('wp_head',$func)
-		 * @since JB Theme 1.0
+		 * @since JB Provider 1.0
 		 */
 		public static function header_output() {
 			?>
@@ -447,7 +421,7 @@ if ( ! class_exists( 'JB_Customizer' ) ) {
 		 * Used by hook: 'customize_preview_init'
 		 *
 		 * @see   add_action('customize_preview_init',$func)
-		 * @since JB Theme 1.0
+		 * @since JB Provider 1.0
 		 */
 		public static function live_preview() {
 			$theme_version = wp_get_theme()->get( 'Version' );
@@ -472,7 +446,7 @@ if ( ! class_exists( 'JB_Customizer' ) ) {
 		 * @param  string $postfix  Optional. Anything that needs to be output after the CSS property.
 		 * @param  bool   $echo     Optional. Whether to print directly to the page (default: true).
 		 * @return string Returns a single line of CSS with selectors and a property.
-		 * @since  JB Theme 1.0
+		 * @since  JB Provider 1.0
 		 */
 		public static function generate_css( $selector, $style, $mod_name, $prefix = '', $postfix = '', $echo = true ) {
 			$return = '';

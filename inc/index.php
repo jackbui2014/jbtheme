@@ -3,7 +3,7 @@
  * The indes file of all
  *
  * @package JB
- * @subpackage jbtheme
+ * @subpackage jbprovider
  * @since 1.0
  */
 
@@ -12,6 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 require_once dirname( __FILE__ ) . '/autoloader.php';
 require_once dirname( __FILE__ ) . '/class-tgm-plugin-activation.php';
+require_once dirname( __FILE__ ) . '/sanitization-callbacks.php';
 require_once dirname( __FILE__ ) . '/class-jb-customizer.php';
 require_once dirname( __FILE__ ) . '/class-jb-social-widget.php';
 require_once dirname( __FILE__ ) . '/widgets.php';

@@ -12,15 +12,15 @@ const TestimonialEdit = (props) =>{
 
 	const inspectorControls = (
 		<InspectorControls>
-			<PanelBody title={__('Testimonial settings', 'jbtheme')} >
-			<h4>{ __('Section background color', 'jbtheme')}</h4>
+			<PanelBody title={__('Testimonial settings', 'jbprovider')} >
+			<h4>{ __('Section background color', 'jbprovider')}</h4>
 			<ColorPicker
 			color={ props.attributes.background_color }
             onChangeComplete={ ( value ) => props.setAttributes({background_color: value.hex}) }
             disableAlpha
 			/>
 
-		<h4>{ __('Section background image', 'jbtheme')}</h4>
+		<h4>{ __('Section background image', 'jbprovider')}</h4>
 			<MediaUpload
 				onSelect={media => {
 					let image = media.sizes.full
@@ -46,8 +46,8 @@ const TestimonialEdit = (props) =>{
 				}
 				/>
 				<TextControl
-				label={ __('Section id', 'jbtheme')}
-				placeholder={ __('Section id', 'jbtheme')}
+				label={ __('Section id', 'jbprovider')}
+				placeholder={ __('Section id', 'jbprovider')}
 				value={ props.attributes.id }
 				onChange={ (id) => props.setAttributes({id})}
 				/>	
@@ -121,8 +121,8 @@ const TestimonialEdit = (props) =>{
 							}
 							/>
 							<RichText
-								label={ __('Testimonial content', 'jbtheme')}
-								placeholder={ __('Testimonial content', 'jbtheme')}
+								label={ __('Testimonial content', 'jbprovider')}
+								placeholder={ __('Testimonial content', 'jbprovider')}
 								tagName="p"
 								value={ testimonial.content }
 								onChange={ (content) => {
@@ -140,8 +140,8 @@ const TestimonialEdit = (props) =>{
 								}}
 								/>	
 							<RichText
-								label={ __('Customer name', 'jbtheme')}
-								placeholder={ __('Customer name', 'jbtheme')}
+								label={ __('Customer name', 'jbprovider')}
+								placeholder={ __('Customer name', 'jbprovider')}
 								tagName="p"
 								value={ testimonial.name }
 								onChange={ (name) => {
@@ -159,7 +159,7 @@ const TestimonialEdit = (props) =>{
 								}}
 								/>	
 								<TextControl
-								placeholder={ __('Customer job title', 'jbtheme')}
+								placeholder={ __('Customer job title', 'jbprovider')}
 								type="text"
 								value={ testimonial.job_title }
 								onChange={ (job_title) => {
@@ -182,9 +182,9 @@ const TestimonialEdit = (props) =>{
 		});
 	return ([
 			inspectorControls,	   
-			<Tooltip text={__("This is testimonials section",'jbtheme')}>
+			<Tooltip text={__("This is testimonials section",'jbprovider')}>
 				<div className="jb-block-title">
-					{__('JB Testimonial', 'jbtheme')}
+					{__('JB Testimonial', 'jbprovider')}
 				</div>
 			</Tooltip>, 
 			<div>

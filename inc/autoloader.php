@@ -4,7 +4,7 @@
  * The autoload function
  *
  * @package JB
- * @subpackage jbtheme
+ * @subpackage jbprovider
  * @since 1.0
  */
 
@@ -16,7 +16,7 @@ if ( ! function_exists( 'jb_auto_load' ) ) {
 	 * @param string $classname is the name of class to be load.
 	 *
 	 * @package JB
-	 * @subpackage jbtheme
+	 * @subpackage jbprovider
 	 * @since 1.0
 	 */
 	function jb_auto_load( $classname = '' ) {
