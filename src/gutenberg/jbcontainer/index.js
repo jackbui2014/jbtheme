@@ -9,7 +9,7 @@ import { containerIcon } from '../../components/icons';
 const { name, category, attributes } = config;
 
 const settings = {
-	title: __('JB Container', 'jbprovider'),
+	title: __('JB Container', 'jbapp'),
 	icon: containerIcon,
 	category: category,
 	attributes,

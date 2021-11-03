@@ -1,0 +1,216 @@
+@import './variables';
+.admin-bar{
+	.site-header{
+		top: 32px;
+	}
+}
+.site-header{
+	height: 80px;
+	width:100%;
+	display:flex;
+	align-items: center;
+	position: fixed;
+	top: 0;
+	z-index:9999;
+	background: $white;
+    -webkit-transition: 300ms all cubic-bezier(.4,0,.2,1);
+    transition: 300ms all cubic-bezier(.4,0,.2,1);
+	border-bottom: 1px solid rgba(255,255,255,.15);
+	.site-logo{
+		width: auto;
+		float:left;
+		margin: 0;
+	    opacity: 1;
+	    -webkit-transition: 300ms all cubic-bezier(.4,0,.2,1);
+	    transition: 300ms all cubic-bezier(.4,0,.2,1);
+	    max-height: 80px;
+	    padding-left:1rem;
+	}
+	.white-logo{
+		display: block;
+	}
+	.custom-logo{
+		display: none;
+	}
+	.primary-navigation{
+		width: 90%;
+		float:left;
+		.navbar-toggler{
+			right: 20px;
+			position: absolute;
+		}
+		.menu-item{
+			position: relative;
+			&.menu-item-has-children{
+				.sub-menu-toggle{
+					background: transparent;
+					border: 0;
+					color: $white;
+					position: absolute;
+					z-index: 99;
+					right: 0px;
+					top: 0;
+				}
+
+			}
+			a{
+				padding: 30px 35px;
+			    color: $menu_link_color;
+			    height: 80px; 
+			    -webkit-transition: 300ms all cubic-bezier(.4,0,.2,1);
+			    transition: 300ms all cubic-bezier(.4,0,.2,1);
+			    text-decoration: none;
+				text-transform: uppercase;
+				font-weight: 500;
+			    &:hover{
+			    	color: $menu_link_hover_color;
+			    }
+		    }
+			.sub-menu{
+				position: absolute;
+				background-color:$white;
+				min-width: 160px;
+				box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+				z-index: -1;
+				overflow: hidden;
+				height: 0;
+				visibility: hidden;
+				opacity: 0;
+				&.active{
+					height: auto;
+					visibility: visible;
+					opacity: 1;
+					top: 49px;
+				}
+				a{
+					float: none;
+					color: $menu_primary_link_color;
+					padding: 12px 16px;
+					text-decoration: none;
+					display: block;
+					text-align: left;
+					&:hover{
+						color: $menu_primary_link_hover_color;
+					}
+				}
+				.menu-item{
+					position: relative;
+					&.menu-item-has-children{
+			
+					}
+					.sub-menu{
+						position: absolute;
+						top: 0;
+						left: 100%;
+						z-index: -1;
+					}
+				}
+			}
+			&:hover, &:focus{
+				>.sub-menu{
+					display: block;
+					top: 49px;
+					opacity: 1;
+					z-index: 3;
+					height: auto;
+					visibility: visible;
+					.menu-item{
+						list-style-type: none;
+						&:hover{
+							background-color: $secondary_color;
+							color: $white;
+						}
+						a{
+							height: auto;
+						}
+					}
+				}
+				.sub-menu-toggle{
+					color: $menu_link_hover_color;
+				}
+			}
+		}
+	}
+	&.fixed-header{
+    	background: $white;
+		box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    	transition: 0.3s;
+		.white-logo{
+			display: none;
+		}
+		.custom-logo{
+			display: block;
+		}
+		.primary-navigation{
+			.menu-item{
+				&:hover{
+					>a{
+						color: $menu_link_hover_color;
+					}
+					>.sub-menu-toggle{
+						color: $menu_link_hover_color;
+					}
+				}
+				a{
+					color: $menu_primary_link_color;
+					&:hover{
+						color: $menu_primary_link_hover_color;
+					}
+				}
+				&.menu-item-has-children{
+					.sub-menu-toggle{
+						color: $menu_primary_link_color;
+						&:hover{
+							color: $menu_link_hover_color;
+						}
+					}
+					&:hover, &:focus{
+						.sub-menu{
+							display: block;
+							top: 49px;
+							opacity: 1;
+							z-index: 3;
+							height: auto;
+							visibility: visible;
+						}
+					}
+				}
+				.sub-menu{
+					.menu-item{
+						a{
+							&:hover{
+								color: $menu_primary_link_color;
+							}
+						}
+					}
+				}
+			}
+		}
+    }
+	&:not(.fixed-header){
+		.sub-menu{
+			background-color: $white;
+			.menu-item{
+				color: $menu_primary_link_color;
+				&:hover{
+					color: $menu_primary_link_hover_color;
+				}
+				a{
+					color: $menu_primary_link_color;
+					&:hover{
+						color: $menu_primary_link_hover_color;
+					}
+				
+				}
+			}
+		}
+	}
+}
+.home{
+	.site-header{
+		background-color: transparent;
+		&.fixed-header{
+			background-color: $white;
+		}
+	}
+}

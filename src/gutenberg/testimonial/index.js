@@ -7,7 +7,7 @@ import { testimonialIcon } from '../../components/icons';
 const { name, category, attributes } = config;
 
 const settings = {
-	title: __('JB Testimonial', 'jbprovider'),
+	title: __('JB Testimonial', 'jbapp'),
 	icon: testimonialIcon,
 	category: category,
 	attributes,

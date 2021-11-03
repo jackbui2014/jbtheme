@@ -8,7 +8,7 @@ import save from './save';
 const {name, category, attributes} = config;
 
 const settings = {
-	title: __('JB Sliders', 'jbprovider'),
+	title: __('JB Sliders', 'jbapp'),
 	icon: 'format-gallery',
 	category: category,
 	attributes,

@@ -12,16 +12,16 @@ const JBTeamEdit = (props) =>{
 
 	const inspectorControls = (
 		<InspectorControls>
-			<PanelBody title={__('Teams settings', 'jbprovider')} >
-			<h4>{ __('Section background color', 'jbprovider')}</h4>
+			<PanelBody title={__('Teams settings', 'jbapp')} >
+			<h4>{ __('Section background color', 'jbapp')}</h4>
 			<ColorPicker
 			color={ props.attributes.background_color }
             onChangeComplete={ ( value ) => props.setAttributes({background_color: value.hex}) }
             disableAlpha
 			/>
 			<TextControl
-			label={ __('Section id', 'jbprovider')}
-				placeholder={ __('Section id', 'jbprovider')}
+			label={ __('Section id', 'jbapp')}
+				placeholder={ __('Section id', 'jbapp')}
 				value={ props.attributes.id }
 				onChange={ (id) => props.setAttributes({id})}
 				/>	
@@ -95,7 +95,7 @@ const JBTeamEdit = (props) =>{
 							}
 							/>
 							<RichText
-								placeholder={ __('Name', 'jbprovider')}
+								placeholder={ __('Name', 'jbapp')}
 								tagName="p"
 								value={ team.name }
 								onChange={ (name) => {
@@ -113,7 +113,7 @@ const JBTeamEdit = (props) =>{
 								}}
 								/>	
 								<TextControl
-								placeholder={ __('Job title', 'jbprovider')}
+								placeholder={ __('Job title', 'jbapp')}
 								type="text"
 								value={ team.job_title }
 								onChange={ (job_title) => {
@@ -131,7 +131,7 @@ const JBTeamEdit = (props) =>{
 								}}
 								/>
 								<TextControl
-								placeholder={ __('Facebook URL', 'jbprovider')}
+								placeholder={ __('Facebook URL', 'jbapp')}
 								type="text"
 								value={ team.facebook }
 								onChange={ (facebook) => {
@@ -149,7 +149,7 @@ const JBTeamEdit = (props) =>{
 								}}
 								/>
 								<TextControl
-								placeholder={ __('Twitter URL', 'jbprovider')}
+								placeholder={ __('Twitter URL', 'jbapp')}
 								type="text"
 								value={ team.twitter }
 								onChange={ (twitter) => {
@@ -167,7 +167,7 @@ const JBTeamEdit = (props) =>{
 								}}
 								/>
 								<TextControl
-								placeholder={ __('Linkedin URL', 'jbprovider')}
+								placeholder={ __('Linkedin URL', 'jbapp')}
 								type="text"
 								value={ team.linkedin }
 								onChange={ (linkedin) => {
@@ -185,7 +185,7 @@ const JBTeamEdit = (props) =>{
 								}}
 								/>
 								<TextControl
-								placeholder={ __('Google + URL', 'jbprovider')}
+								placeholder={ __('Google + URL', 'jbapp')}
 								type="text"
 								value={ team.google }
 								onChange={ (google) => {
@@ -208,22 +208,22 @@ const JBTeamEdit = (props) =>{
 		});
 	return ([
 			inspectorControls,	   
-			<Tooltip text={__("This is JB Team section",'jbprovider')}>
+			<Tooltip text={__("This is JB Team section",'jbapp')}>
 				<div className="jb-block-title">
-					{__('JB Team', 'jbprovider')}
+					{__('JB Team', 'jbapp')}
 				</div>
 			</Tooltip>, 
 			<div>
 				<RichText
-					label={ __('Section title', 'jbprovider')}
-					placeholder={ __('Section title', 'jbprovider')}
+					label={ __('Section title', 'jbapp')}
+					placeholder={ __('Section title', 'jbapp')}
 					tagName="h2"
 					value={ props.attributes.title }
 					onChange={ (title) => props.setAttributes({title})}
 					/>	
 				<RichText
-					label={ __('Section Subtitle', 'jbprovider')}
-					placeholder={ __('Section Subtitle', 'jbprovider')}
+					label={ __('Section Subtitle', 'jbapp')}
+					placeholder={ __('Section Subtitle', 'jbapp')}
 					tagName="p"
 					value={ props.attributes.subtitle }
 					onChange={ (subtitle) => props.setAttributes({subtitle})}

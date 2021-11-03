@@ -6,7 +6,7 @@
  * Contains the opening of the #site-footer div and all content after.
  *
  * @package JB
- * @subpackage jbprovider
+ * @subpackage jbapp
  * @since 1.0
  */
 

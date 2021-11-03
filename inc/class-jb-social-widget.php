@@ -3,7 +3,7 @@
  * The indes file of all
  *
  * @package JB
- * @subpackage jbprovider
+ * @subpackage jbtheme
  * @since 1.0
  */
 
@@ -20,7 +20,7 @@ if ( ! class_exists( 'JB_Social_Widget' ) ) {
 			parent::__construct(
 				'jb_social_widget', // Base ID.
 				'JB Social Widget', // Name.
-				array( 'description' => __( 'JB Social widget', 'jbprovider' ) ) // Args.
+				array( 'description' => __( 'JB Social widget', 'jbapp' ) ) // Args.
 			);
 		}
 
@@ -59,19 +59,19 @@ if ( ! class_exists( 'JB_Social_Widget' ) ) {
 			<div class="jb-social-wrapper <?php echo esc_attr( $cl ); ?>">                
 			<ul class="jb-social-icons">
 				<?php if ( ! empty( $fb_url ) ) : ?>
-					<li><a href="<?php echo esc_attr( $fb_url ); ?>"><i class="fab fa-facebook-square"></i></a></li>
+					<li><a href="<?php echo esc_url( $fb_url ); ?>"><i class="fab fa-facebook-square"></i></a></li>
 				<?php endif; ?>
 				<?php if ( ! empty( $twitter_url ) ) : ?>
-					<li><a href="<?php echo esc_attr( $twitter_url ); ?>"><i class="fab fa-twitter-square"></i></a></li>
+					<li><a href="<?php echo esc_url( $twitter_url ); ?>"><i class="fab fa-twitter-square"></i></a></li>
 				<?php endif; ?>
 				<?php if ( ! empty( $linkedin_url ) ) : ?>
-					<li><a href="<?php echo esc_attr( $linkedin_url ); ?>"><i class="fab fa-linkedin"></i></a></li>
+					<li><a href="<?php echo esc_url( $linkedin_url ); ?>"><i class="fab fa-linkedin"></i></a></li>
 				<?php endif; ?>
 				<?php if ( ! empty( $google_plus_url ) ) : ?>
-					<li><a href="<?php echo esc_attr( $google_plus_url ); ?>"><i class="fab fa-google-plus-square"></i></a></li>
+					<li><a href="<?php echo esc_url( $google_plus_url ); ?>"><i class="fab fa-google-plus-square"></i></a></li>
 				<?php endif; ?>
 				<?php if ( ! empty( $youtube_url ) ) : ?>
-					<li><a href="<?php echo esc_attr( $youtube_url ); ?>"><i class="fab fa-youtube-square"></i></a></li>
+					<li><a href="<?php echo esc_url( $youtube_url ); ?>"><i class="fab fa-youtube-square"></i></a></li>
 				<?php endif; ?>
 			</ul>
 			</div>
@@ -92,7 +92,7 @@ if ( ! class_exists( 'JB_Social_Widget' ) ) {
 			if ( isset( $instance['title'] ) ) {
 				$title = $instance['title'];
 			} else {
-				$title = __( 'JB Social', 'jbprovider' );
+				$title = __( 'JB Social', 'jbapp' );
 			}
 			if ( isset( $instance['style_mode'] ) ) {
 				$style_mode = $instance['style_mode'];
@@ -101,14 +101,14 @@ if ( ! class_exists( 'JB_Social_Widget' ) ) {
 			}
 			?>
 		<p>
-			<label for="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>"><?php esc_html_e( 'Title:', 'jbprovider' ); ?></label>
+			<label for="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>"><?php esc_html_e( 'Title:', 'jbapp' ); ?></label>
 			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
 		</p>
 		<p>
-			<label for="<?php echo esc_attr( $this->get_field_name( 'style_mode' ) ); ?>"><?php esc_html_e( 'Style mode:', 'jbprovider' ); ?></label>
+			<label for="<?php echo esc_attr( $this->get_field_name( 'style_mode' ) ); ?>"><?php esc_html_e( 'Style mode:', 'jbapp' ); ?></label>
 			<select name="<?php echo esc_attr( $this->get_field_name( 'style_mode' ) ); ?>" id="<?php echo esc_html( $this->get_field_id( 'style_mode' ) ); ?>" >
-			<option value="normal" <?php echo ( 'normal' === $style_mode ) ? 'selected' : ''; ?>><?php esc_html_e( 'Normal', 'jbprovider' ); ?></option>
-			<option value="white" <?php echo ( 'white' === $style_mode ) ? 'selected' : ''; ?>><?php esc_html_e( 'White', 'jbprovider' ); ?></option>
+			<option value="normal" <?php echo ( 'normal' === $style_mode ) ? 'selected' : ''; ?>><?php esc_html_e( 'Normal', 'jbapp' ); ?></option>
+			<option value="white" <?php echo ( 'white' === $style_mode ) ? 'selected' : ''; ?>><?php esc_html_e( 'White', 'jbapp' ); ?></option>
 			</select>
 		</p>
 			<?php

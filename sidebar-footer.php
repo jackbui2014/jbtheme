@@ -3,7 +3,7 @@
  * JB Provider's functions and definitions
  *
  * @package JB
- * @subpackage jbprovider
+ * @subpackage jbapp
  * @since 1.0
  */
 

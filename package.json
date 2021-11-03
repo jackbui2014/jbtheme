@@ -1,7 +1,7 @@
 {
-  "name": "jbtheme",
+  "name": "jbapp",
   "version": "1.0.0",
-  "description": "Simple WordPress theme built based on ReactJs",
+  "description": "Simple WordPress theme built based on Gutenberg",
   "main": [
     "index.js",
     "admin.js"

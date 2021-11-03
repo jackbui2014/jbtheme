@@ -4,7 +4,7 @@
  * Site nav template
  *
  * @package JB
- * @subpackage jbprovider
+ * @subpackage jbapp
  * @since 1.0
  */
 
@@ -17,7 +17,7 @@ else :
 endif;
 ?>
 <?php if ( has_nav_menu( 'primary' ) ) : ?>
-	<nav id="site-navigation" class="navbar navbar-expand-lg primary-navigation <?php echo esc_attr( $cl ); ?>" role="navigation" aria-label="<?php esc_attr_e( 'Primary menu', 'jbprovider' ); ?>">
+	<nav id="site-navigation" class="navbar navbar-expand-lg primary-navigation <?php echo esc_attr( $cl ); ?>" role="navigation" aria-label="<?php esc_attr_e( 'Primary menu', 'jbapp' ); ?>">
 	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 	<span class="navbar-toggler-icon"></span>
 	</button>

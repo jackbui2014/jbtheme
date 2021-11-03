@@ -4,7 +4,7 @@
  * Site branding template
  *
  * @package JB
- * @subpackage jbprovider
+ * @subpackage jbapp
  * @since 1.0
  */
 
@@ -17,7 +17,7 @@ $whitelogo    = get_theme_mod( 'jb_white_logo' );
 <?php if ( has_custom_logo() && $show_title ) : ?>
 	<div class="site-logo">
 		<?php if ( ! empty( $whitelogo ) ) : ?>
-			<a href="<?php echo esc_attr( get_home_url() ); ?>"><img src="<?php echo esc_attr( $whitelogo ); ?>" class="white-logo" atl="<?php esc_attr_e( 'White logo', 'jbprovider' ); ?>" /></a>
+			<a href="<?php echo esc_attr( get_home_url() ); ?>" class="logo-link"><img src="<?php echo esc_attr( $whitelogo ); ?>" class="white-logo" atl="<?php esc_attr_e( 'White logo', 'jbapp' ); ?>" /></a>
 		<?php endif; ?>
 		<?php echo wp_kses_post( get_custom_logo() ); ?>
 	</div>

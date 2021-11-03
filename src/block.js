@@ -118,6 +118,22 @@
 				}
 			});
 	}
+	function jbMenuToggle(){
+    $('.sub-menu-toggle').click(function(e){
+      e.preventDefault();
+      var expand_status = $(this).attr('aria-expanded');
+
+      if( 'false' == expand_status ){
+        $(this).parent().find('>.sub-menu').addClass('active');
+        $(this).attr('aria-expanded', true);
+				$('.site-header').addClass('fixed-header');
+      }
+      else{
+        $(this).parent().find('>.sub-menu').removeClass('active');
+        $(this).attr('aria-expanded', false);
+      }
+    });
+  }
 	$(window).load(function(){		
 		$('body').addClass('loaded');
 		ScrollOut({
@@ -137,6 +153,7 @@
 	$(document).ready(function(){
 		smoothScroll();
 		fixedHeader();
+		jbMenuToggle();
 		defaultPostList();
 		jbSliderBlock();
 		jbTestimonial();

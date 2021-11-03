@@ -9,7 +9,7 @@ import { servicesIcon } from '../../components/icons'
 const { name, category, attributes } = config;
 
 const settings = {
-	title: __('JB Service', 'jbprovider'),
+	title: __('JB Service', 'jbapp'),
 	icon: servicesIcon,
 	category: category,
 	attributes,

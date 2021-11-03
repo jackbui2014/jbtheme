@@ -13,7 +13,7 @@ const JBProjectsSave = (props)=>{
                     {project.index}
                 </span>
 				{project.image && (
-				<img src={project.image} className="jb-project-item-image" alt={__('project image', 'jbprovider')} />
+				<img src={project.image} className="jb-project-item-image" alt={__('project image', 'jbapp')} />
 				)}
 				<div className="jb-project-hover">
 					<a href={project.link} target="_blank"  rel="noopener"><i class="fas fa-link"></i></a>

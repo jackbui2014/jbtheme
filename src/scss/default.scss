@@ -325,6 +325,17 @@ License: MIT.
 		outline-offset: 4px;
 	}
 }
+a{
+	&:focus{
+		outline-offset: 2px;
+		outline: 2px dotted $input_border_color;
+		box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 1);
+		*{
+				box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 1);
+		}
+	}
+	
+}
 
 input[type=checkbox] + label,
 input[type=radio] + label {

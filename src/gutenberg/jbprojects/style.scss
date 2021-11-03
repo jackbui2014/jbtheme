@@ -46,7 +46,7 @@
 						margin-top: 12.5px;
 						color: $primary_color;
 					}
-					&:hover, &:visited{
+					&:hover, &:visited, &:focus{
 						i{
 							color: $secondary_color;
 						}
@@ -57,9 +57,9 @@
 			.jb-project-footer-content{
 				position: absolute;
 				width: 100%;
-				height: 0;
+				height: 25%;
 				background-color: $white;
-				bottom:0;
+				bottom: -25%;
 				left: 0;
 				z-index: 2;
 				transition: all .3s;
@@ -81,7 +81,7 @@
 					color: $normal_text_color;
 				}
 			}
-			&:hover{
+			&:hover, &:focus{
 				.jb-project-hover{
 					opacity: .6;
 					a{
@@ -89,7 +89,7 @@
 					}
 				}
 				.jb-project-footer-content{
-					height: 25%;
+					bottom: 0;
 				}
 				.jb-project-item-image{
 					transform: translateY(-50px);

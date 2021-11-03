@@ -6,7 +6,7 @@ import save from './save';
 const {name, category, attributes} = config;
 
 const settings = {
-	title: __('JB Team', 'jbprovider'),
+	title: __('JB Team', 'jbapp'),
 	icon: 'admin-users',
 	category: category,
 	attributes,

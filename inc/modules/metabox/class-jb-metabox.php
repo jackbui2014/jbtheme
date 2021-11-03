@@ -4,7 +4,7 @@
 	 * The JB_Metabox class file
 	 *
 	 * @package JB
-	 * @subpackage jbprovider
+	 * @subpackage jbapp
 	 * @since 1.0
 	 */
 
@@ -14,7 +14,7 @@ if ( ! class_exists( 'JB_Mettabox' ) ) {
 	 * The JB_Metabox class for all posts/pages metabox
 	 *
 	 * @package JB
-	 * @subpackage jbprovider
+	 * @subpackage jbapp
 	 * @since 1.0
 	 */
 	class JB_Metabox extends JB_Settings {

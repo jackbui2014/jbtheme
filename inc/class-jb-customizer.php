@@ -4,7 +4,7 @@
  * JB_Customizer class file
  *
  * @package    JB
- * @subpackage jbprovider
+ * @subpackage jbapp
  * @since      1.0
  */
 
@@ -31,10 +31,10 @@ if ( ! class_exists( 'JB_Customizer' ) ) {
 			$wp_customize->add_section(
 				'jbtheme_options',
 				array(
-					'title'       => __( 'JB Provider Options', 'jbprovider' ), // Visible title of section.
+					'title'       => __( 'JB Provider Options', 'jbapp' ), // Visible title of section.
 					'priority'    => 300, // Determines what order this appears in.
 					'capability'  => 'edit_theme_options', // Capability needed to tweak.
-					'description' => __( 'Allows you to customize the settings for JB Provider.', 'jbprovider' ), // Descriptive tooltip.
+					'description' => __( 'Allows you to customize the settings for JB Provider.', 'jbapp' ), // Descriptive tooltip.
 				)
 			);
 
@@ -55,7 +55,7 @@ if ( ! class_exists( 'JB_Customizer' ) ) {
 					$wp_customize, // Pass the $wp_customize object (required).
 					'jb_white_logo_id', // Set a unique ID for the control.
 					array(
-						'label'    => __( 'White logo', 'jbprovider' ), // Admin-visible name of the control.
+						'label'    => __( 'White logo', 'jbapp' ), // Admin-visible name of the control.
 						'settings' => 'jb_white_logo', // Which setting to load and manipulate (serialized is okay).
 						'priority' => 1, // Determines the order this control appears in for the specified section.
 						'section'  => 'title_tagline', // ID of the section this control should render in (can be one of yours, or a WordPress default section).
@@ -81,7 +81,7 @@ if ( ! class_exists( 'JB_Customizer' ) ) {
 					$wp_customize, // Pass the $wp_customize object (required).
 					'jb_copyright_id', // Set a unique ID for the control.
 					array(
-						'label'    => __( 'Website copyright', 'jbprovider' ), // Admin-visible name of the control.
+						'label'    => __( 'Website copyright', 'jbapp' ), // Admin-visible name of the control.
 						'settings' => 'jb_copyright', // Which setting to load and manipulate (serialized is okay).
 						'priority' => 10, // Determines the order this control appears in for the specified section.
 						'section'  => 'jbtheme_options', // ID of the section this control should render in (can be one of yours, or a WordPress default section).
@@ -107,7 +107,7 @@ if ( ! class_exists( 'JB_Customizer' ) ) {
 					$wp_customize, // Pass the $wp_customize object (required).
 					'jb_address_id', // Set a unique ID for the control.
 					array(
-						'label'    => __( 'Address', 'jbprovider' ), // Admin-visible name of the control.
+						'label'    => __( 'Address', 'jbapp' ), // Admin-visible name of the control.
 						'settings' => 'jb_address', // Which setting to load and manipulate (serialized is okay).
 						'priority' => 10, // Determines the order this control appears in for the specified section.
 						'section'  => 'jbtheme_options', // ID of the section this control should render in (can be one of yours, or a WordPress default section).
@@ -134,7 +134,7 @@ if ( ! class_exists( 'JB_Customizer' ) ) {
 					$wp_customize, // Pass the $wp_customize object (required).
 					'jb_head_scripts_id', // Set a unique ID for the control.
 					array(
-						'label'    => __( 'Head scripts', 'jbprovider' ), // Admin-visible name of the control.
+						'label'    => __( 'Head scripts', 'jbapp' ), // Admin-visible name of the control.
 						'settings' => 'jb_head_scripts', // Which setting to load and manipulate (serialized is okay).
 						'priority' => 10, // Determines the order this control appears in for the specified section.
 						'section'  => 'jbtheme_options', // ID of the section this control should render in (can be one of yours, or a WordPress default section).
@@ -160,7 +160,7 @@ if ( ! class_exists( 'JB_Customizer' ) ) {
 					$wp_customize, // Pass the $wp_customize object (required).
 					'jb_footer_scripts_id', // Set a unique ID for the control.
 					array(
-						'label'    => __( 'Footer scripts', 'jbprovider' ), // Admin-visible name of the control.
+						'label'    => __( 'Footer scripts', 'jbapp' ), // Admin-visible name of the control.
 						'settings' => 'jb_footer_scripts', // Which setting to load and manipulate (serialized is okay).
 						'priority' => 10, // Determines the order this control appears in for the specified section.
 						'section'  => 'jbtheme_options', // ID of the section this control should render in (can be one of yours, or a WordPress default section).
@@ -186,7 +186,7 @@ if ( ! class_exists( 'JB_Customizer' ) ) {
 					$wp_customize, // Pass the $wp_customize object (required).
 					'jb_social_fb_id', // Set a unique ID for the control.
 					array(
-						'label'    => __( 'Facebook URL', 'jbprovider' ), // Admin-visible name of the control.
+						'label'    => __( 'Facebook URL', 'jbapp' ), // Admin-visible name of the control.
 						'settings' => 'jb_social_fb', // Which setting to load and manipulate (serialized is okay).
 						'priority' => 10, // Determines the order this control appears in for the specified section.
 						'section'  => 'jbtheme_options', // ID of the section this control should render in (can be one of yours, or a WordPress default section).
@@ -212,7 +212,7 @@ if ( ! class_exists( 'JB_Customizer' ) ) {
 					$wp_customize, // Pass the $wp_customize object (required).
 					'jb_social_twitter_id', // Set a unique ID for the control.
 					array(
-						'label'    => __( 'Twitter URL', 'jbprovider' ), // Admin-visible name of the control.
+						'label'    => __( 'Twitter URL', 'jbapp' ), // Admin-visible name of the control.
 						'settings' => 'jb_social_twitter', // Which setting to load and manipulate (serialized is okay).
 						'priority' => 10, // Determines the order this control appears in for the specified section.
 						'section'  => 'jbtheme_options', // ID of the section this control should render in (can be one of yours, or a WordPress default section).
@@ -237,7 +237,7 @@ if ( ! class_exists( 'JB_Customizer' ) ) {
 					$wp_customize, // Pass the $wp_customize object (required).
 					'jb_social_linkedin_id', // Set a unique ID for the control.
 					array(
-						'label'    => __( 'Linkedin URL', 'jbprovider' ), // Admin-visible name of the control.
+						'label'    => __( 'Linkedin URL', 'jbapp' ), // Admin-visible name of the control.
 						'settings' => 'jb_social_linkedin', // Which setting to load and manipulate (serialized is okay).
 						'priority' => 10, // Determines the order this control appears in for the specified section.
 						'section'  => 'jbtheme_options', // ID of the section this control should render in (can be one of yours, or a WordPress default section).
@@ -263,7 +263,7 @@ if ( ! class_exists( 'JB_Customizer' ) ) {
 					$wp_customize, // Pass the $wp_customize object (required).
 					'jb_social_google_plus_id', // Set a unique ID for the control.
 					array(
-						'label'    => __( 'Google Plus URL', 'jbprovider' ), // Admin-visible name of the control.
+						'label'    => __( 'Google Plus URL', 'jbapp' ), // Admin-visible name of the control.
 						'settings' => 'jb_social_google_plus', // Which setting to load and manipulate (serialized is okay).
 						'priority' => 10, // Determines the order this control appears in for the specified section.
 						'section'  => 'jbtheme_options', // ID of the section this control should render in (can be one of yours, or a WordPress default section).
@@ -288,7 +288,7 @@ if ( ! class_exists( 'JB_Customizer' ) ) {
 					$wp_customize, // Pass the $wp_customize object (required).
 					'jb_social_youtube_id', // Set a unique ID for the control.
 					array(
-						'label'    => __( 'Youtube URL', 'jbprovider' ), // Admin-visible name of the control.
+						'label'    => __( 'Youtube URL', 'jbapp' ), // Admin-visible name of the control.
 						'settings' => 'jb_social_youtube', // Which setting to load and manipulate (serialized is okay).
 						'priority' => 10, // Determines the order this control appears in for the specified section.
 						'section'  => 'jbtheme_options', // ID of the section this control should render in (can be one of yours, or a WordPress default section).
@@ -314,14 +314,14 @@ if ( ! class_exists( 'JB_Customizer' ) ) {
 					$wp_customize, // Pass the $wp_customize object (required).
 					'jb_blog_layout_id', // Set a unique ID for the control.
 					array(
-						'label'    => __( 'Blog layout', 'jbprovider' ), // Admin-visible name of the control.
+						'label'    => __( 'Blog layout', 'jbapp' ), // Admin-visible name of the control.
 						'settings' => 'jb_blog_layout', // Which setting to load and manipulate (serialized is okay).
 						'priority' => 10, // Determines the order this control appears in for the specified section.
 						'section'  => 'jbtheme_options', // ID of the section this control should render in (can be one of yours, or a WordPress default section).
 						'type'     => 'select',
 						'choices'  => array(
-							'grid' => __( 'Grid', 'jbprovider' ),
-							'list' => __( 'List', 'jbprovider' ),
+							'grid' => __( 'Grid', 'jbapp' ),
+							'list' => __( 'List', 'jbapp' ),
 						),
 					)
 				)
@@ -343,15 +343,15 @@ if ( ! class_exists( 'JB_Customizer' ) ) {
 					$wp_customize, // Pass the $wp_customize object (required).
 					'jb_blog_showsidebar_id', // Set a unique ID for the control.
 					array(
-						'label'    => __( 'Blog sidebar options', 'jbprovider' ), // Admin-visible name of the control.
+						'label'    => __( 'Blog sidebar options', 'jbapp' ), // Admin-visible name of the control.
 						'settings' => 'jb_blog_showsidebar', // Which setting to load and manipulate (serialized is okay).
 						'priority' => 10, // Determines the order this control appears in for the specified section.
 						'section'  => 'jbtheme_options', // ID of the section this control should render in (can be one of yours, or a WordPress default section).
 						'type'     => 'select',
 						'choices'  => array(
-							'nosidebar'    => __( 'No Sidebar', 'jbprovider' ),
-							'leftsidebar'  => __( 'Left Sidebar', 'jbprovider' ),
-							'rightsidebar' => __( 'Right Sidebar', 'jbprovider' ),
+							'nosidebar'    => __( 'No Sidebar', 'jbapp' ),
+							'leftsidebar'  => __( 'Left Sidebar', 'jbapp' ),
+							'rightsidebar' => __( 'Right Sidebar', 'jbapp' ),
 						),
 					)
 				)
@@ -374,14 +374,14 @@ if ( ! class_exists( 'JB_Customizer' ) ) {
 					$wp_customize, // Pass the $wp_customize object (required).
 					'jb_blog_fullwith_id', // Set a unique ID for the control.
 					array(
-						'label'    => __( 'Blog width options', 'jbprovider' ), // Admin-visible name of the control.
+						'label'    => __( 'Blog width options', 'jbapp' ), // Admin-visible name of the control.
 						'settings' => 'jb_blog_fullwith', // Which setting to load and manipulate (serialized is okay).
 						'priority' => 10, // Determines the order this control appears in for the specified section.
 						'section'  => 'jbtheme_options', // ID of the section this control should render in (can be one of yours, or a WordPress default section).
 						'type'     => 'select',
 						'choices'  => array(
-							'default'   => __( 'Default', 'jbprovider' ),
-							'fullwidth' => __( 'Full Width', 'jbprovider' ),
+							'default'   => __( 'Default', 'jbapp' ),
+							'fullwidth' => __( 'Full Width', 'jbapp' ),
 						),
 					)
 				)

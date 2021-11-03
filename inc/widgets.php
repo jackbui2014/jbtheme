@@ -5,7 +5,7 @@
  * The widget file
  *
  * @package JB
- * @subpackage jbprovider
+ * @subpackage jbapp
  * @since 1.0
  */
 
@@ -29,9 +29,9 @@ if ( ! function_exists( 'jb_sidebar_registration' ) ) {
 			array_merge(
 				$shared_args,
 				array(
-					'name'        => __( 'Blog sidebar', 'jbprovider' ),
+					'name'        => __( 'Blog sidebar', 'jbapp' ),
 					'id'          => 'sidebar-blog',
-					'description' => __( 'Widgets in this area will be displayed in blog pages.', 'jbprovider' ),
+					'description' => __( 'Widgets in this area will be displayed in blog pages.', 'jbapp' ),
 				)
 			)
 		);
@@ -41,9 +41,9 @@ if ( ! function_exists( 'jb_sidebar_registration' ) ) {
 			array_merge(
 				$shared_args,
 				array(
-					'name'        => __( 'Footer #1', 'jbprovider' ),
+					'name'        => __( 'Footer #1', 'jbapp' ),
 					'id'          => 'sidebar-1',
-					'description' => __( 'Widgets in this area will be displayed in the first column in the footer.', 'jbprovider' ),
+					'description' => __( 'Widgets in this area will be displayed in the first column in the footer.', 'jbapp' ),
 				)
 			)
 		);
@@ -53,9 +53,9 @@ if ( ! function_exists( 'jb_sidebar_registration' ) ) {
 			array_merge(
 				$shared_args,
 				array(
-					'name'        => __( 'Footer #2', 'jbprovider' ),
+					'name'        => __( 'Footer #2', 'jbapp' ),
 					'id'          => 'sidebar-2',
-					'description' => __( 'Widgets in this area will be displayed in the second column in the footer.', 'jbprovider' ),
+					'description' => __( 'Widgets in this area will be displayed in the second column in the footer.', 'jbapp' ),
 				)
 			)
 		);
@@ -65,9 +65,9 @@ if ( ! function_exists( 'jb_sidebar_registration' ) ) {
 			array_merge(
 				$shared_args,
 				array(
-					'name'        => __( 'Footer #3', 'jbprovider' ),
+					'name'        => __( 'Footer #3', 'jbapp' ),
 					'id'          => 'sidebar-3',
-					'description' => __( 'Widgets in this area will be displayed in the second column in the footer.', 'jbprovider' ),
+					'description' => __( 'Widgets in this area will be displayed in the second column in the footer.', 'jbapp' ),
 				)
 			)
 		);
@@ -77,9 +77,9 @@ if ( ! function_exists( 'jb_sidebar_registration' ) ) {
 			array_merge(
 				$shared_args,
 				array(
-					'name'        => __( 'Footer #4', 'jbprovider' ),
+					'name'        => __( 'Footer #4', 'jbapp' ),
 					'id'          => 'sidebar-4',
-					'description' => __( 'Widgets in this area will be displayed in the second column in the footer.', 'jbprovider' ),
+					'description' => __( 'Widgets in this area will be displayed in the second column in the footer.', 'jbapp' ),
 				)
 			)
 		);

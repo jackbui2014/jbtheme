@@ -49,6 +49,9 @@
                 border: 1px solid $btn_primary_border_hover_color!important;
                 background: $btn_primary_hover_color!important;
             }
+            &:focus{
+                box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 1);
+            }
         }
         input[type="submit"]{
             position: relative;
@@ -63,6 +66,9 @@
                 color: $btn_primary_text_hover_color!important;
                 border: 1px solid $btn_primary_border_hover_color!important;
                 background: $btn_primary_hover_color!important;
+            }
+            &:focus{
+                box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 1);
             }
         }
         label{

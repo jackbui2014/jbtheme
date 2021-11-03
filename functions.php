@@ -3,7 +3,7 @@
  * JB Provider's functions and definitions
  *
  * @package    JB
- * @subpackage jbprovider
+ * @subpackage jbapp
  * @since      1.0
  */
 
@@ -37,7 +37,7 @@ if ( ! function_exists( 'jb_setup' ) ) :
 		 * Make theme available for translation.
 		 * Translations can be placed in the /languages/ directory.
 		 */
-		load_theme_textdomain( 'jbprovider', get_template_directory() . '/languages' );
+		load_theme_textdomain( 'jbapp', get_template_directory() . '/languages' );
 
 		/**
 		 * Add default posts and comments RSS feed links to <head>.
@@ -81,8 +81,8 @@ if ( ! function_exists( 'jb_setup' ) ) :
 			$postmetabox->add_field(
 				array(
 					'name'    => 'jb_show_fullwidth',
-					'title'   => __( 'Show full width', 'jbprovider' ),
-					'desc'    => __( 'Show this page/post full width', 'jbprovider' ),
+					'title'   => __( 'Show full width', 'jbapp' ),
+					'desc'    => __( 'Show this page/post full width', 'jbapp' ),
 					'type'    => 'checkbox',
 					'default' => '0',
 					'options' => array(
@@ -93,14 +93,14 @@ if ( ! function_exists( 'jb_setup' ) ) :
 			$postmetabox->add_field(
 				array(
 					'name'    => 'jb_show_sidebar',
-					'title'   => __( 'Show sidebar', 'jbprovider' ),
-					'desc'    => __( 'Show sidebar', 'jbprovider' ),
+					'title'   => __( 'Show sidebar', 'jbapp' ),
+					'desc'    => __( 'Show sidebar', 'jbapp' ),
 					'type'    => 'select',
 					'default' => '',
 					'options' => array(
-						'nosidebar'    => __( 'No sidebar', 'jbprovider' ),
-						'leftsidebar'  => __( 'Show left sidebar', 'jbprovider' ),
-						'rightsidebar' => __( 'Show right sidebar', 'jbprovider' ),
+						'nosidebar'    => __( 'No sidebar', 'jbapp' ),
+						'leftsidebar'  => __( 'Show left sidebar', 'jbapp' ),
+						'rightsidebar' => __( 'Show right sidebar', 'jbapp' ),
 					),
 				)
 			);
@@ -108,8 +108,8 @@ if ( ! function_exists( 'jb_setup' ) ) :
 			$pagemetabox->add_field(
 				array(
 					'name'    => 'jb_show_fullwidth',
-					'title'   => __( 'Show full width', 'jbprovider' ),
-					'desc'    => __( 'Show this page/post full width', 'jbprovider' ),
+					'title'   => __( 'Show full width', 'jbapp' ),
+					'desc'    => __( 'Show this page/post full width', 'jbapp' ),
 					'type'    => 'checkbox',
 					'default' => '0',
 					'options' => array(
@@ -256,7 +256,7 @@ if ( ! function_exists( 'jb_gutenberg_block_category' ) ) {
 			array(
 				array(
 					'slug'  => 'jb-general-blocks',
-					'title' => __( 'JB General Blocks', 'jbprovider' ),
+					'title' => __( 'JB General Blocks', 'jbapp' ),
 				),
 			),
 			$categories
@@ -271,8 +271,8 @@ if ( ! function_exists( 'jb_menus' ) ) {
 	function jb_menus() {
 
 		$locations = array(
-			'primary' => __( 'Primary menu', 'jbprovider' ),
-			'second'  => __( 'Secondary Menu', 'jbprovider' ),
+			'primary' => __( 'Primary menu', 'jbapp' ),
+			'second'  => __( 'Secondary Menu', 'jbapp' ),
 		);
 		register_nav_menus( $locations );
 	}
@@ -370,9 +370,9 @@ if ( ! function_exists( 'jb_sidebar_registration' ) ) :
 			array_merge(
 				$shared_args,
 				array(
-					'name'        => __( 'Footer #1', 'jbprovider' ),
+					'name'        => __( 'Footer #1', 'jbapp' ),
 					'id'          => 'sidebar-1',
-					'description' => __( 'Widgets in this area will be displayed in the first column in the footer.', 'jbprovider' ),
+					'description' => __( 'Widgets in this area will be displayed in the first column in the footer.', 'jbapp' ),
 				)
 			)
 		);
@@ -382,9 +382,9 @@ if ( ! function_exists( 'jb_sidebar_registration' ) ) :
 			array_merge(
 				$shared_args,
 				array(
-					'name'        => __( 'Footer #2', 'jbprovider' ),
+					'name'        => __( 'Footer #2', 'jbapp' ),
 					'id'          => 'sidebar-2',
-					'description' => __( 'Widgets in this area will be displayed in the second column in the footer.', 'jbprovider' ),
+					'description' => __( 'Widgets in this area will be displayed in the second column in the footer.', 'jbapp' ),
 				)
 			)
 		);
@@ -556,7 +556,7 @@ if ( ! function_exists( 'jb_pagination' ) ) :
 		} elseif ( 'link' === $type ) {
 			wp_link_pages(
 				array(
-					'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'jbprovider' ) . '</span>',
+					'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'jbapp' ) . '</span>',
 					'after'       => '</div>',
 					'link_before' => '<span>',
 					'link_after'  => '</span>',
@@ -564,7 +564,7 @@ if ( ! function_exists( 'jb_pagination' ) ) :
 			);
 		} else {
 			if ( empty( $text ) ) {
-				$text = __( 'Load more', 'jbprovider' );
+				$text = __( 'Load more', 'jbapp' );
 			}
 			echo '<a href="#" id="' . esc_attr( $query_var['post_type'] ) . '-inview" class="inview load-more" >' . esc_html( $text ) . '</a>';
 		}

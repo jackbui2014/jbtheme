@@ -3,7 +3,7 @@
  * This file for sanitize functions
  *
  * @package JB
- * @subpackage jbprovider
+ * @subpackage jbapp
  * @since 1.0
  */
 

@@ -4,7 +4,7 @@
  * The post content template
  *
  * @package JB
- * @subpackage jbprovider
+ * @subpackage jbapp
  * @since 1.0
  */
 

@@ -3,7 +3,7 @@
  * Single template page
  *
  * @package JB
- * @subpackage jbprovider
+ * @subpackage jbapp
  * @since 1.0
  */
 

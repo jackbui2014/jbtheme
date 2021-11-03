@@ -4,7 +4,7 @@
  * The post item with grid layout
  *
  * @package JB
- * @subpackage jbprovider
+ * @subpackage jbapp
  * @since 1.0
  */
 
@@ -26,6 +26,6 @@ $jb_comments = get_comments_number( $post->ID );
 
 		</div>
 		<div class="post-item-exceprt"><?php echo wp_kses_post( $post_expert ); ?></div>
-		<a class="post-item-readmore" href="<?php echo esc_attr( $jb_link ); ?>"><?php esc_html_e( 'Read more', 'jbprovider' ); ?></a>
+		<a class="post-item-readmore" href="<?php echo esc_attr( $jb_link ); ?>"><?php esc_html_e( 'Read more', 'jbapp' ); ?></a>
 	</div>
 </div>

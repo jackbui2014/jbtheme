@@ -5,7 +5,7 @@
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
  * @package JB
- * @subpackage jbprovider
+ * @subpackage jbapp
  * @since 1.0
  */
 
@@ -32,7 +32,7 @@ endif;
 	<div class="archive-description"><?php echo wp_kses_post( wpautop( $description ) ); ?></div>
 	<?php endif; ?>
 	<?php elseif ( is_singular( 'post' ) ) : ?>
-	<h2 class="page-title"><?php esc_html_e( 'BLOG SINGLE', 'jbprovider' ); ?></h2>
+	<h2 class="page-title"><?php esc_html_e( 'BLOG SINGLE', 'jbapp' ); ?></h2>
 		<?php
 		if ( function_exists( 'yoast_breadcrumb' ) ) :
 						yoast_breadcrumb( '<p id="breadcrumbs">', '</p>' );
@@ -41,7 +41,7 @@ endif;
 		$keyword = get_query_var( 's', '' );
 		?>
 		<?php /* translators: %s: search term */ ?>
-		<h2 class="page-title"><?php echo sprintf( esc_html__( 'Search results for: %s ', 'jbprovider' ), esc_html( $keyword ) ); ?></h2>
+		<h2 class="page-title"><?php echo sprintf( esc_html__( 'Search results for: %s ', 'jbapp' ), esc_html( $keyword ) ); ?></h2>
 			<?php
 			if ( function_exists( 'yoast_breadcrumb' ) ) :
 							yoast_breadcrumb( '<p id="breadcrumbs">', '</p>' );
@@ -50,7 +50,7 @@ endif;
 			<?php
 	else :
 		?>
-		<h2 class="page-title"><?php esc_html_e( 'BLOGs', 'jbprovider' ); ?></h2>
+		<h2 class="page-title"><?php esc_html_e( 'BLOGs', 'jbapp' ); ?></h2>
 		<?php
 		if ( function_exists( 'yoast_breadcrumb' ) ) :
 						yoast_breadcrumb( '<p id="breadcrumbs">', '</p>' );
